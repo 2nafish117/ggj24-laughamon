@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Ability
+  m_Script: {fileID: 11500000, guid: b72385017e249b640a365f75c589a3f3, type: 3}
+  m_Name: PlayerProfile
   m_EditorClassIdentifier: 
-  Name: Action
-  IsSelfTargeting: 0
-  Reactions: []
+  Name: Yu, The Hero!
+  Prefab: {fileID: 0}
+  ProfilePicture: {fileID: 0}
+  AbilityEffectiveness: []
+  ReactionMultipliers: []

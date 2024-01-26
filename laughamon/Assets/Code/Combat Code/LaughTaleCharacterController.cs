@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LaughTaleCharacterController : MonoBehaviour, IAbilityExecutionHandler
 {
-    public ActionExecuter ActionExecuter;
+    public AbilityExecuter ActionExecuter;
     public LaughterPoints LaughterPoints;
 
     protected IAbilityExecutionHandler executionHandler;

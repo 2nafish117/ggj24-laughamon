@@ -8,6 +8,7 @@ public class BasicAbility : Ability
 {
     public override void Execute()
     {
+        Announcer.Instance.Say($"{source.name} used an ability on {target.name}", 2f);
         target.AnimateLaugh();
         DOVirtual.DelayedCall(3, EndAbilityExecution);
     }

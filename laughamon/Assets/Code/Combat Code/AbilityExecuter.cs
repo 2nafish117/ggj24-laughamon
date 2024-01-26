@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +7,25 @@ public interface IAbilityExecutionHandler
     void OnAfterAbilityExecuted(Ability ability);
 }
 
-public class ActionExecuter : MonoBehaviour
+public class AbilityExecuter : MonoBehaviour
 {
     public List<Ability> Abilities;
 
     public List<Ability> Spells;
+
+    public List<Ability> AbilitiesUsedThisCombat;
+    public List<Ability> SpellsUsedThisCombat;
+
+    public void Start()
+    {
+        CombatManager.Instance.OnCombatStarted += OnCombatStarted;
+    }
+
+    private void OnCombatStarted()
+    {
+        AbilitiesUsedThisCombat.Clear();
+        SpellsUsedThisCombat.Clear();
+    }
 
     public void ExecuteAbility(Ability ability, LaughTaleCharacterController source, LaughTaleCharacterController target, IAbilityExecutionHandler executionHandler)
     {
@@ -23,6 +36,7 @@ public class ActionExecuter : MonoBehaviour
     public void ExecuteAbility(int index, LaughTaleCharacterController source, LaughTaleCharacterController target, IAbilityExecutionHandler executionHandler)
     {
         var ability = Abilities[index];
+        AbilitiesUsedThisCombat.Add(ability);
         ability.ExecuteAbility(source, target, executionHandler);
     }
 
@@ -34,7 +48,8 @@ public class ActionExecuter : MonoBehaviour
 
     public void ExecuteSpell(int index, LaughTaleCharacterController source, LaughTaleCharacterController target, IAbilityExecutionHandler executionHandler)
     {
-        var ability = Spells[index];
-        ability.ExecuteAbility(source, target, executionHandler);
+        var spell = Spells[index];
+        SpellsUsedThisCombat.Add(spell);
+        spell.ExecuteAbility(source, target, executionHandler);
     }
 }

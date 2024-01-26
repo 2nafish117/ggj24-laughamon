@@ -8,6 +8,8 @@ public class CombatManager : MonoBehaviour
     public static CombatManager Instance;
 
     public event Action<bool> OnTurnChanged;
+    public event Action OnCombatStarted;
+    public event Action OnCombatEnded;
 
     [field: SerializeField]
     public bool IsPlayerTurn { get; private set; }
@@ -26,6 +28,7 @@ public class CombatManager : MonoBehaviour
     public void StartCombat()
     {
         print("Starting combat");
+        OnCombatStarted?.Invoke();
         OnTurnChanged?.Invoke(IsPlayerTurn);
 
     }
@@ -49,6 +52,7 @@ public class CombatManager : MonoBehaviour
 
     public void EndCombat()
     {
-
+        OnCombatEnded?.Invoke();
+        Announcer.Instance.Say(IsPlayerTurn ? "You killed him, how pathetic." : "Someone died, now go home.", 5f);
     }
 }

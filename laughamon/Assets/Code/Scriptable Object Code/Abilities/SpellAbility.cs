@@ -7,8 +7,8 @@ public class SpellAbility : Ability
 {
     public override void Execute()
     {
-        Debug.Log("Used a spell");
+        Announcer.Instance.Say($"{source.name} casted a spell in {target.name}",2f);
         target.AnimateLaugh();
-        DOVirtual.DelayedCall(1, EndAbilityExecution);
+        DOVirtual.DelayedCall(3, EndAbilityExecution);
     }
 }

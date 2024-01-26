@@ -34,11 +34,13 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
     public void OnAbilityUsed(int index)
     {
+        playerTurnActionsCanvas.interactable = false;
         PlayerController.Instance.UseAbilityAtIndex(index, this, AIController.Instance);
     }
 
     public void OnSpellUsed(int index)
     {
+        playerTurnActionsCanvas.interactable = false;
         PlayerController.Instance.UseSpellAtIndex(index, this, AIController.Instance);
     }
 
