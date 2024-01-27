@@ -37,15 +37,20 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
     private void Start()
     {
+        CombatManager.Instance.OnCombatPrep += HandleCombatPrep;
         CombatManager.Instance.OnCombatStarted += HandleCombatStarted;
-        CombatManager.Instance.OnCombatStarted += InitUI;
         CombatManager.Instance.OnTurnChanged += SwitchTurn;
+    }
+
+    private void HandleCombatPrep()
+    {
+        combatResultScreen.gameObject.SetActive(false);
+        InitUI();
     }
 
     private void HandleCombatStarted()
     {
         SetCombatElements(true);
-        combatResultScreen.gameObject.SetActive(false);
     }
 
     public void InitUI()
