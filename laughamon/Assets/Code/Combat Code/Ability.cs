@@ -7,6 +7,8 @@ public abstract class Ability : ScriptableObject
     public bool IsSelfTargeting;
     public Sprite AbilityIcon;
     public int ShopCost;
+    [Range(0f, 1f)]
+    public float SuccessChance = 1;
     [Space]
     public ReactionTextPairs[] Reactions;
 
@@ -28,10 +30,25 @@ public abstract class Ability : ScriptableObject
         this.executionHandler = executionHandler;
         this.source = source;
         this.target = target;
-        Execute();
+        float roll = Random.Range(0f, 1f);
+        if (roll < SuccessChance)
+        {
+            ExecuteSucceeded();
+        }
+        else
+        {
+            ExecuteFailed();
+        }
     }
 
-    public abstract void Execute();
+    /// <summary>
+    /// Used to do things like apply damage and all
+    /// </summary>
+    public abstract void ExecuteSucceeded();
+    /// <summary>
+    /// Used to do things like you failed announcement and all
+    /// </summary>
+    public abstract void ExecuteFailed();
 
     public virtual void ExecuteDOT()
     {
@@ -52,6 +69,12 @@ public abstract class Ability : ScriptableObject
     public virtual void StartAbilityExecution()
     {
         executionHandler.OnBeforeAbilityExecuted(this);
+    }
+
+    public virtual void ExecuteOther()
+    {
+        ExecuteCombatEffects();
+        ExecuteDOT();
     }
 
     public virtual void EndAbilityExecution()
