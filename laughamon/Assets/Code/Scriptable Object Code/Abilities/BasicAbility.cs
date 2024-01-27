@@ -12,12 +12,4 @@ public class BasicAbility : Ability
         target.AnimateLaugh();
         DOVirtual.DelayedCall(3, EndAbilityExecution);
     }
-
-    public override void ExecuteCombatEffects()
-    {
-    }
-
-    public override void ExecuteDOT()
-    {
-    }
 }
