@@ -692,9 +692,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3171963046417577221}
   - {fileID: 572435287}
   - {fileID: 1399728479}
+  - {fileID: 3171963046417577221}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -829,6 +829,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5642018851410134341, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
+      propertyPath: m_Size
+      value: 0.23967353
+      objectReference: {fileID: 0}
     - target: {fileID: 8634456696616690542, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -938,6 +942,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 18.099976
       objectReference: {fileID: 0}
+    - target: {fileID: 1779552893430620082, guid: d0a2649d27c2df047b89139b57568169, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2267690907168056908, guid: d0a2649d27c2df047b89139b57568169, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -954,9 +962,21 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5341879936120037607, guid: d0a2649d27c2df047b89139b57568169, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341879936120037607, guid: d0a2649d27c2df047b89139b57568169, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6199591129751149088, guid: d0a2649d27c2df047b89139b57568169, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247074683882573007, guid: d0a2649d27c2df047b89139b57568169, type: 3}
+      propertyPath: inventoryPanel
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8521206789418969490, guid: d0a2649d27c2df047b89139b57568169, type: 3}
       propertyPath: m_Name

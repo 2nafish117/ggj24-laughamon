@@ -1,7 +1,5 @@
 using DG.Tweening;
 using UnityEngine;
-using System;
-using System.Collections.Generic;
 
 public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 {
@@ -16,6 +14,9 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     [SerializeField]
     private UILaughBar enemyBar;
 
+    [SerializeField]
+    private UIInventory inventoryPanel;
+
     private void Awake()
     {
         Instance = this;
@@ -23,9 +24,15 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
     private void Start()
     {
+        CombatManager.Instance.OnCombatStarted += InitUI;
         CombatManager.Instance.OnTurnChanged += SwitchTurn;
+    }
+
+    public void InitUI()
+    {
         playerBar.Initialize(PlayerController.Instance.LaughterPoints);
         enemyBar.Initialize(AIController.Instance.LaughterPoints);
+        inventoryPanel.Init(PlayerController.Instance.InventoryManager);
     }
 
     public void SwitchTurn(bool isPlayerTurn)
