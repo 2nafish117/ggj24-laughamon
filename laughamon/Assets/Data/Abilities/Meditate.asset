@@ -10,23 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Pillow Guard
+  m_Name: Meditate
   m_EditorClassIdentifier: 
-  LaughPoint: 15
-  IsSelfTargeting: 0
-  AbilityIcon: {fileID: 21300000, guid: 423834b071fa3214f944129c092e5a89, type: 3}
+  LaughPoint: -40
+  IsSelfTargeting: 1
+  AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
   damageType: 0
-  AnimationKey: 1
+  AnimationKey: 0
   TargetReact: 0
   TargetAnimationKey: 0
   TargetAnimationDelay: 0
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList:
-  - {fileID: 11400000, guid: 353671e22913f1d4ead18389b65952f3, type: 2}
-  UsageText: You raised your noble pillow for defence!
+  - {fileID: 11400000, guid: d7c090154c8ea6f4fbada7825a2780cb, type: 2}
+  - {fileID: 11400000, guid: df98769d85f8dd341b6fb27350c9c33a, type: 2}
+  - {fileID: 11400000, guid: a01584ca02f0f404f89194daba7cdc3c, type: 2}
+  UsageText: '[enemy] goes into Nirvana, discarding all humorous thoughts.'
   Reactions: []
   ReactionMultipliers: []
   DOTs: []

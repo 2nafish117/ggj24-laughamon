@@ -20,9 +20,9 @@ public class BasicAbility : Ability
         {
             ApplyToSelf();
         }
-        if (addsBuff)
+        if (BuffsList.Length > 0)
         {
-            source.AddBuff(addsBuff);
+            source.AddBuffs(BuffsList);
         }
 
         AddQueuedAbilities();

@@ -24,7 +24,8 @@ MonoBehaviour:
   TargetAnimationDelay: 2.4
   ExtraTurns: 2
   ChargeAbility: {fileID: 11400000, guid: 0817fbcc7991ef749808567a5423189f, type: 2}
-  addsBuff: {fileID: 11400000, guid: 0e90997d620f5174e9f37b58b1bddd99, type: 2}
+  BuffsList:
+  - {fileID: 11400000, guid: 0e90997d620f5174e9f37b58b1bddd99, type: 2}
   UsageText: You chugged the entire bottle of hot sauce in one go....AAAH FIREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.
   Reactions:
   - Effectiveness: 6

@@ -16,7 +16,7 @@ public abstract class Ability : ScriptableObject
     public float TargetAnimationDelay;
     public int ExtraTurns = 0;
     public Ability ChargeAbility;
-    public Buff addsBuff;
+    public Buff[] BuffsList;
 
     [Space]
     [TextArea]
