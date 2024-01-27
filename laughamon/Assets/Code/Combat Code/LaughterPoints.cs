@@ -18,14 +18,14 @@ public class LaughterPoints : MonoBehaviour
 
     public event Action<float, float> OnLaughPointsChanged;
 
-    public void Laugh(int amount)
+    public void Laugh(float amount)
     {
         Assert.IsTrue(amount >= 0);
         laughPoints -= amount;
         OnLaughPointsChanged?.Invoke(laughPoints, -amount);
     }
 
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         Assert.IsTrue(amount >= 0);
         laughPoints = Mathf.Min(MaxLaughPoints, Mathf.Max(0, laughPoints) + amount); ;

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 {
+    public string Name => CharacterProfile.Name;
     public AbilityExecuter ActionExecuter;
     public LaughterPoints LaughterPoints;
     public CharacterProfile CharacterProfile;
@@ -12,6 +13,11 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     public AbilityEffectHandler EffectHandler;
 
     protected IAbilityExecutionHandler executionHandler;
+
+    public override string ToString()
+    {
+        return Name;
+    }
 
     private void Start()
     {
