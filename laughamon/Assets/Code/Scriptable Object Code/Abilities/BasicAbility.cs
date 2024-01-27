@@ -13,4 +13,11 @@ public class BasicAbility : Ability
         DOVirtual.DelayedCall(3, EndAbilityExecution);
     }
 
+    public override void ExecuteCombatEffects()
+    {
+    }
+
+    public override void ExecuteDOT()
+    {
+    }
 }

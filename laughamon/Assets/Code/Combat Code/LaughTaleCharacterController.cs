@@ -7,11 +7,14 @@ public class LaughTaleCharacterController : MonoBehaviour, IAbilityExecutionHand
 {
     public AbilityExecuter ActionExecuter;
     public LaughterPoints LaughterPoints;
+    public CharacterProfile CharacterProfile;
 
     protected IAbilityExecutionHandler executionHandler;
 
     private void Start()
     {
+        LaughterPoints.Init(CharacterProfile.MaxHealth);
+
         CombatManager.Instance.OnTurnChanged += HandleTurnChanged;
         LaughterPoints.OnLaughPointsChanged += HandleLaughterChanged;
         OnStart();

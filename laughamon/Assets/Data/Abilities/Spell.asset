@@ -12,3 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e120d2d005e37cf4190f7c51d383fbda, type: 3}
   m_Name: Spell
   m_EditorClassIdentifier: 
+  Name: 
+  LaughPoint: 0
+  IsSelfTargeting: 0
+  Reactions:
+  - Effectiveness: 0
+    Reactions:
+    - 
+    - 
+    - 
+  ReactionMultipliers:
+  - Effectiveness: 0
+    Multiplier:
+    - 0

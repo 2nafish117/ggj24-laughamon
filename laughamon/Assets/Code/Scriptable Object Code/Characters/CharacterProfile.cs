@@ -7,6 +7,7 @@ public class CharacterProfile : ScriptableObject
 {
     public string Name;
     public GameObject Prefab;
+    public float MaxHealth;
     public Sprite ProfilePicture;
 
     [Tooltip("Non listed abilities are treated as failures by default")]
