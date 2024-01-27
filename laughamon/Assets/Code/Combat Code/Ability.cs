@@ -170,5 +170,6 @@ public enum DamageType
 {
     Touch,
     Joke,
-    Comic
+    Comic,
+    Universal
 }

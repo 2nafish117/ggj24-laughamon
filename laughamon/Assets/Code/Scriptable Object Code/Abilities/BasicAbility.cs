@@ -47,12 +47,12 @@ public class BasicAbility : Ability
         //Buff calculations
 
         Buff targetDefensiveBuff = target.GetDefensiveBuff();
-        if (targetDefensiveBuff != null && damageType == targetDefensiveBuff.damageType)
+        if (targetDefensiveBuff != null && (damageType == targetDefensiveBuff.damageType || targetDefensiveBuff.damageType == DamageType.Universal))
         {
             damage = Mathf.Clamp(damage - targetDefensiveBuff.value, 0, 1000f);
 
             AbilityReactionEffectiveness buffEffectiveness = AbilityReactionEffectiveness.SuperEffective;
-            if (damage < 1f) buffEffectiveness = AbilityReactionEffectiveness.NotVeryEffective;
+            if (damage > 1f) buffEffectiveness = AbilityReactionEffectiveness.NotVeryEffective;
 
             ReactionTextPairs buffReaction = targetDefensiveBuff.GetReactionTextFor(buffEffectiveness);
             if (buffReaction != null)
