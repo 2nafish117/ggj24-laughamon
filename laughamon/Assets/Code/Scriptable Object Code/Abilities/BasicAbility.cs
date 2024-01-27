@@ -20,18 +20,28 @@ public class BasicAbility : Ability
         {
             ApplyToSelf();
         }
+
         if (BuffsList.Length > 0)
         {
             source.AddBuffs(BuffsList);
         }
 
+        if (HasDamageModifier)
+        {
+            source.AddDamageModifiers(DamageModifiers, this);
+        }
+
+        if (MultiHits > 0)
+        {
+            source.MultiHits = MultiHits;
+        }
+
         AddQueuedAbilities();
-        //DOVirtual.DelayedCall(2.5f, ApplyLaugh);
     }
 
     private void AddQueuedAbilities()
     {
-        for(int i = 0; i < ExtraTurns; i++)
+        for (int i = 0; i < ExtraTurns; i++)
         {
             source.QueueAbility(ChargeAbility);
         }
@@ -81,7 +91,15 @@ public class BasicAbility : Ability
             }
         }
 
-        target.LaughterPoints.Laugh(damage);
+        if (target.HasActiveDamageModifiers)
+        {
+            target.ActiveDamageModifiers.ModifyDamageApplication(source, target, damage);
+            target.RemoveExpiredDamageModifiers();
+        }
+        else
+        {
+            target.LaughterPoints.Laugh(damage);
+        }
 
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
     }

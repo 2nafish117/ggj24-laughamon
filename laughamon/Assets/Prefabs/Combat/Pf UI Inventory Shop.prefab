@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4929779658047399352}
   m_HandleRect: {fileID: 6962934730643873090}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 60, y: 60}
-  m_Spacing: {x: 15, y: 40}
+  m_Spacing: {x: 45, y: 40}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &8147103291204799937

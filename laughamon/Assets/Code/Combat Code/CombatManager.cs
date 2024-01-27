@@ -7,6 +7,7 @@ public class CombatManager : MonoBehaviour
     public static CombatManager Instance;
 
     public event Action<bool> OnTurnChanged;
+    public event Action OnCombatPrep;
     public event Action OnCombatStarted;
     public event Action OnCombatEnded;
 
@@ -29,6 +30,7 @@ public class CombatManager : MonoBehaviour
     {
         AIController.Instance.Init(enemyProfile);
         CombatHUDManager.Instance.ShowStartScreen(PlayerController.Instance.CharacterProfile.Name, enemyProfile.Name);
+        OnCombatPrep?.Invoke();
     }
 
     public void StartCombat()
