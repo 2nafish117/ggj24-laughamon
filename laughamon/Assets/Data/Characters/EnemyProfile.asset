@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72385017e249b640a365f75c589a3f3, type: 3}
   m_Name: EnemyProfile
   m_EditorClassIdentifier: 
-  Name: Dey, The Enemy!
+  Name: Dey
   Prefab: {fileID: 0}
   MaxHealth: 100
   ProfilePicture: {fileID: 0}

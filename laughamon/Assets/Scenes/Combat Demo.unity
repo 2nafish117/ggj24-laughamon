@@ -283,6 +283,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &254421647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778635609567335882, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
+  m_PrefabInstance: {fileID: 2082020157838349265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &260433426
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +393,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &390605129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8100495529285369678, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
+  m_PrefabInstance: {fileID: 2082020157838349265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &572435286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,6 +1184,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8634456696616690542, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
   m_PrefabInstance: {fileID: 2082020157838349265}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1399728483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254421647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90569c1591ffe44eb6f37398d6a624e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainContent: {fileID: 390605129}
+  scrollTextSpeed: 68.2
+  fullStopPause: 0
+  ellipsisSpeed: 10.4
+  scrollingVolumeFactor: 0
+  scrollingPitchFactor: 0
+  initialdelay: 0
+  audioClips: []
+  audioSource: {fileID: 0}
+  babbleOn: 0
 --- !u!1 &1504776338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1619,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 588762716113801798, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
+      propertyPath: textDisplayHelper
+      value: 
+      objectReference: {fileID: 1399728483}
     - target: {fileID: 1778635609567335882, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
       propertyPath: m_Name
       value: Pf UI Combat Logger
@@ -1684,7 +1726,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1778635609567335882, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1399728483}
   m_SourcePrefab: {fileID: 100100000, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
 --- !u!1001 &3171963046417577220
 PrefabInstance:

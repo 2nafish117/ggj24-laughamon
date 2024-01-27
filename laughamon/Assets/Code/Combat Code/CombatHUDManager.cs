@@ -16,8 +16,6 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     [SerializeField]
     private UILaughBar enemyBar;
 
-    private Queue<String> reactionsQueue = new Queue<string>();
-
     private void Awake()
     {
         Instance = this;
@@ -56,10 +54,5 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     public void OnAfterAbilityExecuted(Ability ability)
     {
 
-    }
-
-    public void AddReaction(string reaction)
-    {
-        reactionsQueue.Enqueue(reaction);
     }
 }

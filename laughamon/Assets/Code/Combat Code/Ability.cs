@@ -8,6 +8,11 @@ public abstract class Ability : ScriptableObject
     public int ShopCost;
     [Range(0f, 1f)]
     public float SuccessChance = 1;
+
+    [Space]
+    [TextArea]
+    public string UsageText;
+
     [Space]
     public ReactionTextPairs[] Reactions;
 
