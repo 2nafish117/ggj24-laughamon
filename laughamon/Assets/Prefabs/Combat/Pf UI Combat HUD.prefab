@@ -2452,6 +2452,7 @@ MonoBehaviour:
   abilityPanel: {fileID: 6654447419054969866}
   combatStartScreen: {fileID: 9140375744400002822}
   combatResultScreen: {fileID: 2938493855303167720}
+  combatCamera: {fileID: 0}
 --- !u!1 &8900939755716221050
 GameObject:
   m_ObjectHideFlags: 0
@@ -3450,7 +3451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5642018851410134341, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
       propertyPath: m_Size
-      value: 0.2396735
+      value: 0.23967353
       objectReference: {fileID: 0}
     - target: {fileID: 8634456696616690542, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
       propertyPath: m_Pivot.x
