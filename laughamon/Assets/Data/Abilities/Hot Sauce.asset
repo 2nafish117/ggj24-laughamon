@@ -12,14 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: Hot Sauce
   m_EditorClassIdentifier: 
-  LaughPoint: 0
+  LaughPoint: 30
   IsSelfTargeting: 0
   AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
-  UsageText: 
-  Reactions: []
-  AnimationKey: 18
+  damageType: 2
+  AnimationKey: 12
+  UsageText: "You tilted your head back and chugged the entire bottle of hot sauce.\r\n\r...\nAAAAGH!
+    FIREEEEEEEEEEE!"
+  Reactions:
+  - Effectiveness: 6
+    Reactions:
+    - '[enemy] couldn''t help chuckling in amusement at your suffering!'
+    - '[enemy] enjoyed your suffering too much, bursting into a bellyaching laugh!'
+  - Effectiveness: 1
+    Reactions:
+    - '[enemy] kept a straight face. Slapstick comedy is old now'
+    - '[enemy] is concerned for you. Hurting yourself isn''t funny. Do you need a
+      doctor?'
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []
