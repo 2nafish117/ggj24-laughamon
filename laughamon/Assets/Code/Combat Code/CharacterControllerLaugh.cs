@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
@@ -9,8 +7,9 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     public AbilityExecuter ActionExecuter;
     public LaughterPoints LaughterPoints;
     public CharacterProfile CharacterProfile;
-    public CharacterInventoryManager CharacterInventoryManager;
+    public CharacterInventoryManager InventoryManager;
     public AbilityEffectHandler EffectHandler;
+    public CharacterAnimationController AnimationController;
 
     protected IAbilityExecutionHandler executionHandler;
 
@@ -21,8 +20,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     private void Start()
     {
-        LaughterPoints.Init(CharacterProfile.MaxHealth);
-
+        CombatManager.Instance.OnCombatStarted += OnStart;
         CombatManager.Instance.OnTurnChanged += HandleTurnChanged;
         LaughterPoints.OnLaughPointsChanged += HandleLaughterChanged;
         OnStart();
@@ -30,7 +28,16 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     protected virtual void OnStart()
     {
+        Init();
+    }
 
+    public virtual void Init()
+    {
+        LaughterPoints.Init(CharacterProfile.MaxHealth);
+        InventoryManager.Init(CharacterProfile.Inventory);
+        ActionExecuter.SetAbilities(InventoryManager.inventory);
+        EffectHandler.Init(this);
+        AnimationController.Init();
     }
 
     protected virtual void HandleTurnChanged(bool isPlayerTurn)

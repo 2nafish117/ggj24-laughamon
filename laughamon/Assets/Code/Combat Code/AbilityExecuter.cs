@@ -21,6 +21,24 @@ public class AbilityExecuter : MonoBehaviour
         CombatManager.Instance.OnCombatStarted += OnCombatStarted;
     }
 
+    public void Init(List<Ability> abilities,List<Ability> spells)
+    {
+        SetAbilities(abilities);
+        SetSpells(spells);
+    }
+
+    public void SetAbilities(List<Ability> abilities)
+    {
+        Abilities.Clear();
+        Abilities.AddRange(abilities);
+    }
+
+    public void SetSpells(List<Ability> spells)
+    {
+        Spells.Clear();
+        Spells.AddRange(spells);
+    }
+
     private void OnCombatStarted()
     {
         AbilitiesUsedThisCombat.Clear();
