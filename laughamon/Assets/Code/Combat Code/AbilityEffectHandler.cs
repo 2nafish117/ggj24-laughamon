@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class AbilityEffectHandler : MonoBehaviour
 {
-    public LaughTaleCharacterController CharacterController;
+    public CharacterControllerLaugh CharacterController;
 
     public List<AbilityDOTEffectExecuter> DeBuffs;
 
-    public void AddDeBuff(CharacterController source, CharacterController target, AbilityDOT deBuff)
+    public void AddDeBuff(CharacterControllerLaugh source, CharacterControllerLaugh target, AbilityDOT deBuff)
     {
         var deBuffExecuter = new AbilityDOTEffectExecuter();
         deBuffExecuter.InitDot(source, target, deBuff);

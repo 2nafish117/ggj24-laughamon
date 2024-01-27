@@ -16,15 +16,15 @@ public class AbilityDOT : ScriptableObject
 
 public class AbilityDOTEffectExecuter
 {
-    protected CharacterController source;
-    protected CharacterController target;
+    protected CharacterControllerLaugh source;
+    protected CharacterControllerLaugh target;
     protected AbilityDOT abilityDOT;
 
     public int RemainingTurns { get; private set; }
 
     public bool IsActive => RemainingTurns > 0;
 
-    public void InitDot(CharacterController source, CharacterController target, AbilityDOT abilityDOT)
+    public void InitDot(CharacterControllerLaugh source, CharacterControllerLaugh target, AbilityDOT abilityDOT)
     {
         this.source = source;
         this.target = target;

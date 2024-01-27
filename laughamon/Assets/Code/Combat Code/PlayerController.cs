@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : LaughTaleCharacterController, IAbilityExecutionHandler
+public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandler
 {
     public static PlayerController Instance { get; private set; }
 

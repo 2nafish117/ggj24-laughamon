@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIController : LaughTaleCharacterController
+public class AIController : CharacterControllerLaugh
 {
     public static AIController Instance { get; private set; }
 
@@ -31,7 +31,7 @@ public class AIController : LaughTaleCharacterController
         ExecuteAnAbility(PlayerController.Instance);
     }
 
-    private void ExecuteAnAbility(LaughTaleCharacterController target)
+    private void ExecuteAnAbility(CharacterControllerLaugh target)
     {
         bool useSpell = Random.Range(0, 2) == 0;
         if (useSpell)

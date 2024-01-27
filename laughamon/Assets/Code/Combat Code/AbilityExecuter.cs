@@ -27,26 +27,26 @@ public class AbilityExecuter : MonoBehaviour
         SpellsUsedThisCombat.Clear();
     }
 
-    public void ExecuteAbility(Ability ability, LaughTaleCharacterController source, LaughTaleCharacterController target, IAbilityExecutionHandler executionHandler)
+    public void ExecuteAbility(Ability ability, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
         int abilityIndex = Abilities.IndexOf(ability);
         ExecuteAbility(abilityIndex, source, target, executionHandler);
     }
 
-    public void ExecuteAbility(int index, LaughTaleCharacterController source, LaughTaleCharacterController target, IAbilityExecutionHandler executionHandler)
+    public void ExecuteAbility(int index, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
         var ability = Abilities[index];
         AbilitiesUsedThisCombat.Add(ability);
         ability.ExecuteAbility(source, target, executionHandler);
     }
 
-    public void ExecuteSpell(Ability ability, LaughTaleCharacterController source, LaughTaleCharacterController target, IAbilityExecutionHandler executionHandler)
+    public void ExecuteSpell(Ability ability, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
         int abilityIndex = Spells.IndexOf(ability);
         ExecuteSpell(abilityIndex, source, target, executionHandler);
     }
 
-    public void ExecuteSpell(int index, LaughTaleCharacterController source, LaughTaleCharacterController target, IAbilityExecutionHandler executionHandler)
+    public void ExecuteSpell(int index, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
         var spell = Spells[index];
         SpellsUsedThisCombat.Add(spell);

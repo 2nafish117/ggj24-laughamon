@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class AbilityCombatEffects : ScriptableObject
 {
-    public abstract void ExecuteCustomEffect(CharacterController source, CharacterController target);
+    public abstract void ExecuteCustomEffect(CharacterControllerLaugh source, CharacterControllerLaugh target);
 }
