@@ -7,7 +7,7 @@ public class SpellAbility : Ability
 {
     public override void ExecuteSucceeded()
     {
-        Announcer.Instance.Say($"{source.name} casted a spell in {target.name}",2f);
+        //Announcer.Instance.Say($"{source.name} casted a spell in {target.name}",2f);
         target.AnimateLaugh();
         DOVirtual.DelayedCall(3, EndAbilityExecution);
     }

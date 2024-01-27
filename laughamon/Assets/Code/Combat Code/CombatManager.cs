@@ -70,10 +70,6 @@ public class CombatManager : MonoBehaviour
     {
         IsCombatOver = true;
         OnCombatEnded?.Invoke();
-        string resultCombatLog = IsPlayerTurn ? "You killed him, how pathetic." : "Someone should go home and cry in a corner.";
-        string announcerResult = AIController.Instance.LaughterPoints.IsDead ? "You Win,\nyay...." : "You lost, as fated";
-        Announcer.Instance.Say(announcerResult, 5f);
-        CombatLogger.Instance.AddLog(resultCombatLog);
-        CombatLogger.Instance.AddLog("Combat Over!");
+        Announcer.Instance.Say(IsPlayerTurn ? "Player Victory" : "Player Defeat", 5f);
     }
 }

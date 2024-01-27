@@ -14,6 +14,12 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
     public override void OnAfterAbilityExecuted(Ability ability)
     {
         base.OnAfterAbilityExecuted(ability);
+        CombatLogger.OnLogEmptied += EndPlayerTurn;
+    }
+
+    private void EndPlayerTurn()
+    {
+        CombatLogger.OnLogEmptied -= EndPlayerTurn;
         CombatManager.Instance.EndPlayerTurn();
     }
 }
