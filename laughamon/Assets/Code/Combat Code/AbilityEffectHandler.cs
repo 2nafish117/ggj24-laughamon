@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,9 +21,15 @@ public class AbilityEffectHandler : MonoBehaviour
             deBuff.TickDOT();
         }
 
-        for (var i = 0; i < DeBuffs.Count; i++)
+        int len = DeBuffs.Count;
+        for (var i = 0; i < len; i++)
         {
-
+            if (DeBuffs[i].IsActive == false)
+            {
+                i--;
+                len--;
+                DeBuffs.RemoveAtSwapBack(i);
+            }
         }
     }
 }
