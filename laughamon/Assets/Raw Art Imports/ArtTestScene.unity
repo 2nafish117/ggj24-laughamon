@@ -356,6 +356,38 @@ PrefabInstance:
       propertyPath: characterPrefab
       value: 
       objectReference: {fileID: 2323650861464931228}
+    - target: {fileID: 4630650756558807893, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630650756558807893, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630650756558807893, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630650756558807893, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9961236
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630650756558807893, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.087964214
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630650756558807893, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630650756558807893, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630650756558807893, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -10.093
+      objectReference: {fileID: 0}
     - target: {fileID: 6059954478287613999, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
       propertyPath: m_Name
       value: PotheadKnight
