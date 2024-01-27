@@ -31,4 +31,9 @@ public class LaughterPoints : MonoBehaviour
         laughPoints = Mathf.Min(MaxLaughPoints, Mathf.Max(0, laughPoints) + amount); ;
         OnLaughPointsChanged?.Invoke(laughPoints, amount);
     }
+
+    public void Init(float maxHP)
+    {
+        maxLaughPoints = maxHP;
+    }
 }

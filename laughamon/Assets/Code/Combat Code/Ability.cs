@@ -1,14 +1,23 @@
-using System;
 using UnityEngine;
 
 public abstract class Ability : ScriptableObject
 {
     public string Name;
+    public float LaughPoint;
     public bool IsSelfTargeting;
+    public Sprite AbilityIcon;
+    public int ShopCost;
+    [Space]
     public ReactionTextPairs[] Reactions;
 
     [Tooltip("Reaction multipler are only used if listed otherwise the default value will be zero")]
     public ReactionMultiplierPairs[] ReactionMultipliers;
+
+    [Header("DOT's")]
+    public AbilityDOT[] DOTs;
+
+    [Header("Cusotm Behaviours")]
+    public AbilityCombatEffects[] CombatEffects;
 
     protected IAbilityExecutionHandler executionHandler;
     protected LaughTaleCharacterController source;
@@ -23,6 +32,8 @@ public abstract class Ability : ScriptableObject
     }
 
     public abstract void Execute();
+    public abstract void ExecuteDOT();
+    public abstract void ExecuteCombatEffects();
 
     public virtual void StartAbilityExecution()
     {
