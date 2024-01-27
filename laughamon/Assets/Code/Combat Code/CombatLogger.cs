@@ -28,4 +28,13 @@ public class CombatLogger : MonoBehaviour
         LogText.SetText(logBuilder.ToString());
         Scroll.verticalNormalizedPosition = 1;
     }
+
+    private string[] ParseRawStringToLogs(string raw)
+    {
+        string polished = raw.Replace("[target]", AIController.Instance.CharacterProfile.Name);
+
+        string[] broken = polished.Split("/n");
+
+        return broken;
+    }
 }

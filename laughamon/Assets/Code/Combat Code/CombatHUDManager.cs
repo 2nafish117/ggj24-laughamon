@@ -1,5 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 {
@@ -13,6 +15,8 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
     [SerializeField]
     private UILaughBar enemyBar;
+
+    private Queue<String> reactionsQueue = new Queue<string>();
 
     private void Awake()
     {
@@ -52,5 +56,10 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     public void OnAfterAbilityExecuted(Ability ability)
     {
 
+    }
+
+    public void AddReaction(string reaction)
+    {
+        reactionsQueue.Enqueue(reaction);
     }
 }
