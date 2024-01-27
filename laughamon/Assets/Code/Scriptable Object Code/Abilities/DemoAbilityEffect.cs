@@ -8,6 +8,6 @@ public class DemoAbilityEffect : AbilityCombatEffects
 {
     public override void ExecuteCustomEffect(CharacterControllerLaugh source, CharacterControllerLaugh target)
     {
-        Announcer.Instance.Say("Executing custom effect", 2f);
+        //Announcer.Instance.Say("Executing custom effect", 2f);
     }
 }

@@ -16,6 +16,9 @@ public class CombatLogger : MonoBehaviour
 
     Coroutine ActiveLogDisplay = null;
 
+    public static event System.Action OnLogProgressed;
+    public static event System.Action OnLogEmptied;
+
     struct LogLineInfo
     {
         public string content;
@@ -37,11 +40,19 @@ public class CombatLogger : MonoBehaviour
     public ScrollRect Scroll;
     public StringBuilder logBuilder;
     public TextBox textDisplayHelper;
+    public GameObject blinkingArrow;
 
     private void Start()
     {
         logBuilder = new StringBuilder(32_762);
         //AddLog("Combat Started.");
+        LogText.SetText("");
+    }
+
+    private void OnEnable()
+    {
+        PlayerInput.OnProgressPrompt += ProgressLog;
+        textDisplayHelper.onFinishedScrollingText += ShowBlinkingArrow;
     }
 
     public void AddLog(string rawString, float minDelay = 0f)
@@ -54,21 +65,50 @@ public class CombatLogger : MonoBehaviour
             logQueue.Enqueue(new LogLineInfo(loglines[i], 0f));
         }
 
-        if(ActiveLogDisplay == null)
-        {
-            ActiveLogDisplay = StartCoroutine(DisplayLogQueueRoutine());
-        }
+        ProgressLog();
     }
 
     private void DisplayInLog(string line)
     {
         //logBuilder.AppendLine(line);
         //LogText.SetText(logBuilder.ToString());
-        textDisplayHelper.DisplayText(line);
 
+        HideBlinkingArrow();
+
+        textDisplayHelper.DisplayText(line);
 
         StartCoroutine(ScrollAfter());
     }
+
+    private void ProgressLog()
+    {
+        if (ActiveLogDisplay == null && logQueue.Count > 0)
+        {
+            ActiveLogDisplay = StartCoroutine(DisplayLogQueueRoutine());
+        }
+
+        else if(logQueue.Count == 0)
+        {
+            HideBlinkingArrow();
+            LogText.SetText("");
+            OnLogEmptied?.Invoke();
+        }
+    }
+
+    private void ShowBlinkingArrow()
+    {
+        if(ActiveLogDisplay == null && textDisplayHelper.isScrollingText == false)
+        {
+            blinkingArrow.SetActive(true);
+        }
+    }
+
+    private void HideBlinkingArrow()
+    {
+        blinkingArrow.SetActive(false);
+    }
+
+
 
 
     IEnumerator ScrollAfter()
@@ -79,27 +119,16 @@ public class CombatLogger : MonoBehaviour
 
     IEnumerator DisplayLogQueueRoutine()
     {
-        while(logQueue.Count > 0)
-        {
-            LogLineInfo first = logQueue.Dequeue();
-            DisplayInLog(first.content);
 
-            yield return new WaitForSeconds(first.minDelay);
-            playerInputPrompted = false;
+        LogLineInfo first = logQueue.Dequeue();
+        DisplayInLog(first.content);
 
-            while (!playerInputPrompted)
-            {
-                //replace depending on Input system
-                if (Input.anyKey)
-                {
-                    playerInputPrompted = true;
-                    break;
-                }
-                yield return null;
-            }
-        }
+        yield return new WaitForSeconds(first.minDelay);
 
         ActiveLogDisplay = null;
+        ShowBlinkingArrow();
+
+        OnLogProgressed?.Invoke();
     }
 
     private string[] ParseRawStringToLogs(string raw)
@@ -107,7 +136,7 @@ public class CombatLogger : MonoBehaviour
         string polished = raw.Replace("[target]", AIController.Instance.CharacterProfile.Name);
         polished = polished.Replace("[user]", PlayerController.Instance.CharacterProfile.Name);
 
-        string[] broken = polished.Split("\n");
+        string[] broken = polished.Split("\n", System.StringSplitOptions.RemoveEmptyEntries);
 
         return broken;
     }

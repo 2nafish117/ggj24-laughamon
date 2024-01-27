@@ -22,12 +22,14 @@ public class CombatManager : MonoBehaviour
     private void Start()
     {
         OnTurnChanged += AnnounceTurn;
-        DOVirtual.DelayedCall(2, StartCombat);
+        DOVirtual.DelayedCall(0.2f, StartCombat);
     }
 
     public void StartCombat()
     {
         print("Starting combat");
+        IsPlayerTurn = true;
+
         OnCombatStarted?.Invoke();
         OnTurnChanged?.Invoke(IsPlayerTurn);
 
@@ -53,6 +55,6 @@ public class CombatManager : MonoBehaviour
     public void EndCombat()
     {
         OnCombatEnded?.Invoke();
-        Announcer.Instance.Say(IsPlayerTurn ? "You killed him, how pathetic." : "Someone died, now go home.", 5f);
+        Announcer.Instance.Say(IsPlayerTurn ? "Player Victory" : "Player Defeat", 5f);
     }
 }

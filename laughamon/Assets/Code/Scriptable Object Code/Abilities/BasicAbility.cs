@@ -9,9 +9,10 @@ public class BasicAbility : Ability
 
     public override void ExecuteSucceeded()
     {
-        Announcer.Instance.Say($"{source.name} used an ability on {target.name}", 2f);
+        //Announcer.Instance.Say($"{source.name} used an ability on {target.name}", 2f);
         StartAbilityExecution();
-        DOVirtual.DelayedCall(2.5f, ApplyLaugh);
+        ApplyLaugh();
+        //DOVirtual.DelayedCall(2.5f, ApplyLaugh);
     }
 
     private void ApplyLaugh()

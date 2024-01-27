@@ -22,8 +22,8 @@ public class AIController : CharacterControllerLaugh
 
     private void AnnounceAITurn()
     {
-        Announcer.Instance.Say("Enemy is Thinking", 2);
-        DOVirtual.DelayedCall(2, PlayAIMove);
+        //Announcer.Instance.Say("Enemy is Thinking", 2);
+        DOVirtual.DelayedCall(0.2f, PlayAIMove);
     }
 
     private void PlayAIMove()
@@ -36,13 +36,13 @@ public class AIController : CharacterControllerLaugh
         bool useSpell = Random.Range(0, 2) == 0;
         if (useSpell)
         {
-            Announcer.Instance.Say("Enemy Casted a Spell", 2f);
+            //Announcer.Instance.Say("Enemy Casted a Spell", 2f);
             ActionExecuter.Spells.GetRandom(out var index);
             ActionExecuter.ExecuteSpell(index, this, target, this);
         }
         else
         {
-            Announcer.Instance.Say("Enemy Used an Ability", 2f);
+            //Announcer.Instance.Say("Enemy Used an Ability", 2f);
             ActionExecuter.Abilities.GetRandom(out var index);
             ActionExecuter.ExecuteAbility(index, this, target, this);
         }
@@ -51,6 +51,12 @@ public class AIController : CharacterControllerLaugh
     public override void OnAfterAbilityExecuted(Ability ability)
     {
         base.OnAfterAbilityExecuted(ability);
+        CombatLogger.OnLogEmptied += ProgressToPlayerTurn;
+    }
+
+    private void ProgressToPlayerTurn()
+    {
+        CombatLogger.OnLogEmptied -= ProgressToPlayerTurn;
         CombatManager.Instance.StartPlayerTurn();
     }
 
