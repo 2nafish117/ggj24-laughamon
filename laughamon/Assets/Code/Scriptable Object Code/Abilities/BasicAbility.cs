@@ -33,7 +33,6 @@ public class BasicAbility : Ability
             $"\n{target} laughed for {LaughPoint * multiplier}");
 
         target.LaughterPoints.Laugh(LaughPoint * multiplier);
-        target.AnimateLaugh();
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
     }
 

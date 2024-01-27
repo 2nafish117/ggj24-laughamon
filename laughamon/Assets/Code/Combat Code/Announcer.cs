@@ -33,11 +33,14 @@ public class Announcer : MonoBehaviour
         messageContainer.gameObject.SetActive(true);
         messageContainer.DOScale(Vector3.one, 0.3f).SetEase(Ease.InBounce);
         HideAfter(duration);
-
     }
 
     private void HideAfter(float duration)
     {
+        if(duration < 0)
+        {
+            duration = 9999999;
+        }
         DOVirtual.DelayedCall(duration, HideAnim);
     }
 

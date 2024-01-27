@@ -38,6 +38,6 @@ public class UILaughBar : MonoBehaviour
     private void UpdateUI(float currentLaughPoints, float changedAmount)
     {
         var normalizedLP = currentLaughPoints / target.MaxLaughPoints;
-        scrollbar.value = normalizedLP;
+        scrollbar.value = Mathf.Clamp01(1 - normalizedLP);
     }
 }

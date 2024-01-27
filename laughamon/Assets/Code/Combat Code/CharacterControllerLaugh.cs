@@ -65,17 +65,38 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         transform.DOPunchScale(Vector3.one * 0.2f, 0.4f, 1).SetEase(Ease.OutBounce);
     }
 
+    public void AnimateUnLaugh()
+    {
+        transform.DOPunchRotation(Vector3.one * 0.2f, 0.4f, 1).SetEase(Ease.OutBounce);
+    }
+
+    public void AnimateROFL()
+    {
+        transform.DOScale(Vector3.one * 0.2f, 1f).SetEase(Ease.InOutBack);
+    }
+
     public void HandleLaughterChanged(float currentPoints, float changed)
     {
         if (LaughterPoints.IsDead)
         {
             LaughterPoints.OnLaughPointsChanged -= HandleLaughterChanged;
             OnDead();
+            return;
+        }
+
+        if (changed < 0)
+        {
+            AnimateLaugh();
+        }
+        else
+        {
+            AnimateUnLaugh();
         }
     }
 
     public void OnDead()
     {
+        AnimateROFL();
         CombatManager.Instance.EndCombat();
     }
 }
