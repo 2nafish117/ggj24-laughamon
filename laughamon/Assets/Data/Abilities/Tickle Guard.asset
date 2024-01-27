@@ -24,7 +24,8 @@ MonoBehaviour:
   TargetAnimationDelay: 0
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
-  addsBuff: {fileID: 11400000, guid: 1467158381dbe2f4eb305edeeac4806d, type: 2}
+  BuffsList:
+  - {fileID: 11400000, guid: 1467158381dbe2f4eb305edeeac4806d, type: 2}
   UsageText: '[enemy] defended their armpits with ancient martial arts techniques.'
   Reactions: []
   ReactionMultipliers: []

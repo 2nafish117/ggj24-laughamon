@@ -10,33 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Mirror of Purity
+  m_Name: Octodad Joke Scroll
   m_EditorClassIdentifier: 
-  LaughPoint: -30
-  IsSelfTargeting: 1
-  AbilityIcon: {fileID: 21300000, guid: 84f96c25f0a12a44988514d6e56e7202, type: 3}
+  LaughPoint: 50
+  IsSelfTargeting: 0
+  AbilityIcon: {fileID: 21300000, guid: 898abc7b0e1b28342b767673debc76b0, type: 3}
   ShopCost: 0
   SuccessChance: 1
-  damageType: 2
-  AnimationKey: 3
-  TargetReact: 0
-  TargetAnimationKey: 0
-  TargetAnimationDelay: 0
+  damageType: 1
+  AnimationKey: 0
+  TargetReact: 1
+  TargetAnimationKey: 8
+  TargetAnimationDelay: 2
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   addsBuff: {fileID: 0}
-  UsageText: 'You used the all-seeing mirror to watch an episode of ''Friends''.
-
-    It
-    was incredibly unfunny. You healed some amusement!'
+  UsageText: "[enemy] read the ancient scroll aloud.\r\nTwo cannibals are eating
+    a clown. One says to the other...\r\n\r...Does this taste funny to you?"
   Reactions:
   - Effectiveness: 6
     Reactions:
-    - It was incredibly unfunny. You healed some amusement!
+    - You cringed hard enough to sustain mental damage!
+    - You laughed in horror at the sheer dumbness of the joke.
   - Effectiveness: 1
     Reactions:
-    - You watched this too many times, and had a chuckle of familiarity. Healing
-      reduced!
+    - You were unaffected! It's not funny if you've heard it before.
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []

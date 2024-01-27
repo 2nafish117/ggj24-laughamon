@@ -158,4 +158,12 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     {
         Buffs.Add(buff);
     }
+
+    public void AddBuffs(IEnumerable<Buff> buffs)
+    {
+        foreach(Buff buff in buffs)
+        {
+            AddBuff(buff);
+        }
+    }
 }
