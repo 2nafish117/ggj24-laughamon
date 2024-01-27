@@ -413,7 +413,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 564575543672867689}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.42043367
+  m_Size: 0.36202225
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 10, y: 20, z: 10, w: 30}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

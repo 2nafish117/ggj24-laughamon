@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Text;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +28,14 @@ public class CombatLogger : MonoBehaviour
     {
         logBuilder.AppendLine(log);
         LogText.SetText(logBuilder.ToString());
-        Scroll.verticalNormalizedPosition = 1;
+
+        StartCoroutine(ScrollAfter());
+    }
+
+    IEnumerator ScrollAfter()
+    {
+        yield return null;
+        Scroll.verticalNormalizedPosition = 0;
     }
 
     private string[] ParseRawStringToLogs(string raw)
