@@ -5,9 +5,11 @@ using UnityEngine.Assertions;
 public class LaughterPoints : MonoBehaviour
 {
     [Range(0, 500)]
+    [SerializeField]
     private float maxLaughPoints = 100;
 
     [Range(0, 500)]
+    [SerializeField]
     private float laughPoints = 100;
 
     public float LaughPoints => laughPoints;

@@ -9,34 +9,19 @@ public interface IAbilityExecutionHandler
 
 public class AbilityExecuter : MonoBehaviour
 {
-    public List<Ability> Abilities;
-
-    public List<Ability> Spells;
-
     public List<Ability> AbilitiesUsedThisCombat;
     public List<Ability> SpellsUsedThisCombat => AbilitiesUsedThisCombat;
+    public CharacterInventoryManager InventoryManager;
 
     public void Start()
     {
         CombatManager.Instance.OnCombatStarted += OnCombatStarted;
     }
 
-    public void Init(List<Ability> abilities,List<Ability> spells)
+    public void Init(CharacterInventoryManager inventoryManager)
     {
-        SetAbilities(abilities);
-        SetSpells(spells);
-    }
-
-    public void SetAbilities(List<Ability> abilities)
-    {
-        Abilities.Clear();
-        Abilities.AddRange(abilities);
-    }
-
-    public void SetSpells(List<Ability> spells)
-    {
-        Spells.Clear();
-        Spells.AddRange(spells);
+        InventoryManager = inventoryManager;
+        AbilitiesUsedThisCombat.Clear();
     }
 
     private void OnCombatStarted()
@@ -47,26 +32,26 @@ public class AbilityExecuter : MonoBehaviour
 
     public void ExecuteAbility(Ability ability, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
-        int abilityIndex = Abilities.IndexOf(ability);
+        int abilityIndex = InventoryManager.Equipped.IndexOf(ability);
         ExecuteAbility(abilityIndex, source, target, executionHandler);
     }
 
     public void ExecuteAbility(int index, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
-        var ability = Abilities[index];
+        var ability = InventoryManager.Equipped[index];
         AbilitiesUsedThisCombat.Add(ability);
         ability.ExecuteAbility(source, target, executionHandler);
     }
 
     public void ExecuteSpell(Ability ability, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
-        int abilityIndex = Spells.IndexOf(ability);
+        int abilityIndex = InventoryManager.Equipped.IndexOf(ability);
         ExecuteSpell(abilityIndex, source, target, executionHandler);
     }
 
     public void ExecuteSpell(int index, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
-        var spell = Spells[index];
+        var spell = InventoryManager.Equipped[index];
         SpellsUsedThisCombat.Add(spell);
         spell.ExecuteAbility(source, target, executionHandler);
     }

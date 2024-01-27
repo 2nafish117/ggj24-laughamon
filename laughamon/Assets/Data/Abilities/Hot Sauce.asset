@@ -19,7 +19,7 @@ MonoBehaviour:
   SuccessChance: 1
   UsageText: 
   Reactions: []
-  AnimationKey: 0
+  AnimationKey: 18
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []

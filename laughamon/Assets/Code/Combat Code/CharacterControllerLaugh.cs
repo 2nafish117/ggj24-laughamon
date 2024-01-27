@@ -23,7 +23,6 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         CombatManager.Instance.OnCombatStarted += OnStart;
         CombatManager.Instance.OnTurnChanged += HandleTurnChanged;
         LaughterPoints.OnLaughPointsChanged += HandleLaughterChanged;
-        OnStart();
     }
 
     protected virtual void OnStart()
@@ -37,7 +36,8 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         AnimationController = SpawnCharacter(profile.Prefab);
         LaughterPoints.Init(CharacterProfile.MaxHealth);
         InventoryManager.Init(CharacterProfile.Inventory);
-        ActionExecuter.SetAbilities(InventoryManager.inventory);
+        InventoryManager.EquipDefaults();
+        ActionExecuter.Init(InventoryManager);
         EffectHandler.Init(this);
         AnimationController.Init();
     }

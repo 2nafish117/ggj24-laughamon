@@ -28,7 +28,7 @@ MonoBehaviour:
     Reactions:
     - You barely reacted! You're numb to the stimulation!
     - You shrugged it off with barely a laugh. You're numb to the stimulation!
-  AnimationKey: 0
+  AnimationKey: 18
   ReactionMultipliers:
   - Effectiveness: 0
     Multiplier:
