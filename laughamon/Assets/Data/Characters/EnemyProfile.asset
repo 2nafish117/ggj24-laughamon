@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyProfile
   m_EditorClassIdentifier: 
   Name: Suzannemon
-  Prefab: {fileID: 5749028323010143770, guid: d0bb04cae49c5824a93879083d4a7025, type: 3}
+  Prefab: {fileID: 1983718808703900365, guid: d0bb04cae49c5824a93879083d4a7025, type: 3}
   MaxHealth: 100
   ProfilePicture: {fileID: 0}
   AbilityEffectiveness:
