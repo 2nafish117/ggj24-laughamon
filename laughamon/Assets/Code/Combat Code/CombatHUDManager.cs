@@ -27,6 +27,9 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     [SerializeField]
     private UICombatResultScreen combatResultScreen;
 
+    [SerializeField]
+    private Camera combatCamera;
+
     private void Awake()
     {
         Instance = this;
@@ -125,5 +128,11 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     {
         SetCombatElements(false);
         combatResultScreen.SetResult(playerVictory);
+    }
+
+    public void ShowCombat(bool active)
+    {
+        combatCamera.gameObject.SetActive(active);
+        gameObject.SetActive(active);
     }
 }

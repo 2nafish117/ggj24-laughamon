@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public event Action<int> OnCurrentLevelChanged;
+    public int LevelIndex { get; private set; }
+    public int MaxLevel;
+
     private void Awake()
     {
         Instance = this;
@@ -15,21 +19,48 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        DOVirtual.DelayedCall(0.2f, StartGame);
+        ShowMenu();
     }
-    public void StartGame()
+
+    public void ShowMenu()
     {
-        StartCombat(0);
+        UIMainMenuManager.Instace.ShowMenu(true);
+        CombatHUDManager.Instance.ShowCombat(false);
+    }
+
+    public void ShowCombat()
+    {
+        UIMainMenuManager.Instace.ShowMenu(false);
+        CombatHUDManager.Instance.ShowCombat(true);
+    }
+
+    public void OnCombatFinished(bool playerWon)
+    {
+        if (playerWon)
+        {
+            LevelIndex++;
+        }
+        //else
+        //{
+        //    LevelIndex--;
+        //}
+
+        LevelIndex = Mathf.Min(MaxLevel, Mathf.Max(LevelIndex++, 0));
+
+        OnCurrentLevelChanged(LevelIndex);
+        ShowMenu();
+    }
+
+    public void StartCombatAtLevel(int levelIndex)
+    {
+        StartCombat(levelIndex);
     }
 
     public void StartCombat(int enemyIndex)
     {
         enemyIndex = enemyIndex % EnemyProfiles.Length;
-        CombatManager.Instance.SetUpCombat(EnemyProfiles[enemyIndex]);
-    }
 
-    internal void ShowLevelScreen(bool playerWon)
-    {
-        throw new NotImplementedException();
+        ShowCombat();
+        CombatManager.Instance.SetUpCombat(EnemyProfiles[enemyIndex]);
     }
 }

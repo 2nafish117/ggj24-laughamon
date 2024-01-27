@@ -63,7 +63,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     private void ClearBuffs()
     {
         List<Buff> remainingBuffs = new List<Buff>();
-        foreach(Buff buff in Buffs)
+        foreach (Buff buff in Buffs)
         {
             buff.turnsLeft--;
             if (buff.turnsLeft > 0) remainingBuffs.Add(buff);
@@ -75,7 +75,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     {
         this.executionHandler = executionHandler;
 
-        if(AbilityQueue.Count == 0)
+        if (AbilityQueue.Count == 0)
         {
             ActionExecuter.ExecuteAbility(index, this, target, this);
         }
@@ -115,7 +115,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     public void AnimateROFL()
     {
-        transform.DOScale(Vector3.one * 0.2f, 1f).SetEase(Ease.InOutBack);
+        AnimationController.PlayAnimation(AnimationKey.Death1);
     }
 
     public void HandleLaughterChanged(float currentPoints, float changed)

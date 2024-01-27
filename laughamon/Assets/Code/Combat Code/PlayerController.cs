@@ -29,6 +29,7 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
 
     protected override void OnStart()
     {
+        LaughterPoints.Init(CharacterProfile.MaxHealth);
     }
 
     public override void OnAfterAbilityExecuted(Ability ability)
