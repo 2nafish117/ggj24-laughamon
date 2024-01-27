@@ -42,6 +42,8 @@ public class CombatLogger : MonoBehaviour
     public TextBox textDisplayHelper;
     public GameObject blinkingArrow;
 
+    public bool IsLogEmpty => LogText.text == "";
+
     private void Start()
     {
         logBuilder = new StringBuilder(32_762);
