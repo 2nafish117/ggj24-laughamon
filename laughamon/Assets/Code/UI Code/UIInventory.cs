@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +5,7 @@ public class UIInventory : MonoBehaviour, IAbilityEquipHandler
 {
     public CharacterInventoryManager InventoryManager { get; private set; }
     public List<UIAbilitySlot> AbilitySlots;
+    public List<UIAbilitySlot> EquippedAbilitiesSlots;
 
     public void Initialize(CharacterInventoryManager inventoryManager)
     {
@@ -29,12 +29,21 @@ public class UIInventory : MonoBehaviour, IAbilityEquipHandler
                 AbilitySlots[i].gameObject.SetActive(false);
             }
         }
+
+        SetEquippedAbilites(InventoryManager.Equipped);
     }
 
     public void OnAbilitySlotClicked(UIAbilitySlot slot)
     {
+
+
         if (InventoryManager.Equipped.Contains(slot.Ability))
         {
+            if (InventoryManager.Equipped.Count == 1)
+            {
+                return;
+            }
+
             InventoryManager.UnEquipAbility(slot.Ability);
             PopulateInventory();
             return;
@@ -48,5 +57,22 @@ public class UIInventory : MonoBehaviour, IAbilityEquipHandler
 
         InventoryManager.EquipAbility(slot.Ability);
         PopulateInventory();
+    }
+
+    public void SetEquippedAbilites(List<Ability> abilities)
+    {
+        int ablitiyCount = abilities.Count;
+        for (int i = 0; i < EquippedAbilitiesSlots.Count; i++)
+        {
+            if (i < ablitiyCount)
+            {
+                EquippedAbilitiesSlots[i].SetAbility(abilities[i], true, this);
+                EquippedAbilitiesSlots[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                EquippedAbilitiesSlots[i].gameObject.SetActive(false);
+            }
+        }
     }
 }
