@@ -22,7 +22,7 @@ public class AIController : CharacterControllerLaugh
         if (isPlayerTurn)
             return;
 
-        DOVirtual.DelayedCall(2f, AnnounceAITurn);
+        DOVirtual.DelayedCall(0.2f, AnnounceAITurn);
     }
 
     private void AnnounceAITurn()

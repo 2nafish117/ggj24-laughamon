@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72385017e249b640a365f75c589a3f3, type: 3}
   m_Name: EnemyProfile
   m_EditorClassIdentifier: 
-  Name: Dey
+  Name: Suzannemon
   Prefab: {fileID: 6059954478287613999, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
   MaxHealth: 100
   ProfilePicture: {fileID: 0}
@@ -21,4 +21,4 @@ MonoBehaviour:
     Reactions:
     - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
   Inventory:
-  - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
+  - {fileID: 11400000, guid: e8a24a6d284704d49a7d4a239849cdc2, type: 2}

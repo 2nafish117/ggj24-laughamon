@@ -57,10 +57,10 @@ public class CombatLogger : MonoBehaviour
 
     public void AddLog(string rawString, float minDelay = 0f)
     {
-        string[] loglines = ParseRawStringToLogs(rawString);
+        List<string> loglines = ParseRawStringToLogs(rawString);
 
         logQueue.Enqueue(new LogLineInfo(loglines[0], minDelay));
-        for(int i=1;i < loglines.Length; i++)
+        for(int i=1;i < loglines.Count; i++)
         {
             logQueue.Enqueue(new LogLineInfo(loglines[i], 0f));
         }
@@ -131,12 +131,22 @@ public class CombatLogger : MonoBehaviour
         OnLogProgressed?.Invoke();
     }
 
-    private string[] ParseRawStringToLogs(string raw)
+    private List<string> ParseRawStringToLogs(string raw)
     {
-        string polished = raw.Replace("[target]", AIController.Instance.CharacterProfile.Name);
-        polished = polished.Replace("[user]", PlayerController.Instance.CharacterProfile.Name);
+        //string userName = CombatManager.Instance.IsPlayerTurn ?
+        //    PlayerController.Instance.CharacterProfile.Name : AIController.Instance.CharacterProfile.Name;
 
-        string[] broken = polished.Split("\n", System.StringSplitOptions.RemoveEmptyEntries);
+        //string targetName = CombatManager.Instance.IsPlayerTurn ?
+        //     AIController.Instance.CharacterProfile.Name : PlayerController.Instance.CharacterProfile.Name;
+
+        //string polished = raw.Replace("[user]", userName);
+        //polished = polished.Replace("[target]", targetName);
+
+        string polished = raw.Replace("[enemy]", AIController.Instance.CharacterProfile.Name);
+
+        List<string> broken = polished.Split("\n", System.StringSplitOptions.RemoveEmptyEntries).ToListPooled<string>();
+
+        if (broken[broken.Count - 1].Length <= 1) broken.RemoveAt(broken.Count - 1); //removes newline substrings
 
         return broken;
     }

@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Feather Tickle
+  m_Name: Tickle Storm
   m_EditorClassIdentifier: 
-  LaughPoint: 15
+  LaughPoint: 20
   IsSelfTargeting: 0
   AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
-  UsageText: You tickled [enemy]'s armpit with the feather.
+  UsageText: '[enemy] used all four of their arms to tickle you inappropriately.
+    Someone call the police!'
   Reactions:
   - Effectiveness: 0
     Reactions:
-    - '[enemy] squealed and giggled uncontrollably!'
-    - '[enemy] begged you to stop in a high-pitched voice!'
+    - You squealed and giggled uncontrollably!
+    - You begged [enemy] to stop in a high-pitched voice!
   - Effectiveness: 1
     Reactions:
-    - '[enemy] barely reacted! They''re numb to the stimulation!'
-    - '[enemy] shrugged it off with barely a laugh.They''re numb to the stimulation!'
+    - You barely reacted! You're numb to the stimulation!
+    - You shrugged it off with barely a laugh. You're numb to the stimulation!
   AnimationKey: 0
   ReactionMultipliers:
   - Effectiveness: 0
