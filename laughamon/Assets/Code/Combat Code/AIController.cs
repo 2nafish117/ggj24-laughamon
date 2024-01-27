@@ -56,7 +56,9 @@ public class AIController : CharacterControllerLaugh
     public override void OnAfterAbilityExecuted(Ability ability)
     {
         base.OnAfterAbilityExecuted(ability);
-        CombatLogger.OnLogEmptied += ProgressToPlayerTurn;
+        if (CombatLogger.Instance.IsLogEmpty) ProgressToPlayerTurn();
+        else 
+            CombatLogger.OnLogEmptied += ProgressToPlayerTurn;
     }
 
     private void ProgressToPlayerTurn()
