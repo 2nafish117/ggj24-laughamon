@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaughTaleCharacterController : MonoBehaviour, IAbilityExecutionHandler
+public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 {
     public AbilityExecuter ActionExecuter;
     public LaughterPoints LaughterPoints;
     public CharacterProfile CharacterProfile;
+    public CharacterInventoryManager CharacterInventoryManager;
+    public AbilityEffectHandler EffectHandler;
 
     protected IAbilityExecutionHandler executionHandler;
 
@@ -30,13 +32,13 @@ public class LaughTaleCharacterController : MonoBehaviour, IAbilityExecutionHand
 
     }
 
-    public void UseAbilityAtIndex(int index, IAbilityExecutionHandler executionHandler, LaughTaleCharacterController target)
+    public void UseAbilityAtIndex(int index, IAbilityExecutionHandler executionHandler, CharacterControllerLaugh target)
     {
         this.executionHandler = executionHandler;
         ActionExecuter.ExecuteAbility(index, this, target, this);
     }
 
-    public void UseSpellAtIndex(int index, IAbilityExecutionHandler executionHandler, LaughTaleCharacterController target)
+    public void UseSpellAtIndex(int index, IAbilityExecutionHandler executionHandler, CharacterControllerLaugh target)
     {
         this.executionHandler = executionHandler;
         ActionExecuter.ExecuteSpell(index, this, target, this);

@@ -20,10 +20,10 @@ public abstract class Ability : ScriptableObject
     public AbilityCombatEffects[] CombatEffects;
 
     protected IAbilityExecutionHandler executionHandler;
-    protected LaughTaleCharacterController source;
-    protected LaughTaleCharacterController target;
+    protected CharacterControllerLaugh source;
+    protected CharacterControllerLaugh target;
 
-    public void ExecuteAbility(LaughTaleCharacterController source, LaughTaleCharacterController target, IAbilityExecutionHandler executionHandler)
+    public void ExecuteAbility(CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
         this.executionHandler = executionHandler;
         this.source = source;
@@ -32,8 +32,22 @@ public abstract class Ability : ScriptableObject
     }
 
     public abstract void Execute();
-    public abstract void ExecuteDOT();
-    public abstract void ExecuteCombatEffects();
+
+    public virtual void ExecuteDOT()
+    {
+        foreach (var dot in DOTs)
+        {
+            target.EffectHandler.AddDeBuff(source, target, dot);
+        }
+    }
+
+    public virtual void ExecuteCombatEffects()
+    {
+        foreach (var effect in CombatEffects)
+        {
+            effect.ExecuteCustomEffect(source, target);
+        }
+    }
 
     public virtual void StartAbilityExecution()
     {
