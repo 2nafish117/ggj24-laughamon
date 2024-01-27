@@ -14,23 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Yu, The Hero!
   Prefab: {fileID: 0}
+  MaxHealth: 100
   ProfilePicture: {fileID: 0}
-  AbilityEffectiveness:
-  - Effectiveness: 0
-    Reactions:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Effectiveness: 1
-    Reactions:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Effectiveness: 1
-    Reactions:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+  AbilityEffectiveness: []
+  Inventory: []
