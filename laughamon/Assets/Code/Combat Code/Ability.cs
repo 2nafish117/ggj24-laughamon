@@ -8,6 +8,7 @@ public abstract class Ability : ScriptableObject
     public int ShopCost;
     [Range(0f, 1f)]
     public float SuccessChance = 1;
+    public AnimationKey AnimationKey;
 
     [Space]
     [TextArea]
@@ -15,7 +16,6 @@ public abstract class Ability : ScriptableObject
 
     [Space]
     public ReactionTextPairs[] Reactions;
-    public AnimationKey AnimationKey;
 
     [Tooltip("Reaction multipler are only used if listed otherwise the default value will be zero")]
     public ReactionMultiplierPairs[] ReactionMultipliers;

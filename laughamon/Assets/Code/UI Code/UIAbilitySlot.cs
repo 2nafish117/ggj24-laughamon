@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ public class UIAbilitySlot : MonoBehaviour
     public Image Bg;
     public Image AbilityIcon;
     public IAbilityEquipHandler equipHandler;
+    public TextMeshProUGUI nameLabel;
 
     public Ability Ability { get; set; }
 
@@ -22,6 +24,7 @@ public class UIAbilitySlot : MonoBehaviour
         Ability = ability;
         this.equipHandler = equipHandler;
         AbilityIcon.sprite = ability.AbilityIcon;
+        nameLabel.SetText(ability.name);
         SetEquippedState(isEquipped);
     }
 
