@@ -11,6 +11,14 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
         Instance = this;
     }
 
+    protected override void OnStart()
+    {
+        LaughterPoints.Init(CharacterProfile.MaxHealth);
+        InventoryManager.Init(CharacterProfile.Inventory);
+        EffectHandler.Init(this);
+        AnimationController.Init();
+    }
+
     public override void OnAfterAbilityExecuted(Ability ability)
     {
         base.OnAfterAbilityExecuted(ability);

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerProfile
   m_EditorClassIdentifier: 
   Name: Yu
-  Prefab: {fileID: 5957343603994407860, guid: c64880850fbf01f4bb59a86459a0f14c, type: 3}
+  Prefab: {fileID: 6059954478287613999, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
   MaxHealth: 100
   ProfilePicture: {fileID: 0}
   AbilityEffectiveness:

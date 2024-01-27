@@ -23,7 +23,6 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         CombatManager.Instance.OnCombatStarted += OnStart;
         CombatManager.Instance.OnTurnChanged += HandleTurnChanged;
         LaughterPoints.OnLaughPointsChanged += HandleLaughterChanged;
-        OnStart();
     }
 
     protected virtual void OnStart()
