@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,6 +30,11 @@ public class UILaughBar : MonoBehaviour
 
     public void OnDisable()
     {
+        if (target == null)
+        {
+            return;
+        }
+
         target.OnLaughPointsChanged -= UpdateUI;
     }
 

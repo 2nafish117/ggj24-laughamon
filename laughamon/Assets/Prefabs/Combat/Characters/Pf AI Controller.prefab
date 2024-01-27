@@ -66,15 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373edfe70d9b80646b0b44e3be7a8fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Abilities:
-  - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
-  - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
-  - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
-  Spells:
-  - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
-  - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
-  - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
   AbilitiesUsedThisCombat: []
+  InventoryManager: {fileID: 0}
 --- !u!114 &9003507457120971103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af608b32e3ab194b904c3b3ef75d9a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLaughPoints: 100
+  laughPoints: 100
 --- !u!114 &3196921830533620678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,8 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce707d2ca211bb4591f11387a23f940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
-  EquippedSlots: 4
+  Inventory: []
+  MaxEquippedSlots: 4
   Equipped: []
 --- !u!114 &7543056191781667263
 MonoBehaviour:

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
@@ -20,6 +21,12 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     [SerializeField]
     private UIAbilityPanel abilityPanel;
 
+    [SerializeField]
+    private UICombatStartScreen combatStartScreen;
+
+    [SerializeField]
+    private UICombatResultScreen combatResultScreen;
+
     private void Awake()
     {
         Instance = this;
@@ -27,8 +34,15 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
     private void Start()
     {
+        CombatManager.Instance.OnCombatStarted += HandleCombatStarted;
         CombatManager.Instance.OnCombatStarted += InitUI;
         CombatManager.Instance.OnTurnChanged += SwitchTurn;
+    }
+
+    private void HandleCombatStarted()
+    {
+        SetCombatElements(true);
+        combatResultScreen.gameObject.SetActive(false);
     }
 
     public void InitUI()
@@ -75,5 +89,26 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     {
         CombatLogger.Instance.AddLog($" {PlayerController.Instance} decides to do nothing.");
         CombatManager.Instance.EndPlayerTurn();
+    }
+
+    public void ShowStartScreen(string playerName, string enemyName)
+    {
+        combatStartScreen.Init(playerName, enemyName);
+        SetCombatElements(false);
+    }
+
+    public void SetCombatElements(bool active)
+    {
+        playerBar.gameObject.SetActive(active);
+        enemyBar.gameObject.SetActive(active);
+        abilityPanel.gameObject.SetActive(active);
+        CombatLogger.Instance.gameObject.SetActive(active);
+        Announcer.Instance.gameObject.SetActive(active);
+    }
+
+    internal void ShowCombatEndScreen(bool playerVictory)
+    {
+        SetCombatElements(false);
+        combatResultScreen.SetResult(playerVictory);
     }
 }

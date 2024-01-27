@@ -28,7 +28,7 @@ public class CombatManager : MonoBehaviour
     public void SetUpCombat(CharacterProfile enemyProfile)
     {
         AIController.Instance.Init(enemyProfile);
-        StartCombat();
+        CombatHUDManager.Instance.ShowStartScreen(PlayerController.Instance.CharacterProfile.Name, enemyProfile.Name);
     }
 
     public void StartCombat()
@@ -70,6 +70,14 @@ public class CombatManager : MonoBehaviour
     {
         IsCombatOver = true;
         OnCombatEnded?.Invoke();
-        Announcer.Instance.Say(IsPlayerTurn ? "Player Victory" : "Player Defeat", 5f);
+        bool playerVictory = AIController.Instance.LaughterPoints.IsDead;
+        Announcer.Instance.Say(playerVictory ? "You Won!" : "You Lost..", 5f);
+        CombatHUDManager.Instance.ShowCombatEndScreen(playerVictory);
+        DOVirtual.DelayedCall(5f, ShowLevelScreen);
+    }
+
+    private void ShowLevelScreen()
+    {
+        GameManager.Instance.ShowLevelScreen(AIController.Instance.LaughterPoints.IsDead);
     }
 }

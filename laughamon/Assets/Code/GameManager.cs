@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -27,4 +28,8 @@ public class GameManager : MonoBehaviour
         CombatManager.Instance.SetUpCombat(EnemyProfiles[enemyIndex]);
     }
 
+    internal void ShowLevelScreen(bool playerWon)
+    {
+        throw new NotImplementedException();
+    }
 }
