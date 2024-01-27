@@ -17,6 +17,13 @@ MonoBehaviour:
   AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
+  damageType: 0
+  AnimationKey: 18
+  TargetReact: 1
+  TargetAnimationKey: 14
+  TargetAnimationDelay: 2.5
+  ExtraTurns: 0
+  ChargeAbility: {fileID: 0}
   UsageText: You tickled [enemy]'s armpit with the feather.
   Reactions:
   - Effectiveness: 0
@@ -27,7 +34,6 @@ MonoBehaviour:
     Reactions:
     - '[enemy] barely reacted! They''re numb to the stimulation!'
     - '[enemy] shrugged it off with barely a laugh.They''re numb to the stimulation!'
-  AnimationKey: 18
   ReactionMultipliers:
   - Effectiveness: 0
     Multiplier:

@@ -148,7 +148,14 @@ public class CombatLogger : MonoBehaviour
 
         List<string> broken = polished.Split("\n", System.StringSplitOptions.RemoveEmptyEntries).ToListPooled<string>();
 
-        if (broken[broken.Count - 1].Length <= 1) broken.RemoveAt(broken.Count - 1); //removes newline substrings
+        if(broken.Count > 0)
+        {
+            if (broken[broken.Count - 1].Length <= 1)
+            {
+                broken.RemoveAt(broken.Count - 1); //removes newline substrings
+            }
+        }
+
 
         return broken;
     }

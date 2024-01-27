@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: Ability
   m_EditorClassIdentifier: 
-  Name: Action
   LaughPoint: 10
   IsSelfTargeting: 0
   AbilityIcon: {fileID: 0}
   ShopCost: 0
+  SuccessChance: 1
+  damageType: 0
+  AnimationKey: 0
+  UsageText: 
   Reactions:
   - Effectiveness: 0
     Reactions:
@@ -26,3 +29,4 @@ MonoBehaviour:
   - {fileID: 0}
   CombatEffects:
   - {fileID: 0}
+  ExecutionTime: 3

@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public abstract class Ability : ScriptableObject
 {
@@ -8,7 +9,14 @@ public abstract class Ability : ScriptableObject
     public int ShopCost;
     [Range(0f, 1f)]
     public float SuccessChance = 1;
+    public DamageType damageType;
     public AnimationKey AnimationKey;
+    public bool TargetReact;
+    public AnimationKey TargetAnimationKey;
+    public float TargetAnimationDelay;
+    public int ExtraTurns = 0;
+    public Ability ChargeAbility;
+    public Buff addsBuff;
 
     [Space]
     [TextArea]
@@ -17,7 +25,7 @@ public abstract class Ability : ScriptableObject
     [Space]
     public ReactionTextPairs[] Reactions;
 
-    [Tooltip("Reaction multipler are only used if listed otherwise the default value will be zero")]
+    [Tooltip("Reaction multipler are only used if listed otherwise the default value will be one")]
     public ReactionMultiplierPairs[] ReactionMultipliers;
 
     [Header("DOT's")]
@@ -75,6 +83,15 @@ public abstract class Ability : ScriptableObject
     {
         executionHandler.OnBeforeAbilityExecuted(this);
         source.AnimationController.PlayAnimation(AnimationKey);
+        if (TargetReact)
+        {
+            DOVirtual.DelayedCall(TargetAnimationDelay, TriggerTargetAnimation);
+        }
+    }
+
+    private void TriggerTargetAnimation()
+    {
+        target.AnimationController.PlayAnimation(TargetAnimationKey);
     }
 
     public virtual void ExecuteOther()
@@ -120,6 +137,7 @@ public enum AbilityReactionEffectiveness
     Critical,
     DefenseSuccessful,
     DefenseFailed,
+    Normal
 }
 
 [System.Serializable]
@@ -146,4 +164,11 @@ public class ReactionMultiplierPairs
         consecutiveUsage = Mathf.Min(Multiplier.Length - 1, consecutiveUsage);
         return Multiplier[consecutiveUsage];
     }
+}
+
+public enum DamageType
+{
+    Touch,
+    Joke,
+    Comic
 }

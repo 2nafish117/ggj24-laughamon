@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
+  m_Name: Mirror of Purity
+  m_EditorClassIdentifier: 
+  LaughPoint: -30
+  IsSelfTargeting: 1
+  AbilityIcon: {fileID: 21300000, guid: 84f96c25f0a12a44988514d6e56e7202, type: 3}
+  ShopCost: 0
+  SuccessChance: 1
+  damageType: 2
+  AnimationKey: 3
+  UsageText: You used the all-seeing mirror to watch an episode of 'Friends'.
+  Reactions:
+  - Effectiveness: 6
+    Reactions:
+    - It was incredibly unfunny. You healed some amusement!
+  - Effectiveness: 1
+    Reactions:
+    - You watched this too many times, and had a chuckle of familiarity. Healing
+      reduced!
+  ReactionMultipliers: []
+  DOTs: []
+  CombatEffects: []
+  ExecutionTime: 3

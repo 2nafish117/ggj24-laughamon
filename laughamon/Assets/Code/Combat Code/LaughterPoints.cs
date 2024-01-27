@@ -22,8 +22,9 @@ public class LaughterPoints : MonoBehaviour
 
     public void Laugh(float amount)
     {
-        Assert.IsTrue(amount >= 0);
+        //Assert.IsTrue(amount >= 0);
         laughPoints -= amount;
+        laughPoints = Mathf.Clamp(laughPoints, 0, maxLaughPoints);
         OnLaughPointsChanged?.Invoke(laughPoints, -amount);
     }
 
