@@ -18,22 +18,9 @@ MonoBehaviour:
   ShopCost: 0
   SuccessChance: 1
   UsageText: '[user] raised his noble pillow for defence.'
-  Reactions:
-  - Effectiveness: 0
-    Reactions:
-    - '[target] squealed and giggled uncontrollably!'
-    - '[target] begged [user] to stop in a high-pitched voice!'
-  - Effectiveness: 1
-    Reactions:
-    - '[target] barely reacted! They''re numb to the stimulation!'
-    - '[target] shrugged it off with barely a laugh. They''re numb to the stimulation!'
-  ReactionMultipliers:
-  - Effectiveness: 0
-    Multiplier:
-    - 1.5
-  - Effectiveness: 1
-    Multiplier:
-    - 0.5
+  Reactions: []
+  AnimationKey: 0
+  ReactionMultipliers: []
   DOTs: []
   CombatEffects: []
   ExecutionTime: 3
