@@ -1,32 +1,45 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterInventoryManager : MonoBehaviour
 {
-    public List<Ability> inventory;
+    public List<Ability> Inventory;
     [Range(1, 10)]
-    public int EquippedSlots = 4;
+    public int MaxEquippedSlots = 4;
     public List<Ability> Equipped;
+    public event Action<Ability, bool> OnAbilityChanged;
 
     public void Init(List<Ability> startingAbilities)
     {
-        inventory.AddRange(startingAbilities);
+        Inventory.AddRange(startingAbilities);
+    }
 
+    public void EquipAbility(Ability ability)
+    {
+        Equipped.Add(ability);
+        OnAbilityChanged?.Invoke(ability, true);
+    }
+
+    public void UnEquipAbility(Ability ability)
+    {
+        Equipped.Remove(ability);
+        OnAbilityChanged?.Invoke(ability, false);
     }
 
     public void EquipDefaults()
     {
         Equipped.Clear();
 
-        for (int i = 0; i < EquippedSlots; i++)
+        for (int i = 0; i < MaxEquippedSlots; i++)
         {
-            if (i >= inventory.Count)
+            if (i >= Inventory.Count)
             {
                 break;
             }
 
-            Equipped.Add(inventory[i]);
+            Equipped.Add(Inventory[i]);
         }
     }
 }

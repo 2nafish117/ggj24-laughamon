@@ -27,7 +27,7 @@ MonoBehaviour:
     Reactions:
     - '[enemy] barely reacted! They''re numb to the stimulation!'
     - '[enemy] shrugged it off with barely a laugh.They''re numb to the stimulation!'
-  AnimationKey: 0
+  AnimationKey: 18
   ReactionMultipliers:
   - Effectiveness: 0
     Multiplier:

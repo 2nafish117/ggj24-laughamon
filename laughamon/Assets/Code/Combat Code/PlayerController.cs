@@ -11,11 +11,30 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
         Instance = this;
     }
 
+    private void Start()
+    {
+        CombatManager.Instance.OnCombatStarted += OnStart;
+        CombatManager.Instance.OnTurnChanged += HandleTurnChanged;
+        LaughterPoints.OnLaughPointsChanged += HandleLaughterChanged;
+
+        LaughterPoints.Init(CharacterProfile.MaxHealth);
+        InventoryManager.Init(CharacterProfile.Inventory);
+        InventoryManager.EquipDefaults();
+
+        ActionExecuter.Init(InventoryManager);
+        EffectHandler.Init(this);
+        AnimationController.Init();
+    }
+
+    protected override void OnStart()
+    {
+    }
+
     public override void OnAfterAbilityExecuted(Ability ability)
     {
         base.OnAfterAbilityExecuted(ability);
         if (CombatLogger.Instance.IsLogEmpty) EndPlayerTurn();
-        else 
+        else
             CombatLogger.OnLogEmptied += EndPlayerTurn;
     }
 
