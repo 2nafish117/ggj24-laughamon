@@ -3482,10 +3482,6 @@ PrefabInstance:
       value: 396.8401
       objectReference: {fileID: 0}
     - target: {fileID: 8634456696616690542, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 86.2561
-      objectReference: {fileID: 0}
-    - target: {fileID: 8634456696616690542, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
