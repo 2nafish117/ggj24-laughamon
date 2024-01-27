@@ -78,6 +78,6 @@ public class CombatManager : MonoBehaviour
 
     private void ShowLevelScreen()
     {
-        GameManager.Instance.ShowLevelScreen(AIController.Instance.LaughterPoints.IsDead);
+        GameManager.Instance.OnCombatFinished(AIController.Instance.LaughterPoints.IsDead);
     }
 }
