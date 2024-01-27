@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyProfile
   m_EditorClassIdentifier: 
   Name: Dey
-  Prefab: {fileID: 114188812472432430, guid: 92bc9d2f0b473004cb7b65627a56e868, type: 3}
+  Prefab: {fileID: 6059954478287613999, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
   MaxHealth: 100
   ProfilePicture: {fileID: 0}
   AbilityEffectiveness:
