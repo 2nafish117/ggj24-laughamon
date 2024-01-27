@@ -55,8 +55,11 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
     public void SwitchTurn(bool isPlayerTurn)
     {
-        playerTurnActionsCanvas.interactable = isPlayerTurn;
-        playerTurnActionsCanvas.DOFade(isPlayerTurn ? 1 : 0, 0.4f).SetEase(isPlayerTurn ? Ease.InExpo : Ease.OutExpo);
+        if (isPlayerTurn)
+        {
+            ShowPlayerControls(true);
+            CombatLogger.OnLogProgressed += DismissControlsOnFirstCombatLog;
+        }
     }
 
     public void OnAbilityUsed(int index)
@@ -104,6 +107,18 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
         abilityPanel.gameObject.SetActive(active);
         CombatLogger.Instance.gameObject.SetActive(active);
         Announcer.Instance.gameObject.SetActive(active);
+    }
+
+    private void ShowPlayerControls(bool value)
+    {
+        playerTurnActionsCanvas.interactable = value;
+        playerTurnActionsCanvas.DOFade(value ? 1 : 0, 0.4f).SetEase(value ? Ease.InExpo : Ease.OutExpo);
+    }
+
+    private void DismissControlsOnFirstCombatLog()
+    {
+        CombatLogger.OnLogProgressed -= DismissControlsOnFirstCombatLog;
+        ShowPlayerControls(false);
     }
 
     internal void ShowCombatEndScreen(bool playerVictory)
