@@ -13,7 +13,17 @@ MonoBehaviour:
   m_Name: AbilityDOT
   m_EditorClassIdentifier: 
   Name: 
-  Turns: 0
+  Turns: 7
   Chance: 1
   LaughPoint: 0
-  Multiplier: []
+  Multiplier:
+  - Effectiveness: 0
+    Multiplier:
+    - 0
+    - 0
+    - 0
+  - Effectiveness: 0
+    Multiplier:
+    - 0
+    - 0
+    - 0
