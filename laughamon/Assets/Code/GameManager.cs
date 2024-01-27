@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        DOVirtual.DelayedCall(2, StartGame);
+        DOVirtual.DelayedCall(0.2f, StartGame);
     }
     public void StartGame()
     {

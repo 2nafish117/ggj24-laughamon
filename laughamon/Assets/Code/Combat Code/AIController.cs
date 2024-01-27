@@ -22,7 +22,7 @@ public class AIController : CharacterControllerLaugh
         if (isPlayerTurn)
             return;
 
-        DOVirtual.DelayedCall(2f, AnnounceAITurn);
+        DOVirtual.DelayedCall(0.2f, AnnounceAITurn);
     }
 
     private void AnnounceAITurn()
@@ -56,7 +56,9 @@ public class AIController : CharacterControllerLaugh
     public override void OnAfterAbilityExecuted(Ability ability)
     {
         base.OnAfterAbilityExecuted(ability);
-        CombatLogger.OnLogEmptied += ProgressToPlayerTurn;
+        if (CombatLogger.Instance.IsLogEmpty) ProgressToPlayerTurn();
+        else 
+            CombatLogger.OnLogEmptied += ProgressToPlayerTurn;
     }
 
     private void ProgressToPlayerTurn()

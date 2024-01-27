@@ -17,16 +17,17 @@ MonoBehaviour:
   AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
-  UsageText: '[user] brushed under [target]''s arm with the feather.'
+  UsageText: You tickled [enemy]'s armpit with the feather.
   Reactions:
   - Effectiveness: 0
     Reactions:
-    - '[target] squealed and giggled uncontrollably!'
-    - '[target] begged [user] to stop in a high-pitched voice!'
+    - '[enemy] squealed and giggled uncontrollably!'
+    - '[enemy] begged you to stop in a high-pitched voice!'
   - Effectiveness: 1
     Reactions:
-    - '[target] barely reacted! They''re numb to the stimulation!'
-    - '[target] shrugged it off with barely a laugh. They''re numb to the stimulation!'
+    - '[enemy] barely reacted! They''re numb to the stimulation!'
+    - '[enemy] shrugged it off with barely a laugh.They''re numb to the stimulation!'
+  AnimationKey: 0
   ReactionMultipliers:
   - Effectiveness: 0
     Multiplier:

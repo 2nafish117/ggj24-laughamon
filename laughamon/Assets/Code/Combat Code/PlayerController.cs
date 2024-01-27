@@ -26,7 +26,9 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
     public override void OnAfterAbilityExecuted(Ability ability)
     {
         base.OnAfterAbilityExecuted(ability);
-        CombatLogger.OnLogEmptied += EndPlayerTurn;
+        if (CombatLogger.Instance.IsLogEmpty) EndPlayerTurn();
+        else 
+            CombatLogger.OnLogEmptied += EndPlayerTurn;
     }
 
     private void EndPlayerTurn()
