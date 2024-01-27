@@ -15,6 +15,7 @@ public abstract class Ability : ScriptableObject
 
     [Space]
     public ReactionTextPairs[] Reactions;
+    public AnimationKey AnimationKey;
 
     [Tooltip("Reaction multipler are only used if listed otherwise the default value will be zero")]
     public ReactionMultiplierPairs[] ReactionMultipliers;
@@ -73,6 +74,7 @@ public abstract class Ability : ScriptableObject
     public virtual void StartAbilityExecution()
     {
         executionHandler.OnBeforeAbilityExecuted(this);
+        source.AnimationController.PlayAnimation(AnimationKey);
     }
 
     public virtual void ExecuteOther()

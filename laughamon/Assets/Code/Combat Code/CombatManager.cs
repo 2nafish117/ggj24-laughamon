@@ -2,7 +2,6 @@ using DG.Tweening;
 using System;
 using UnityEngine;
 
-
 public class CombatManager : MonoBehaviour
 {
     public static CombatManager Instance;
@@ -10,6 +9,8 @@ public class CombatManager : MonoBehaviour
     public event Action<bool> OnTurnChanged;
     public event Action OnCombatStarted;
     public event Action OnCombatEnded;
+
+    public bool IsCombatOver { get; private set; } = false;
 
     [field: SerializeField]
     public bool IsPlayerTurn { get; private set; }
@@ -22,38 +23,52 @@ public class CombatManager : MonoBehaviour
     private void Start()
     {
         OnTurnChanged += AnnounceTurn;
-        DOVirtual.DelayedCall(0.2f, StartCombat);
+    }
+
+    public void SetUpCombat(CharacterProfile enemyProfile)
+    {
+        AIController.Instance.Init(enemyProfile);
+        StartCombat();
     }
 
     public void StartCombat()
     {
-        print("Starting combat");
+        IsCombatOver = false;
+        //Can be determined by a random roll.
         IsPlayerTurn = true;
-
         OnCombatStarted?.Invoke();
         OnTurnChanged?.Invoke(IsPlayerTurn);
-
     }
 
     public void StartPlayerTurn()
     {
+        if (IsCombatOver)
+        {
+            return;
+        }
+
         IsPlayerTurn = true;
         OnTurnChanged?.Invoke(IsPlayerTurn);
     }
 
     public void EndPlayerTurn()
     {
+        if (IsCombatOver)
+        {
+            return;
+        }
         IsPlayerTurn = false;
         OnTurnChanged?.Invoke(IsPlayerTurn);
     }
 
     private void AnnounceTurn(bool _)
     {
-        Announcer.Instance.Say(IsPlayerTurn ? "Your Turn" : "Enemy's Turn", 2f);
+        Announcer.Instance.Say(IsPlayerTurn ? "Your Turn" : "Enemy's Turn", -1);
     }
 
     public void EndCombat()
     {
+        IsCombatOver = true;
         OnCombatEnded?.Invoke();
         Announcer.Instance.Say(IsPlayerTurn ? "Player Victory" : "Player Defeat", 5f);
     }

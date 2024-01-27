@@ -5,7 +5,13 @@ public class AbilityEffectHandler : MonoBehaviour
 {
     public CharacterControllerLaugh CharacterController;
 
-    public List<AbilityDOTEffectExecuter> DeBuffs;
+    public readonly List<AbilityDOTEffectExecuter> DeBuffs = new List<AbilityDOTEffectExecuter>();
+
+    public void Init(CharacterControllerLaugh controller)
+    {
+        CharacterController = controller;
+        DeBuffs.Clear();
+    }
 
     public void AddDeBuff(CharacterControllerLaugh source, CharacterControllerLaugh target, AbilityDOT deBuff)
     {
@@ -14,7 +20,7 @@ public class AbilityEffectHandler : MonoBehaviour
         DeBuffs.Add(deBuffExecuter);
     }
 
-    public void TickAbility()
+    public void TickDeBuff()
     {
         foreach (var deBuff in DeBuffs)
         {

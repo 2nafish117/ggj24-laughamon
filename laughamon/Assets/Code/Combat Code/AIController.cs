@@ -12,6 +12,11 @@ public class AIController : CharacterControllerLaugh
         Instance = this;
     }
 
+    public void SetAIEnemy(CharacterProfile profile)
+    {
+        CharacterProfile = profile;
+    }
+
     protected override void HandleTurnChanged(bool isPlayerTurn)
     {
         if (isPlayerTurn)

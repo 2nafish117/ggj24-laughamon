@@ -14,7 +14,7 @@ public class CharacterProfile : ScriptableObject
     public ReactionAbilityPairs[] AbilityEffectiveness;
 
     [Header("Starting Inventory")]
-    public Ability[] Inventory;
+    public List<Ability> Inventory;
 
     public AbilityReactionEffectiveness GetEffectiveness(Ability ability)
     {

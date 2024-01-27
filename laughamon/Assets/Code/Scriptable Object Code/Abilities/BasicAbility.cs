@@ -29,16 +29,14 @@ public class BasicAbility : Ability
         {
             multiplier = reactionMultiplier.GetMultiplier(consecutiveMuliplier);
         }
-
-        //CombatLogger.Instance.AddLog($"{source} used {name} on {target}." +
-        //    $"\n{GetReactionTextFor(effectiveness).GetRandomReaction().Replace("[target]", $"{target}")}" +
-        //    $"\n{target} laughed for {LaughPoint * multiplier}");
+        CombatLogger.Instance.AddLog($"{source} used {name} on {target}." +
+            $"\n{GetReactionTextFor(effectiveness).GetRandomReaction().Replace("[target]", $"{target}")}" +
+            $"\n{target} laughed for {LaughPoint * multiplier}");
 
         CombatLogger.Instance.AddLog(UsageText);
         CombatLogger.Instance.AddLog(GetReactionTextFor(effectiveness).GetRandomReaction());
 
         target.LaughterPoints.Laugh(LaughPoint * multiplier);
-        target.AnimateLaugh();
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
     }
 
