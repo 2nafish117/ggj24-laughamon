@@ -19,6 +19,11 @@ MonoBehaviour:
   SuccessChance: 1
   damageType: 2
   AnimationKey: 12
+  TargetReact: 1
+  TargetAnimationKey: 8
+  TargetAnimationDelay: 2.4
+  ExtraTurns: 1
+  ChargeAbility: {fileID: 11400000, guid: 0817fbcc7991ef749808567a5423189f, type: 2}
   UsageText: "You tilted your head back and chugged the entire bottle of hot sauce.\r\n\r...\nAAAAGH!
     FIREEEEEEEEEEE!"
   Reactions:

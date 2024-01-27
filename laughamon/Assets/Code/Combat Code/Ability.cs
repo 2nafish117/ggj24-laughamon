@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public abstract class Ability : ScriptableObject
 {
@@ -10,6 +11,12 @@ public abstract class Ability : ScriptableObject
     public float SuccessChance = 1;
     public DamageType damageType;
     public AnimationKey AnimationKey;
+    public bool TargetReact;
+    public AnimationKey TargetAnimationKey;
+    public float TargetAnimationDelay;
+    public int ExtraTurns = 0;
+    public Ability ChargeAbility;
+    public Buff addsBuff;
 
     [Space]
     [TextArea]
@@ -76,6 +83,15 @@ public abstract class Ability : ScriptableObject
     {
         executionHandler.OnBeforeAbilityExecuted(this);
         source.AnimationController.PlayAnimation(AnimationKey);
+        if (TargetReact)
+        {
+            DOVirtual.DelayedCall(TargetAnimationDelay, TriggerTargetAnimation);
+        }
+    }
+
+    private void TriggerTargetAnimation()
+    {
+        target.AnimationController.PlayAnimation(TargetAnimationKey);
     }
 
     public virtual void ExecuteOther()

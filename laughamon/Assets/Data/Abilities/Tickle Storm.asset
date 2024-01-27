@@ -17,6 +17,13 @@ MonoBehaviour:
   AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
+  damageType: 0
+  AnimationKey: 18
+  TargetReact: 1
+  TargetAnimationKey: 13
+  TargetAnimationDelay: 1.5
+  ExtraTurns: 0
+  ChargeAbility: {fileID: 0}
   UsageText: '[enemy] used all four of their arms to tickle you inappropriately.
     Someone call the police!'
   Reactions:
@@ -28,7 +35,6 @@ MonoBehaviour:
     Reactions:
     - You barely reacted! You're numb to the stimulation!
     - You shrugged it off with barely a laugh. You're numb to the stimulation!
-  AnimationKey: 18
   ReactionMultipliers:
   - Effectiveness: 0
     Multiplier:

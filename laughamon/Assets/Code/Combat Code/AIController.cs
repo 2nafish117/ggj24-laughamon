@@ -53,6 +53,11 @@ public class AIController : CharacterControllerLaugh
         }
     }
 
+    private void ExecuteAnAbility(CharacterControllerLaugh target, Ability ability)
+    {
+        ActionExecuter.ExecuteAbility(ability, this, target, this);
+    }
+
     public override void OnAfterAbilityExecuted(Ability ability)
     {
         base.OnAfterAbilityExecuted(ability);
