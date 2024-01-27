@@ -85,11 +85,11 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
     }
 
-    public void SkipTurn()
-    {
-        CombatLogger.Instance.AddLog($" {PlayerController.Instance} decides to do nothing.");
-        CombatManager.Instance.EndPlayerTurn();
-    }
+    //public void SkipTurn()
+    //{
+    //    CombatLogger.Instance.AddLog($" {PlayerController.Instance} decides to do nothing.");
+    //    CombatManager.Instance.EndPlayerTurn();
+    //}
 
     public void ShowStartScreen(string playerName, string enemyName)
     {

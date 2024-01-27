@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaughPoint: 15
   IsSelfTargeting: 0
-  AbilityIcon: {fileID: 0}
+  AbilityIcon: {fileID: 21300000, guid: 268d778de65cae842936686d62431810, type: 3}
   ShopCost: 0
   SuccessChance: 1
   damageType: 0
@@ -24,6 +24,7 @@ MonoBehaviour:
   TargetAnimationDelay: 2.5
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
+  addsBuff: {fileID: 0}
   UsageText: You tickled [enemy]'s armpit with the feather.
   Reactions:
   - Effectiveness: 0

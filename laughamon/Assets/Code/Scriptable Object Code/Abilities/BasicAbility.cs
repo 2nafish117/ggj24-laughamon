@@ -12,7 +12,19 @@ public class BasicAbility : Ability
     {
         //Announcer.Instance.Say($"{source.name} used an ability on {target.name}", 2f);
         StartAbilityExecution();
-        ApplyLaugh();
+        if (!IsSelfTargeting)
+        {
+            ApplyLaugh();
+        }
+        else
+        {
+            ApplyToSelf();
+        }
+        if (addsBuff)
+        {
+            source.AddBuff(addsBuff);
+        }
+
         AddQueuedAbilities();
         //DOVirtual.DelayedCall(2.5f, ApplyLaugh);
     }
@@ -71,7 +83,15 @@ public class BasicAbility : Ability
 
         target.LaughterPoints.Laugh(damage);
 
-        if (addsBuff) source.AddBuff(addsBuff);
+        DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
+    }
+
+
+    private void ApplyToSelf()
+    {
+        CombatLogger.Instance.AddLog(UsageText);
+
+        source.LaughterPoints.Laugh(LaughPoint);
 
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
     }
