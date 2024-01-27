@@ -32,6 +32,10 @@ public class BasicAbility : Ability
             $"\n{GetReactionTextFor(effectiveness).GetRandomReaction().Replace("[target]", $"{target}")}" +
             $"\n{target} laughed for {LaughPoint * multiplier}");
 
+
+CombatLogger.Instance.AddLog(UsageText);
+        CombatLogger.Instance.AddLog(GetReactionTextFor(effectiveness).GetRandomReaction());
+
         target.LaughterPoints.Laugh(LaughPoint * multiplier);
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
     }
