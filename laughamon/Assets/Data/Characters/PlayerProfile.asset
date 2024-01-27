@@ -16,5 +16,9 @@ MonoBehaviour:
   Prefab: {fileID: 0}
   MaxHealth: 100
   ProfilePicture: {fileID: 0}
-  AbilityEffectiveness: []
+  AbilityEffectiveness:
+  - Effectiveness: 0
+    Reactions: []
+  - Effectiveness: 1
+    Reactions: []
   Inventory: []

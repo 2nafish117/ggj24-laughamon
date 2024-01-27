@@ -109,6 +109,7 @@ public enum AbilityReactionEffectiveness
 public class ReactionTextPairs
 {
     public AbilityReactionEffectiveness Effectiveness;
+    [TextArea]
     public string[] Reactions;
 
     public string GetRandomReaction()
