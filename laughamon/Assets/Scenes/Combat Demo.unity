@@ -1025,6 +1025,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7055820791009937610, guid: d0a2649d27c2df047b89139b57568169, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254033937817092165, guid: d0a2649d27c2df047b89139b57568169, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -90.599976
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254033937817092165, guid: d0a2649d27c2df047b89139b57568169, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.099976
+      objectReference: {fileID: 0}
     - target: {fileID: 8521206789418969490, guid: d0a2649d27c2df047b89139b57568169, type: 3}
       propertyPath: m_Name
       value: Pf UI Combat HUD
