@@ -28,16 +28,27 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     protected virtual void OnStart()
     {
-        Init();
+        Init(CharacterProfile);
     }
 
-    public virtual void Init()
+    public virtual void Init(CharacterProfile profile)
     {
+        CharacterProfile = profile;
+        AnimationController = SpawnCharacter(profile.Prefab);
         LaughterPoints.Init(CharacterProfile.MaxHealth);
         InventoryManager.Init(CharacterProfile.Inventory);
         ActionExecuter.SetAbilities(InventoryManager.inventory);
         EffectHandler.Init(this);
         AnimationController.Init();
+    }
+
+    protected virtual CharacterAnimationController SpawnCharacter(GameObject characterPrefab)
+    {
+        if (AnimationController != null)
+        {
+            Destroy(AnimationController.gameObject);
+        }
+        return Instantiate(characterPrefab, transform).GetComponentInChildren<CharacterAnimationController>();
     }
 
     protected virtual void HandleTurnChanged(bool isPlayerTurn)

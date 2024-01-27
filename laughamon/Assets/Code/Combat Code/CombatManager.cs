@@ -23,16 +23,21 @@ public class CombatManager : MonoBehaviour
     private void Start()
     {
         OnTurnChanged += AnnounceTurn;
-        DOVirtual.DelayedCall(2, StartCombat);
+    }
+
+    public void SetUpCombat(CharacterProfile enemyProfile)
+    {
+        AIController.Instance.Init(enemyProfile);
+        StartCombat();
     }
 
     public void StartCombat()
     {
-        print("Starting combat");
         IsCombatOver = false;
+        //Can be determined by a random roll.
+        IsPlayerTurn = true;
         OnCombatStarted?.Invoke();
         OnTurnChanged?.Invoke(IsPlayerTurn);
-
     }
 
     public void StartPlayerTurn()
