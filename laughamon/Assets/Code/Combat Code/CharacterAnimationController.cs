@@ -9,17 +9,36 @@ public enum AnimationKey
 	DefenseLoop,
 
 	// one shot anims
+	IdleTwitch1,
 	Heal,
-	TakeHotSauceDamage,
 	ListenMusic,
-	DumbDance,
-	Death,
-	IdleTwitch,
-	TakeDamage,
-	Attack,
-	Break4thWall,
-	Tickle,
+	
+	DumbDance1,
+	DumbDance2,
+	DumbDance3,
 
+	Laughing1,
+	Laughing2,
+	
+	Death1,
+	Death2,
+	
+	TakeHotSauceDamage,
+	TakeDamage1,
+	TakeTickleDamage,
+	
+	Break4thWall1,
+	Break4thWall2,
+	
+	Tickle1,
+	Attack1,
+	ActingPuppet,
+	
+	Taunt1,
+	Taunt2,
+	Taunt3,
+
+	NumKeys
 }
 
 public class CharacterAnimationController : MonoBehaviour
@@ -43,36 +62,74 @@ public class CharacterAnimationController : MonoBehaviour
 			case AnimationKey.DefenseLoop:
 				animator.SetTrigger("idle_defense");
 				break;
+			case AnimationKey.IdleTwitch1:
+				animator.SetTrigger("idle_twitch1");
+				break;
 			case AnimationKey.Heal:
 				animator.SetTrigger("heal");
-				break;
-			case AnimationKey.TakeHotSauceDamage:
-				animator.SetTrigger("hot_sauce_damage");
 				break;
 			case AnimationKey.ListenMusic:
 				animator.SetTrigger("listen_music");
 				break;
-			case AnimationKey.DumbDance:
-				animator.SetTrigger("dumb_dance");
+			case AnimationKey.DumbDance1:
+				animator.SetTrigger("dumb_dance1");
 				break;
-			case AnimationKey.Death:
-				animator.SetTrigger("death");
+			case AnimationKey.DumbDance2:
+				animator.SetTrigger("dumb_dance2");
 				break;
-			case AnimationKey.IdleTwitch:
-				animator.SetTrigger("idle_twitch");
+			case AnimationKey.DumbDance3:
+				animator.SetTrigger("dumb_dance3");
 				break;
-			case AnimationKey.TakeDamage:
-				animator.SetTrigger("damage");
+			case AnimationKey.Laughing1:
+				animator.SetTrigger("laughing1");
 				break;
-			case AnimationKey.Attack:
-				animator.SetTrigger("attack");
+			case AnimationKey.Laughing2:
+				animator.SetTrigger("laughing2");
 				break;
-			case AnimationKey.Break4thWall:
-				animator.SetTrigger("break_4th_wall");
+			case AnimationKey.Death1:
+				animator.SetTrigger("death1");
 				break;
-			case AnimationKey.Tickle:
-				animator.SetTrigger("tickle");
+			case AnimationKey.Death2:
+				animator.SetTrigger("death2");
 				break;
+			case AnimationKey.TakeHotSauceDamage:
+				animator.SetTrigger("hot_sauce_damage");
+				break;
+			case AnimationKey.TakeDamage1:
+				animator.SetTrigger("damage1");
+				break;
+			//case AnimationKey.TakeDamage2:
+			//	animator.SetTrigger("damage2");
+			//	break;
+			case AnimationKey.TakeTickleDamage:
+				animator.SetTrigger("take_tickle_damage");
+				break;
+
+			case AnimationKey.Break4thWall1:
+				animator.SetTrigger("break4thwall1");
+				break;
+			case AnimationKey.Break4thWall2:
+				animator.SetTrigger("break4thwall2");
+				break;
+			case AnimationKey.Tickle1:
+				animator.SetTrigger("tickle1");
+				break;
+			case AnimationKey.Attack1:
+				animator.SetTrigger("attack1");
+				break;
+			case AnimationKey.ActingPuppet:
+				animator.SetTrigger("acting_puppet");
+				break;
+			case AnimationKey.Taunt1:
+				animator.SetTrigger("taunt1");
+				break;
+			case AnimationKey.Taunt2:
+				animator.SetTrigger("taunt2");
+				break;
+			case AnimationKey.Taunt3:
+				animator.SetTrigger("taunt3");
+				break;
+
 			default:
 				Debug.Assert(false, "BRUH");
 				break;
@@ -80,6 +137,26 @@ public class CharacterAnimationController : MonoBehaviour
     }
 
 	#region debug
+
+
+	[SerializeField]
+	private GameObject characterPrefab;
+
+	[SerializeField]
+	private GameObject debugContainer;
+
+	[ContextMenu("Debug/TestAnimKeys")]
+	private void TestAnimKeys()
+	{
+		for(int i = 0; i < (int)AnimationKey.NumKeys; ++i)
+		{
+			var go = Instantiate(characterPrefab);
+			go.transform.parent = debugContainer.transform;
+			var controller = go.GetComponent<CharacterAnimationController>();
+			controller.PlayAnimation((AnimationKey)i);
+		}
+	}
+
 	[SerializeField]
 	private string m_IntTrigger;
 
