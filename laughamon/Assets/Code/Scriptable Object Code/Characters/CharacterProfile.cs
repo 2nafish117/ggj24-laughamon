@@ -13,6 +13,9 @@ public class CharacterProfile : ScriptableObject
     [Tooltip("Non listed abilities are treated as failures by default")]
     public ReactionAbilityPairs[] AbilityEffectiveness;
 
+    [Header("Starting Inventory")]
+    public Ability[] Inventory;
+
     public AbilityReactionEffectiveness GetEffectiveness(Ability ability)
     {
         AbilityReactionEffectiveness effectiveness = AbilityReactionEffectiveness.Failure;

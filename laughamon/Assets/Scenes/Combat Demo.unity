@@ -873,6 +873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionExecuter: {fileID: 1090315938}
   LaughterPoints: {fileID: 1090315937}
+  CharacterProfile: {fileID: 0}
 --- !u!114 &1090315937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +902,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e597e6646483e8d4a9b99fad10ff51c6, type: 2}
   Spells:
   - {fileID: 11400000, guid: 79770162058324d44b50febbebbf5efc, type: 2}
+  AbilitiesUsedThisCombat: []
+  SpellsUsedThisCombat: []
 --- !u!1 &1176656360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,6 +1437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionExecuter: {fileID: 2002806591}
   LaughterPoints: {fileID: 2002806590}
+  CharacterProfile: {fileID: 0}
 --- !u!114 &2002806590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1468,6 +1472,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 79770162058324d44b50febbebbf5efc, type: 2}
   - {fileID: 11400000, guid: 79770162058324d44b50febbebbf5efc, type: 2}
   - {fileID: 11400000, guid: 79770162058324d44b50febbebbf5efc, type: 2}
+  AbilitiesUsedThisCombat: []
+  SpellsUsedThisCombat: []
 --- !u!1001 &3171963046417577220
 PrefabInstance:
   m_ObjectHideFlags: 0
