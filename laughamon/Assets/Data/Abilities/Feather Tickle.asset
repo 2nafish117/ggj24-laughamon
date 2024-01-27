@@ -17,6 +17,7 @@ MonoBehaviour:
   IsSelfTargeting: 0
   AbilityIcon: {fileID: 0}
   ShopCost: 0
+  SuccessChance: 1
   Reactions:
   - Effectiveness: 0
     Reactions:
@@ -33,7 +34,5 @@ MonoBehaviour:
   - Effectiveness: 1
     Multiplier:
     - 0.5
-  DOTs:
-  - {fileID: 0}
-  CombatEffects:
-  - {fileID: 0}
+  DOTs: []
+  CombatEffects: []

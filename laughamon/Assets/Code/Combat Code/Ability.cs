@@ -2,7 +2,6 @@ using UnityEngine;
 
 public abstract class Ability : ScriptableObject
 {
-    public string Name;
     public float LaughPoint;
     public bool IsSelfTargeting;
     public Sprite AbilityIcon;
