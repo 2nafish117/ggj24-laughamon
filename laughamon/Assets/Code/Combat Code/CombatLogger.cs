@@ -63,9 +63,11 @@ public class CombatLogger : MonoBehaviour
     public void AddLog(string rawString, float minDelay = 0f)
     {
         List<string> loglines = ParseRawStringToLogs(rawString);
+        if (loglines.Count == 0)
+            return;
 
         logQueue.Enqueue(new LogLineInfo(loglines[0], minDelay));
-        for(int i=1;i < loglines.Count; i++)
+        for (int i = 1; i < loglines.Count; i++)
         {
             logQueue.Enqueue(new LogLineInfo(loglines[i], 0f));
         }
@@ -92,7 +94,7 @@ public class CombatLogger : MonoBehaviour
             ActiveLogDisplayCoroutine = StartCoroutine(DisplayLogQueueRoutine());
         }
 
-        else if(ActiveLogDisplayCoroutine == null && logQueue.Count == 0)
+        else if (ActiveLogDisplayCoroutine == null && logQueue.Count == 0)
         {
             HideBlinkingArrow();
             LogText.SetText("");
@@ -102,7 +104,7 @@ public class CombatLogger : MonoBehaviour
 
     private void ShowBlinkingArrow()
     {
-        if(ActiveLogDisplayCoroutine == null && textDisplayHelper.isScrollingText == false)
+        if (ActiveLogDisplayCoroutine == null && textDisplayHelper.isScrollingText == false)
         {
             blinkingArrow.SetActive(true);
         }
@@ -151,7 +153,7 @@ public class CombatLogger : MonoBehaviour
 
         List<string> broken = polished.Split("\n", System.StringSplitOptions.RemoveEmptyEntries).ToListPooled<string>();
 
-        if(broken.Count > 0)
+        if (broken.Count > 0)
         {
             if (broken[broken.Count - 1].Length <= 1)
             {

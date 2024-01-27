@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
@@ -51,6 +52,16 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     private void HandleCombatStarted()
     {
         SetCombatElements(true);
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DelayInitUI());
+        }
+    }
+
+    IEnumerator DelayInitUI()
+    {
+        yield return null;
+        InitUI();
     }
 
     public void InitUI()
@@ -63,11 +74,12 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
     public void SwitchTurn(bool isPlayerTurn)
     {
-        if (isPlayerTurn)
-        {
-            ShowPlayerControls(true);
-            CombatLogger.OnLogProgressed += DismissControlsOnFirstCombatLog;
-        }
+        ShowPlayerControls(isPlayerTurn);
+
+        //if (isPlayerTurn)
+        //{
+        //    CombatLogger.OnLogProgressed += DismissControlsOnFirstCombatLog;
+        //}
     }
 
     public void OnAbilityUsed(int index)
@@ -76,6 +88,7 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
 
         playerTurnActionsCanvas.interactable = false;
         PlayerController.Instance.UseAbilityAtIndex(index, this, AIController.Instance);
+        ShowPlayerControls(false);
     }
 
     public void OnSpellUsed(int index)
@@ -95,12 +108,6 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     {
 
     }
-
-    //public void SkipTurn()
-    //{
-    //    CombatLogger.Instance.AddLog($" {PlayerController.Instance} decides to do nothing.");
-    //    CombatManager.Instance.EndPlayerTurn();
-    //}
 
     public void ShowStartScreen(string playerName, string enemyName)
     {
@@ -123,11 +130,11 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
         playerTurnActionsCanvas.DOFade(value ? 1 : 0, 0.4f).SetEase(value ? Ease.InExpo : Ease.OutExpo);
     }
 
-    private void DismissControlsOnFirstCombatLog()
-    {
-        CombatLogger.OnLogProgressed -= DismissControlsOnFirstCombatLog;
-        ShowPlayerControls(false);
-    }
+    //private void DismissControlsOnFirstCombatLog()
+    //{
+    //    CombatLogger.OnLogProgressed -= DismissControlsOnFirstCombatLog;
+    //    ShowPlayerControls(false);
+    //}
 
     internal void ShowCombatEndScreen(bool playerVictory)
     {

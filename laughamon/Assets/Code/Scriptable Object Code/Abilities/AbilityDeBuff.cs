@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AbilityDOT", menuName = "Custom/Ability DOT")]
-public class AbilityDOT : ScriptableObject
+[CreateAssetMenu(fileName = "Ability DeBuff", menuName = "Custom/Ability DOT")]
+public class AbilityDeBuff : ScriptableObject
 {
     public string Name;
     [Range(1, 10)]
@@ -12,19 +12,24 @@ public class AbilityDOT : ScriptableObject
 
     [Space]
     public ReactionMultiplierPairs[] Multiplier;
+
+    public void Execute(CharacterControllerLaugh source,CharacterControllerLaugh target)
+    {
+
+    }
 }
 
 public class AbilityDOTEffectExecuter
 {
     protected CharacterControllerLaugh source;
     protected CharacterControllerLaugh target;
-    protected AbilityDOT abilityDOT;
+    protected AbilityDeBuff abilityDOT;
 
     public int RemainingTurns { get; private set; }
 
     public bool IsActive => RemainingTurns > 0;
 
-    public void InitDot(CharacterControllerLaugh source, CharacterControllerLaugh target, AbilityDOT abilityDOT)
+    public void InitDot(CharacterControllerLaugh source, CharacterControllerLaugh target, AbilityDeBuff abilityDOT)
     {
         this.source = source;
         this.target = target;
@@ -36,5 +41,6 @@ public class AbilityDOTEffectExecuter
     public void TickDOT()
     {
         RemainingTurns--;
+        abilityDOT.Execute(source, target);
     }
 }

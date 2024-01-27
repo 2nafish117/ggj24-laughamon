@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityEffectHandler : MonoBehaviour
+public class AbilityDeBuffExecuter : MonoBehaviour
 {
     public CharacterControllerLaugh CharacterController;
 
@@ -13,7 +13,7 @@ public class AbilityEffectHandler : MonoBehaviour
         DeBuffs.Clear();
     }
 
-    public void AddDeBuff(CharacterControllerLaugh source, CharacterControllerLaugh target, AbilityDOT deBuff)
+    public void AddDeBuff(CharacterControllerLaugh source, CharacterControllerLaugh target, AbilityDeBuff deBuff)
     {
         var deBuffExecuter = new AbilityDOTEffectExecuter();
         deBuffExecuter.InitDot(source, target, deBuff);

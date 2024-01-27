@@ -29,7 +29,7 @@ public abstract class Ability : ScriptableObject
     public ReactionMultiplierPairs[] ReactionMultipliers;
 
     [Header("DOT's")]
-    public AbilityDOT[] DOTs;
+    public AbilityDeBuff[] DOTs;
 
     [Header("Cusotm Behaviours")]
     public AbilityCombatEffects[] CombatEffects;
@@ -37,6 +37,14 @@ public abstract class Ability : ScriptableObject
     protected IAbilityExecutionHandler executionHandler;
     protected CharacterControllerLaugh source;
     protected CharacterControllerLaugh target;
+
+    [Header("Damage Modifiers")]
+    public bool HasDamageModifier;
+    public DamageModifiers DamageModifiers;
+
+    [Header("Multi Hit")]
+    [Range(0, 5)]
+    public int MultiHits;
 
     public void ExecuteAbility(CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
@@ -63,7 +71,7 @@ public abstract class Ability : ScriptableObject
     /// </summary>
     public abstract void ExecuteFailed();
 
-    public virtual void ExecuteDOT()
+    public virtual void ApplyDOT()
     {
         foreach (var dot in DOTs)
         {
@@ -97,12 +105,37 @@ public abstract class Ability : ScriptableObject
     public virtual void ExecuteOther()
     {
         ExecuteCombatEffects();
-        ExecuteDOT();
+        ApplyDOT();
     }
 
     public virtual void EndAbilityExecution()
     {
+        if (source.MultiHits > 0)
+        {
+            source.MultiHits--;
+            //
+            if (CombatManager.Instance.IsPlayerTurn)
+            {
+                CombatManager.Instance.StartPlayerTurn();
+            }
+            else
+            {
+                CombatManager.Instance.EndPlayerTurn();
+            }
+
+            ClearReferences();
+            return;
+        }
+
         executionHandler.OnAfterAbilityExecuted(this);
+        ClearReferences();
+    }
+
+    private void ClearReferences()
+    {
+        source = null;
+        target = null;
+        executionHandler = null;
     }
 
     public ReactionTextPairs GetReactionTextFor(AbilityReactionEffectiveness effectiveness)
@@ -138,6 +171,88 @@ public enum AbilityReactionEffectiveness
     DefenseSuccessful,
     DefenseFailed,
     Normal
+}
+
+[System.Serializable]
+public class DamageModifiers
+{
+    [Range(-1f, 1f)]
+    public float DamageBlockMultiplier;
+    [Range(0, 10)]
+    public int DamageBlockInstance;
+    [Range(-1f, 1f)]
+    public float DamageReflectMultiplier;
+    [Range(0, 10)]
+    public int DamageReflectInstance;
+
+    [HideInInspector]
+    public Ability SourceAbility;
+
+    public bool IsExpired => DamageBlockInstance <= 0 && DamageReflectInstance <= 0;
+
+    public DamageModifiers() { }
+
+    public DamageModifiers(Ability sourceAbility, float damageBlockMultiplier, int damageBlockInstance, float reflectionMultiplier, int reflectionInstances)
+    {
+        SourceAbility = sourceAbility;
+        AddDamageReflectionBuff(reflectionMultiplier, reflectionInstances);
+        AddDamageBlockBuff(damageBlockMultiplier, damageBlockInstance);
+    }
+
+    public void AddDamageReflectionBuff(float reflectionMultiplier, int instances)
+    {
+        DamageReflectMultiplier = reflectionMultiplier;
+        DamageReflectInstance = instances;
+    }
+
+    public void AddDamageBlockBuff(float blockMultiplier, int instances)
+    {
+        DamageBlockMultiplier = blockMultiplier;
+        DamageBlockInstance = instances;
+    }
+
+    public void ModifyDamageApplication(CharacterControllerLaugh source, CharacterControllerLaugh target, float damage)
+    {
+        var reflectedDamage = 0f;
+        if (DamageReflectInstance > 0)
+        {
+            DamageBlockInstance--;
+            reflectedDamage = damage * DamageReflectMultiplier;
+        }
+
+        var blockedDamage = 0f;
+        if (DamageBlockInstance > 0)
+        {
+            DamageBlockInstance--;
+            blockedDamage = damage * DamageBlockMultiplier;
+        }
+
+
+        target.LaughterPoints.Laugh(reflectedDamage);
+        if (reflectedDamage > 0)
+        {
+            source.AnimationController.PlayAnimation(AnimationKey.TakeDamage1);
+            //TODO : Add reflected damage combat log;
+        }
+        else
+        {
+            source.AnimationController.PlayAnimation(AnimationKey.Heal);
+            //TODO : Add reflected heal combat log;
+        }
+
+        var reducedDamage = damage - blockedDamage;
+        source.LaughterPoints.Laugh(reducedDamage);
+        if (reducedDamage > 0)
+        {
+            target.AnimationController.PlayAnimation(AnimationKey.TakeDamage1);
+            //TODO : Add reduced damage combat log;
+        }
+        else
+        {
+            target.AnimationController.PlayAnimation(AnimationKey.Heal);
+            //TODO : Add amped damage combat log;
+        }
+    }
 }
 
 [System.Serializable]

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
+  m_Name: And Again And Again And Again Aaaand Again!
+  m_EditorClassIdentifier: 
+  LaughPoint: 0
+  IsSelfTargeting: 1
+  AbilityIcon: {fileID: 21300000, guid: 0bfe98145eafa064d975dc003f042def, type: 3}
+  ShopCost: 0
+  SuccessChance: 1
+  damageType: 0
+  AnimationKey: 0
+  TargetReact: 0
+  TargetAnimationKey: 0
+  TargetAnimationDelay: 0
+  ExtraTurns: 0
+  ChargeAbility: {fileID: 0}
+  BuffsList: []
+  UsageText: 'You used And Again And Again And Again Aaaand Again!
+
+    You get to
+    move And Again And Again And Again Aaaand Again!'
+  Reactions: []
+  ReactionMultipliers: []
+  DOTs: []
+  CombatEffects: []
+  HasDamageModifier: 0
+  DamageModifiers:
+    DamageBlockMultiplier: 0
+    DamageBlockInstance: 0
+    DamageReflectMultiplier: 0
+    DamageReflectInstance: 0
+    SourceAbility: {fileID: 0}
+  MultiHits: 2
+  ExecutionTime: 3

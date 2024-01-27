@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 {
@@ -9,14 +10,18 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     public LaughterPoints LaughterPoints;
     public CharacterProfile CharacterProfile;
     public CharacterInventoryManager InventoryManager;
-    public AbilityEffectHandler EffectHandler;
+    public AbilityDeBuffExecuter EffectHandler;
     public CharacterAnimationController AnimationController;
-
 
     protected IAbilityExecutionHandler executionHandler;
 
     protected Queue<Ability> AbilityQueue = new Queue<Ability>();
     protected List<Buff> Buffs = new List<Buff>();
+
+    public DamageModifiers ActiveDamageModifiers;
+    public bool HasActiveDamageModifiers => ActiveDamageModifiers != null && ActiveDamageModifiers.IsExpired == false;
+
+    public int MultiHits;
 
     public override string ToString()
     {
@@ -58,8 +63,8 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     protected virtual void HandleTurnChanged(bool isPlayerTurn)
     {
-
     }
+
     private void ClearBuffs()
     {
         List<Buff> remainingBuffs = new List<Buff>();
@@ -103,21 +108,6 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         executionHandler?.OnAfterAbilityExecuted(ability);
     }
 
-    public void AnimateLaugh()
-    {
-        transform.DOPunchScale(Vector3.one * 0.2f, 0.4f, 1).SetEase(Ease.OutBounce);
-    }
-
-    public void AnimateUnLaugh()
-    {
-        transform.DOPunchRotation(Vector3.one * 0.2f, 0.4f, 1).SetEase(Ease.OutBounce);
-    }
-
-    public void AnimateROFL()
-    {
-        AnimationController.PlayAnimation(AnimationKey.Death1);
-    }
-
     public void HandleLaughterChanged(float currentPoints, float changed)
     {
         if (LaughterPoints.IsDead)
@@ -139,7 +129,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     public void OnDead()
     {
-        AnimateROFL();
+        AnimationController.PlayAnimation(AnimationKey.Death1);
         CombatManager.Instance.EndCombat();
     }
 
@@ -161,9 +151,25 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     public void AddBuffs(IEnumerable<Buff> buffs)
     {
-        foreach(Buff buff in buffs)
+        foreach (Buff buff in buffs)
         {
             AddBuff(buff);
         }
     }
+
+    public void AddDamageModifiers(DamageModifiers damageModifier, Ability sourceAbility)
+    {
+        ActiveDamageModifiers = new DamageModifiers(sourceAbility, damageModifier.DamageBlockMultiplier, damageModifier.DamageBlockInstance, damageModifier.DamageReflectMultiplier, damageModifier.DamageReflectInstance); ;
+    }
+
+    public void RemoveExpiredDamageModifiers()
+    {
+        if (ActiveDamageModifiers.IsExpired)
+        {
+            ActiveDamageModifiers = null;
+        }
+    }
+
+
+
 }
