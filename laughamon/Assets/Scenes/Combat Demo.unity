@@ -946,10 +946,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8247074683882573007, guid: d0a2649d27c2df047b89139b57568169, type: 3}
-      propertyPath: inventoryPanel
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8521206789418969490, guid: d0a2649d27c2df047b89139b57568169, type: 3}
       propertyPath: m_Name
       value: Pf UI Combat HUD
