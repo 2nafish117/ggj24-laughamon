@@ -10,7 +10,7 @@ public class CharacterProfile : ScriptableObject
     public float MaxHealth;
     public Sprite ProfilePicture;
 
-    [Tooltip("Non listed abilities are treated as failures by default")]
+    [Tooltip("Non listed abilities are treated as normal by default")]
     public ReactionAbilityPairs[] AbilityEffectiveness;
 
     [Header("Starting Inventory")]
@@ -18,7 +18,7 @@ public class CharacterProfile : ScriptableObject
 
     public AbilityReactionEffectiveness GetEffectiveness(Ability ability)
     {
-        AbilityReactionEffectiveness effectiveness = AbilityReactionEffectiveness.Failure;
+        AbilityReactionEffectiveness effectiveness = AbilityReactionEffectiveness.Normal;
         for (int i = 0; i < AbilityEffectiveness.Length; i++)
         {
             if (AbilityEffectiveness[i].HasReaction(ability))

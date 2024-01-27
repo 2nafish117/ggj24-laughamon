@@ -8,6 +8,7 @@ public abstract class Ability : ScriptableObject
     public int ShopCost;
     [Range(0f, 1f)]
     public float SuccessChance = 1;
+    public DamageType damageType;
 
     [Space]
     [TextArea]
@@ -17,7 +18,7 @@ public abstract class Ability : ScriptableObject
     public ReactionTextPairs[] Reactions;
     public AnimationKey AnimationKey;
 
-    [Tooltip("Reaction multipler are only used if listed otherwise the default value will be zero")]
+    [Tooltip("Reaction multipler are only used if listed otherwise the default value will be one")]
     public ReactionMultiplierPairs[] ReactionMultipliers;
 
     [Header("DOT's")]
@@ -120,6 +121,7 @@ public enum AbilityReactionEffectiveness
     Critical,
     DefenseSuccessful,
     DefenseFailed,
+    Normal
 }
 
 [System.Serializable]
@@ -146,4 +148,11 @@ public class ReactionMultiplierPairs
         consecutiveUsage = Mathf.Min(Multiplier.Length - 1, consecutiveUsage);
         return Multiplier[consecutiveUsage];
     }
+}
+
+public enum DamageType
+{
+    Touch,
+    Joke,
+    Comic
 }

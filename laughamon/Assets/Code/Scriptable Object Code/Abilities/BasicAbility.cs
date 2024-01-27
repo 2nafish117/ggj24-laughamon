@@ -23,7 +23,7 @@ public class BasicAbility : Ability
         float multiplier = 1; ;
         if (reactionMultiplier == null)
         {
-            multiplier = 0;
+            multiplier = 1;
         }
         else
         {
