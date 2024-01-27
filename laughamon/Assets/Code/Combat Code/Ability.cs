@@ -91,6 +91,17 @@ public abstract class Ability : ScriptableObject
 
         return null;
     }
+
+    public ReactionMultiplierPairs GetReactionMultiplier(AbilityReactionEffectiveness effectiveness)
+    {
+        for (int i = 0; i < ReactionMultipliers.Length; i++)
+        {
+            if (effectiveness == ReactionMultipliers[i].Effectiveness)
+                return ReactionMultipliers[i];
+        }
+
+        return null;
+    }
 }
 
 [System.Serializable]
@@ -125,7 +136,7 @@ public class ReactionMultiplierPairs
 
     public float GetMultiplier(int consecutiveUsage)
     {
-        consecutiveUsage = Mathf.Min(Multiplier.Length, consecutiveUsage);
+        consecutiveUsage = Mathf.Min(Multiplier.Length - 1, consecutiveUsage);
         return Multiplier[consecutiveUsage];
     }
 }

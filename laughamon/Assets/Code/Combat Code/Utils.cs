@@ -22,4 +22,14 @@ public static class Utils
         list[index] = list[last];
         list.RemoveAt(last);
     }
+
+    public static T GetLast<T>(this List<T> list)
+    {
+        return list[list.Count - 1];
+    }
+
+    public static T GetLast<T>(this T[] array)
+    {
+        return array[array.Length - 1];
+    }
 }

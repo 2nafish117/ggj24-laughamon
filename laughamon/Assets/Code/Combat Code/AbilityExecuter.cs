@@ -14,7 +14,7 @@ public class AbilityExecuter : MonoBehaviour
     public List<Ability> Spells;
 
     public List<Ability> AbilitiesUsedThisCombat;
-    public List<Ability> SpellsUsedThisCombat;
+    public List<Ability> SpellsUsedThisCombat => AbilitiesUsedThisCombat;
 
     public void Start()
     {
@@ -51,5 +51,21 @@ public class AbilityExecuter : MonoBehaviour
         var spell = Spells[index];
         SpellsUsedThisCombat.Add(spell);
         spell.ExecuteAbility(source, target, executionHandler);
+    }
+
+    public int GetConsecutiveCount(Ability ability)
+    {
+        int counter = 0;
+        for (int i = AbilitiesUsedThisCombat.Count - 1; i >= 0; i--)
+        {
+            if (AbilitiesUsedThisCombat[i] == ability)
+            {
+                counter++;
+                continue;
+            }
+            break;
+        }
+
+        return counter;
     }
 }
