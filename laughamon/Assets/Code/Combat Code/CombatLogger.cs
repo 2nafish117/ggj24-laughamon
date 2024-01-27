@@ -14,7 +14,7 @@ public class CombatLogger : MonoBehaviour
 
     private bool playerInputPrompted = false;
 
-    Coroutine ActiveLogDisplay = null;
+    Coroutine ActiveLogDisplayCoroutine = null;
 
     public static event System.Action OnLogProgressed;
     public static event System.Action OnLogEmptied;
@@ -42,7 +42,10 @@ public class CombatLogger : MonoBehaviour
     public TextBox textDisplayHelper;
     public GameObject blinkingArrow;
 
-    public bool IsLogEmpty => LogText.text == "";
+    public bool IsLogEmpty()
+    {
+        return LogText.text == "" && textDisplayHelper.isScrollingText == false;
+    }
 
     private void Start()
     {
@@ -84,12 +87,12 @@ public class CombatLogger : MonoBehaviour
 
     private void ProgressLog()
     {
-        if (ActiveLogDisplay == null && logQueue.Count > 0)
+        if (ActiveLogDisplayCoroutine == null && logQueue.Count > 0)
         {
-            ActiveLogDisplay = StartCoroutine(DisplayLogQueueRoutine());
+            ActiveLogDisplayCoroutine = StartCoroutine(DisplayLogQueueRoutine());
         }
 
-        else if(logQueue.Count == 0)
+        else if(ActiveLogDisplayCoroutine == null && logQueue.Count == 0)
         {
             HideBlinkingArrow();
             LogText.SetText("");
@@ -99,7 +102,7 @@ public class CombatLogger : MonoBehaviour
 
     private void ShowBlinkingArrow()
     {
-        if(ActiveLogDisplay == null && textDisplayHelper.isScrollingText == false)
+        if(ActiveLogDisplayCoroutine == null && textDisplayHelper.isScrollingText == false)
         {
             blinkingArrow.SetActive(true);
         }
@@ -127,7 +130,7 @@ public class CombatLogger : MonoBehaviour
 
         yield return new WaitForSeconds(first.minDelay);
 
-        ActiveLogDisplay = null;
+        ActiveLogDisplayCoroutine = null;
         ShowBlinkingArrow();
 
         OnLogProgressed?.Invoke();
