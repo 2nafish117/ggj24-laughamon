@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaughPoint: 30
   IsSelfTargeting: 0
-  AbilityIcon: {fileID: 0}
+  AbilityIcon: {fileID: 21300000, guid: 3c84b119c9325f940a1d41fb152de655, type: 3}
   ShopCost: 0
   SuccessChance: 1
   damageType: 2
