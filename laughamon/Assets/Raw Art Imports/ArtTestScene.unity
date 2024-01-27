@@ -309,31 +309,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1939364854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6059954478287613999, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
-  m_PrefabInstance: {fileID: 2323650861464931227}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1939364855 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1457002342800958169, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
-  m_PrefabInstance: {fileID: 2323650861464931227}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1939364857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939364854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 865486417cf35504296662d50b0efc5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 1939364855}
-  m_IntTrigger: dumb_dance
-  m_IntTriggerValue: 1
 --- !u!1001 &2323650861464931227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -389,10 +364,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6059954478287613999, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1939364857}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaae8b1ca3633904995a87074ac949c1, type: 3}
 --- !u!1001 &5205807606547581026
 PrefabInstance:
@@ -449,55 +421,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5749028323010143770, guid: d0bb04cae49c5824a93879083d4a7025, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5205807606547581028}
-    - targetCorrespondingSourceObject: {fileID: 5749028323010143770, guid: d0bb04cae49c5824a93879083d4a7025, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5205807606547581029}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0bb04cae49c5824a93879083d4a7025, type: 3}
---- !u!1 &5205807606547581027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5749028323010143770, guid: d0bb04cae49c5824a93879083d4a7025, type: 3}
-  m_PrefabInstance: {fileID: 5205807606547581026}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5205807606547581028
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205807606547581027}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2076263fe84c8ce40902824742149359, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3e1d890428f45a04789849d30ec8627c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5205807606547581029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205807606547581027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 865486417cf35504296662d50b0efc5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 0}
-  m_IntTrigger: 
-  m_IntTriggerValue: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
