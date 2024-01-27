@@ -17,6 +17,9 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     [SerializeField]
     private UIInventory inventoryPanel;
 
+    [SerializeField]
+    private UIAbilityPanel abilityPanel;
+
     private void Awake()
     {
         Instance = this;
@@ -32,7 +35,8 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     {
         playerBar.Initialize(PlayerController.Instance.LaughterPoints);
         enemyBar.Initialize(AIController.Instance.LaughterPoints);
-        inventoryPanel.Init(PlayerController.Instance.InventoryManager);
+        inventoryPanel.Initialize(PlayerController.Instance.InventoryManager);
+        abilityPanel.Initialize(PlayerController.Instance.InventoryManager);
     }
 
     public void SwitchTurn(bool isPlayerTurn)
@@ -65,5 +69,11 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     public void OnAfterAbilityExecuted(Ability ability)
     {
 
+    }
+
+    public void SkipTurn()
+    {
+        CombatLogger.Instance.AddLog($" {PlayerController.Instance} decides to do nothing.");
+        CombatManager.Instance.EndPlayerTurn();
     }
 }

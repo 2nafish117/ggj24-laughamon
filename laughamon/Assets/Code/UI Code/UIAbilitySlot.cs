@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,11 +17,12 @@ public class UIAbilitySlot : MonoBehaviour
 
     public Ability Ability { get; set; }
 
-    public void SetAbility(Ability ability, IAbilityEquipHandler equipHandler)
+    public void SetAbility(Ability ability, bool isEquipped,IAbilityEquipHandler equipHandler)
     {
         Ability = ability;
         this.equipHandler = equipHandler;
         AbilityIcon.sprite = ability.AbilityIcon;
+        SetEquippedState(isEquipped);
     }
 
     public void OnButtonClicked()

@@ -13,8 +13,15 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
 
     private void Start()
     {
+        CombatManager.Instance.OnCombatStarted += OnStart;
+        CombatManager.Instance.OnTurnChanged += HandleTurnChanged;
+        LaughterPoints.OnLaughPointsChanged += HandleLaughterChanged;
+
         LaughterPoints.Init(CharacterProfile.MaxHealth);
         InventoryManager.Init(CharacterProfile.Inventory);
+        InventoryManager.EquipDefaults();
+
+        ActionExecuter.Init(InventoryManager);
         EffectHandler.Init(this);
         AnimationController.Init();
     }
@@ -27,7 +34,7 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
     {
         base.OnAfterAbilityExecuted(ability);
         if (CombatLogger.Instance.IsLogEmpty) EndPlayerTurn();
-        else 
+        else
             CombatLogger.OnLogEmptied += EndPlayerTurn;
     }
 

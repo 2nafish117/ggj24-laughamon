@@ -7,7 +7,7 @@ public class UIInventory : MonoBehaviour, IAbilityEquipHandler
     public CharacterInventoryManager InventoryManager { get; private set; }
     public List<UIAbilitySlot> AbilitySlots;
 
-    public void Init(CharacterInventoryManager inventoryManager)
+    public void Initialize(CharacterInventoryManager inventoryManager)
     {
         InventoryManager = inventoryManager;
         PopulateInventory();
@@ -20,7 +20,8 @@ public class UIInventory : MonoBehaviour, IAbilityEquipHandler
         {
             if (i < ablitiyCount)
             {
-                AbilitySlots[i].SetAbility(InventoryManager.Inventory[i], this);
+                bool isEquipped = InventoryManager.Equipped.Contains(InventoryManager.Inventory[i]);
+                AbilitySlots[i].SetAbility(InventoryManager.Inventory[i], isEquipped, this);
                 AbilitySlots[i].gameObject.SetActive(true);
             }
             else
@@ -35,7 +36,7 @@ public class UIInventory : MonoBehaviour, IAbilityEquipHandler
         if (InventoryManager.Equipped.Contains(slot.Ability))
         {
             InventoryManager.UnEquipAbility(slot.Ability);
-            slot.SetEquippedState(false);
+            PopulateInventory();
             return;
         }
 
@@ -46,6 +47,6 @@ public class UIInventory : MonoBehaviour, IAbilityEquipHandler
         }
 
         InventoryManager.EquipAbility(slot.Ability);
-        slot.SetEquippedState(true);
+        PopulateInventory();
     }
 }

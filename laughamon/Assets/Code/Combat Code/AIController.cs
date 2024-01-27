@@ -42,13 +42,13 @@ public class AIController : CharacterControllerLaugh
         if (useSpell)
         {
             //Announcer.Instance.Say("Enemy Casted a Spell", 2f);
-            ActionExecuter.Spells.GetRandom(out var index);
+            ActionExecuter.InventoryManager.Equipped.GetRandom(out var index);
             ActionExecuter.ExecuteSpell(index, this, target, this);
         }
         else
         {
             //Announcer.Instance.Say("Enemy Used an Ability", 2f);
-            ActionExecuter.Abilities.GetRandom(out var index);
+            ActionExecuter.InventoryManager.Equipped.GetRandom(out var index);
             ActionExecuter.ExecuteAbility(index, this, target, this);
         }
     }
