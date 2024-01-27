@@ -32,8 +32,8 @@ public class AbilityExecuter : MonoBehaviour
 
     public void ExecuteAbility(Ability ability, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
-        int abilityIndex = InventoryManager.Equipped.IndexOf(ability);
-        ExecuteAbility(abilityIndex, source, target, executionHandler);
+        AbilitiesUsedThisCombat.Add(ability);
+        ability.ExecuteAbility(source, target, executionHandler);
     }
 
     public void ExecuteAbility(int index, CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)

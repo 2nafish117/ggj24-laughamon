@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 {
@@ -11,7 +12,11 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     public AbilityEffectHandler EffectHandler;
     public CharacterAnimationController AnimationController;
 
+
     protected IAbilityExecutionHandler executionHandler;
+
+    protected Queue<Ability> AbilityQueue = new Queue<Ability>();
+    protected List<Buff> Buffs = new List<Buff>();
 
     public override string ToString()
     {
@@ -55,11 +60,30 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     {
 
     }
+    private void ClearBuffs()
+    {
+        List<Buff> remainingBuffs = new List<Buff>();
+        foreach(Buff buff in Buffs)
+        {
+            buff.turnsLeft--;
+            if (buff.turnsLeft > 0) remainingBuffs.Add(buff);
+        }
+        Buffs = remainingBuffs;
+    }
 
     public void UseAbilityAtIndex(int index, IAbilityExecutionHandler executionHandler, CharacterControllerLaugh target)
     {
         this.executionHandler = executionHandler;
-        ActionExecuter.ExecuteAbility(index, this, target, this);
+
+        if(AbilityQueue.Count == 0)
+        {
+            ActionExecuter.ExecuteAbility(index, this, target, this);
+        }
+
+        else
+        {
+            ActionExecuter.ExecuteAbility(AbilityQueue.Dequeue(), this, target, this);
+        }
     }
 
     public void UseSpellAtIndex(int index, IAbilityExecutionHandler executionHandler, CharacterControllerLaugh target)
@@ -70,6 +94,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     public virtual void OnBeforeAbilityExecuted(Ability ability)
     {
+        ClearBuffs();
         executionHandler?.OnBeforeAbilityExecuted(ability);
     }
 
@@ -102,19 +127,35 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
             return;
         }
 
-        if (changed < 0)
-        {
-            AnimateLaugh();
-        }
-        else
-        {
-            AnimateUnLaugh();
-        }
+        //if (changed < 0)
+        //{
+        //    AnimateLaugh();
+        //}
+        //else
+        //{
+        //    AnimateUnLaugh();
+        //}
     }
 
     public void OnDead()
     {
         AnimateROFL();
         CombatManager.Instance.EndCombat();
+    }
+
+    public void QueueAbility(Ability ability)
+    {
+        AbilityQueue.Enqueue(ability);
+    }
+
+    public Buff GetDefensiveBuff()
+    {
+        if (Buffs.Count == 0) return null;
+        else return Buffs[0]; //TODO search for defensive buff.
+    }
+
+    public void AddBuff(Buff buff)
+    {
+        Buffs.Add(buff);
     }
 }

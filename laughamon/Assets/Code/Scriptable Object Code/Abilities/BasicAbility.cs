@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "Ability", menuName = "Custom/Ability")]
 public class BasicAbility : Ability
@@ -12,7 +13,16 @@ public class BasicAbility : Ability
         //Announcer.Instance.Say($"{source.name} used an ability on {target.name}", 2f);
         StartAbilityExecution();
         ApplyLaugh();
+        AddQueuedAbilities();
         //DOVirtual.DelayedCall(2.5f, ApplyLaugh);
+    }
+
+    private void AddQueuedAbilities()
+    {
+        for(int i = 0; i < ExtraTurns; i++)
+        {
+            source.QueueAbility(ChargeAbility);
+        }
     }
 
     private void ApplyLaugh()
@@ -30,14 +40,39 @@ public class BasicAbility : Ability
             multiplier = reactionMultiplier.GetMultiplier(consecutiveMuliplier);
         }
 
+        float damage = LaughPoint * multiplier;
+
         CombatLogger.Instance.AddLog(UsageText);
-        ReactionTextPairs reaction = GetReactionTextFor(effectiveness);
-        if (reaction != null)
+
+        //Buff calculations
+
+        Buff targetDefensiveBuff = target.GetDefensiveBuff();
+        if (targetDefensiveBuff != null && damageType == targetDefensiveBuff.damageType)
         {
-            CombatLogger.Instance.AddLog(reaction.GetRandomReaction());
+            damage = Mathf.Clamp(damage - targetDefensiveBuff.value, 0, 1000f);
+
+            AbilityReactionEffectiveness buffEffectiveness = AbilityReactionEffectiveness.SuperEffective;
+            if (damage < 1f) buffEffectiveness = AbilityReactionEffectiveness.NotVeryEffective;
+
+            ReactionTextPairs buffReaction = targetDefensiveBuff.GetReactionTextFor(buffEffectiveness);
+            if (buffReaction != null)
+            {
+                CombatLogger.Instance.AddLog(buffReaction.GetRandomReaction());
+            }
+        }
+        else
+        {
+            ReactionTextPairs reaction = GetReactionTextFor(effectiveness);
+            if (reaction != null)
+            {
+                CombatLogger.Instance.AddLog(reaction.GetRandomReaction());
+            }
         }
 
-        target.LaughterPoints.Laugh(LaughPoint * multiplier);
+        target.LaughterPoints.Laugh(damage);
+
+        if (addsBuff) source.AddBuff(addsBuff);
+
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
     }
 
