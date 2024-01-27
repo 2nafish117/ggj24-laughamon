@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7592496291289791223}
-  - component: {fileID: 7564380306910226493}
+  - component: {fileID: 3802654256427231155}
+  - component: {fileID: 6846537739229932270}
   m_Layer: 0
   m_Name: 4ArmDude
   m_TagString: Untagged
@@ -26,14 +27,14 @@ Transform:
   m_GameObject: {fileID: 5749028323010143770}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0.98290795, y: 0.01786637, z: -1.6068505}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9021543042114625396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7564380306910226493
+--- !u!114 &3802654256427231155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,7 +46,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d9d2468bd0b964cbcd502b49ab996c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 3157825216602588430}
+  animator: {fileID: 6846537739229932270}
+--- !u!95 &6846537739229932270
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749028323010143770}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2076263fe84c8ce40902824742149359, type: 3}
+  m_Controller: {fileID: 9100000, guid: 3e1d890428f45a04789849d30ec8627c, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8842902411579160735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,20 +120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: T-Pose
       objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: 2076263fe84c8ce40902824742149359, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 3e1d890428f45a04789849d30ec8627c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2076263fe84c8ce40902824742149359, type: 3}
---- !u!95 &3157825216602588430 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 2076263fe84c8ce40902824742149359, type: 3}
-  m_PrefabInstance: {fileID: 8842902411579160735}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9021543042114625396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2076263fe84c8ce40902824742149359, type: 3}

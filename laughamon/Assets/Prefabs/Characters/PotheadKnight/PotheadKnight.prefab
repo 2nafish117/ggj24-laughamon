@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1457002342800958169}
+  m_IntTrigger: 
+  m_IntTriggerValue: 0
 --- !u!1 &7739950225330727754
 GameObject:
   m_ObjectHideFlags: 0
