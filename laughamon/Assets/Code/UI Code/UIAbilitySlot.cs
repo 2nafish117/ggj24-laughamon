@@ -19,13 +19,14 @@ public class UIAbilitySlot : MonoBehaviour
 
     public Ability Ability { get; set; }
 
-    public void SetAbility(Ability ability, bool isEquipped,IAbilityEquipHandler equipHandler)
+    public void SetAbility(Ability ability, bool isEquipped, IAbilityEquipHandler equipHandler)
     {
         Ability = ability;
         this.equipHandler = equipHandler;
         AbilityIcon.sprite = ability.AbilityIcon;
         nameLabel.SetText(ability.name);
         SetEquippedState(isEquipped);
+        gameObject.SetActive(true);
     }
 
     public void OnButtonClicked()
