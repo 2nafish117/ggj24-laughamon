@@ -2324,7 +2324,6 @@ GameObject:
   m_Component:
   - component: {fileID: 198731639}
   - component: {fileID: 198731638}
-  - component: {fileID: 198731637}
   - component: {fileID: 198731636}
   - component: {fileID: 198731635}
   m_Layer: 8
@@ -2411,14 +2410,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &198731637
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198731634}
-  m_Enabled: 1
 --- !u!20 &198731638
 Camera:
   m_ObjectHideFlags: 0
@@ -3396,6 +3387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 276940511}
   - component: {fileID: 276940510}
+  - component: {fileID: 276940512}
   m_Layer: 0
   m_Name: BGMPlayer
   m_TagString: Untagged
@@ -3514,6 +3506,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &276940512
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276940509}
+  m_Enabled: 1
 --- !u!1001 &277036041
 PrefabInstance:
   m_ObjectHideFlags: 0
