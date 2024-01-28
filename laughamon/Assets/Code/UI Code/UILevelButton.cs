@@ -71,7 +71,7 @@ public class UILevelButton : MonoBehaviour
 
         if (state == State.Defeated)
         {
-            deadAnimator.PlayAnimation(AnimationKey.Death1);
+            deadAnimator.PlayDeath();
         }
     }
 
