@@ -306,6 +306,7 @@ MonoBehaviour:
   MaxLevel: 3
   EnemyProfiles:
   - {fileID: 11400000, guid: af6484324d70f954b89daa7639230db8, type: 2}
+  - {fileID: 11400000, guid: fa25832bc8cd2364283a570099708a5b, type: 2}
 --- !u!4 &199283713
 Transform:
   m_ObjectHideFlags: 0

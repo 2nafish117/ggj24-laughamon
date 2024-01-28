@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72385017e249b640a365f75c589a3f3, type: 3}
+  m_Name: EnemyProfile Tentaclemon
+  m_EditorClassIdentifier: 
+  Name: Tentaclemon
+  Prefab: {fileID: 8561303538410986300, guid: fe0e9f4d30a3aa8458d0d8a357916f1d, type: 3}
+  MaxHealth: 150
+  ProfilePicture: {fileID: 0}
+  AbilityEffectiveness:
+  - Effectiveness: 0
+    Reactions:
+    - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
+  Inventory:
+  - {fileID: 11400000, guid: e8a24a6d284704d49a7d4a239849cdc2, type: 2}
+  - {fileID: 11400000, guid: 45ab0a20f4a8902409b2860ba59440d5, type: 2}
