@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Tentamon
   Prefab: {fileID: 8561303538410986300, guid: fe0e9f4d30a3aa8458d0d8a357916f1d, type: 3}
-  MaxHealth: 150
+  MaxHealth: 110
   ProfilePicture: {fileID: 0}
   AbilityEffectiveness:
   - Effectiveness: 0

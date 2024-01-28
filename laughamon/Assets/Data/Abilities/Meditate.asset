@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: Meditate
   m_EditorClassIdentifier: 
-  LaughPoint: -25
+  LaughPoint: -20
   IsSelfTargeting: 1
   AbilityIcon: {fileID: 0}
   ShopCost: 0
@@ -42,11 +42,8 @@ MonoBehaviour:
     SourceAbility: {fileID: 0}
   MultiHits: 0
   IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  JokeDataArray: []
+  JokeReaction: 0
+  JokeReactionDelay: 0
+  JokeFailedText: 
   ExecutionTime: 3

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Suzannemon
   Prefab: {fileID: 1983718808703900365, guid: d0bb04cae49c5824a93879083d4a7025, type: 3}
-  MaxHealth: 100
+  MaxHealth: 75
   ProfilePicture: {fileID: 0}
   AbilityEffectiveness:
   - Effectiveness: 0

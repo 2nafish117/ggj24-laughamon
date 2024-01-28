@@ -55,8 +55,9 @@ MonoBehaviour:
     - Clown Around
     - OOGA BOOGA NO SPEAK ENGLISH
     - Can I Ball?
-    CorrectReaction: You were unaffected! It's not funny if you know the answer.
+    CorrectReaction: You knew the correct answer and were unaffected by the attack!
     WrongReaction: Wrong Answer! You cringed hard enough to sustain mental damage!
   JokeReaction: 8
   JokeReactionDelay: 1
+  JokeFailedText: 
   ExecutionTime: 3

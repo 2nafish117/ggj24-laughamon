@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Brickmon
   Prefab: {fileID: 4235323617038930953, guid: e724f9b2a2c33f94689b8b08360e10b4, type: 3}
-  MaxHealth: 200
+  MaxHealth: 160
   ProfilePicture: {fileID: 0}
   AbilityEffectiveness:
   - Effectiveness: 0

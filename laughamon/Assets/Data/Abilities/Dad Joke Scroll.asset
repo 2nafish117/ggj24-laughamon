@@ -18,7 +18,7 @@ MonoBehaviour:
   ShopCost: 0
   SuccessChance: 1
   damageType: 1
-  AnimationKey: 5
+  AnimationKey: 20
   TargetReact: 1
   TargetAnimationKey: 8
   TargetAnimationDelay: 2
@@ -35,7 +35,10 @@ MonoBehaviour:
     Reactions:
     - '[enemy] barely reacted. It''s not funny if you''ve heard it before.'
     - '[enemy] was confused. The joke went right over their head.'
-  ReactionMultipliers: []
+  ReactionMultipliers:
+  - Effectiveness: 0
+    Multiplier:
+    - 2
   DOTs: []
   CombatEffects: []
   HasDamageModifier: 0
@@ -60,5 +63,5 @@ MonoBehaviour:
     WrongReaction: That...makes no sense. No laughs dealt!
   JokeReaction: 8
   JokeReactionDelay: 1
-  JokeFailedText: But [enemy] was too dense to get the joke!
+  JokeFailedText: 
   ExecutionTime: 3
