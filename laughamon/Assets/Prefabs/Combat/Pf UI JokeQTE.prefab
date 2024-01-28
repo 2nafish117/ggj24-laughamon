@@ -974,7 +974,9 @@ MonoBehaviour:
   timerFill: {fileID: 7165456609387883664}
   optionPanel: {fileID: 2052062022285210387}
   successMessage: {fileID: 1506666933771835811}
+  successText: {fileID: 7937059792570038407}
   failureMessage: {fileID: 8059933464707182672}
+  failureText: {fileID: 9185752749188147159}
   resultPanel: {fileID: 1388262355857412606}
 --- !u!1 &4757571360865864356
 GameObject:

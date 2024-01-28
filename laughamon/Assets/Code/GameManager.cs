@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
         LevelIndex = Mathf.Min(MaxLevel, Mathf.Max(LevelIndex++, 0));
 
         OnCurrentLevelChanged(LevelIndex);
-        ShowMenu();
     }
 
     public void StartCombatAtLevel(int levelIndex)

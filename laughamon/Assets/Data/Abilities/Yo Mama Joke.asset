@@ -25,9 +25,7 @@ MonoBehaviour:
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: 'Yo Mama Joke was used on you.
-
-    Ger Ready to Defend Yo Mana.'
+  UsageText: Yo Mama Joke was used.
   Reactions: []
   ReactionMultipliers: []
   DOTs: []

@@ -27,7 +27,13 @@ public class UIJokePanel : MonoBehaviour
     private GameObject successMessage;
 
     [SerializeField]
+    private TextMeshProUGUI successText;
+
+    [SerializeField]
     private GameObject failureMessage;
+
+    [SerializeField]
+    private TextMeshProUGUI failureText;
 
     [SerializeField]
     private GameObject resultPanel;
@@ -44,6 +50,9 @@ public class UIJokePanel : MonoBehaviour
         success = false;
 
         jokeStartText.SetText(jokeData.JokeStart);
+        successText.SetText(jokeData.CorrectReaction);
+        failureText.SetText(jokeData.WrongReaction);
+
         List<string> allOptions = new List<string>(jokeData.WrongAnswers)
         {
             jokeData.CorrectAnswer

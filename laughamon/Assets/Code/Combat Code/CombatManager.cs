@@ -75,11 +75,6 @@ public class CombatManager : MonoBehaviour
         bool playerVictory = AIController.Instance.LaughterPoints.IsDead;
         Announcer.Instance.Say(playerVictory ? "You Won!" : "You Lost..", 5f);
         CombatHUDManager.Instance.ShowCombatEndScreen(playerVictory);
-        DOVirtual.DelayedCall(5f, ShowLevelScreen);
-    }
-
-    private void ShowLevelScreen()
-    {
         GameManager.Instance.OnCombatFinished(AIController.Instance.LaughterPoints.IsDead);
     }
 }
