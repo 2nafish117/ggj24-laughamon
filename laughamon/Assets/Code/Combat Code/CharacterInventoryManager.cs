@@ -11,8 +11,14 @@ public class CharacterInventoryManager : MonoBehaviour
     public List<Ability> Equipped;
     public event Action<Ability, bool> OnAbilityChanged;
 
-    public void Init(List<Ability> startingAbilities)
+    public void Init(List<Ability> startingAbilities, bool clear = false)
     {
+        if (clear)
+        {
+            Inventory.Clear();
+            Equipped.Clear();
+        }
+
         Inventory.AddRange(startingAbilities);
     }
 

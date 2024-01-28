@@ -46,10 +46,15 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     public virtual void Init(CharacterProfile profile)
     {
         CharacterProfile = profile;
+
         AnimationController = SpawnCharacter(profile.Prefab);
+        AnimationController.StopDance();
+
         LaughterPoints.Init(CharacterProfile.MaxHealth);
-        InventoryManager.Init(CharacterProfile.Inventory);
+
+        InventoryManager.Init(CharacterProfile.Inventory, true);
         InventoryManager.EquipDefaults();
+
         ActionExecuter.Init(InventoryManager);
         EffectHandler.Init(this);
         AnimationController.Init();
