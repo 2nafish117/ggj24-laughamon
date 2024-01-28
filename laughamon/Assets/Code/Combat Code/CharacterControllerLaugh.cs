@@ -40,6 +40,8 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         Buffs.Clear();
         AbilityQueue.Clear();
         AnimationController.PlayAnimation(AnimationKey.IdleLoop);
+        ActiveDamageModifiers = null;
+        MultiHits = 0;
         Init(CharacterProfile);
     }
 
