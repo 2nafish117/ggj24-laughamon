@@ -230,7 +230,7 @@ public class CharacterAnimationController : MonoBehaviour
         if (deathKeys.Count == 0)
             return;
 
-        PlayAnimation(danceKeys.GetRandom(out _));
+        PlayAnimation(deathKeys.GetRandom(out _));
     }
 
     Coroutine danceRoutine;

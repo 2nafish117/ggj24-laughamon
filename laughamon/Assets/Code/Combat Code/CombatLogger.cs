@@ -58,6 +58,14 @@ public class CombatLogger : MonoBehaviour
         textDisplayHelper.onFinishedScrollingText += ShowBlinkingArrow;
     }
 
+    private void OnDisable()
+    {
+        PlayerInput.OnProgressPrompt -= ProgressLog;
+        textDisplayHelper.onFinishedScrollingText -= ShowBlinkingArrow;
+        StopAllCoroutines();
+        ActiveLogDisplayCoroutine = null;
+    }
+
     public void AddLog(string rawString, float minDelay = 0f)
     {
         List<string> loglines = ParseRawStringToLogs(rawString);
