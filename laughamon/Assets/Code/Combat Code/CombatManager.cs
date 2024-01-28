@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatManager : MonoBehaviour
@@ -15,6 +16,9 @@ public class CombatManager : MonoBehaviour
 
     [field: SerializeField]
     public bool IsPlayerTurn { get; private set; }
+
+    [SerializeField]
+    private Transform VfxRoot;
 
     private void Awake()
     {
@@ -77,4 +81,11 @@ public class CombatManager : MonoBehaviour
         CombatHUDManager.Instance.ShowCombatEndScreen(playerVictory);
         GameManager.Instance.OnCombatFinished(playerVictory);
     }
+
+    public GameObject SpawnVFX(GameObject prefab)
+    {
+        return Instantiate(prefab, VfxRoot);
+    }
+
+
 }
