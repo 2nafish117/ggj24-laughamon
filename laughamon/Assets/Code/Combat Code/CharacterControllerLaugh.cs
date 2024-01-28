@@ -129,7 +129,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     public void OnDead()
     {
-        AnimationController.PlayAnimation(AnimationKey.Death1);
+        AnimationController.PlayDeath();
         CombatManager.Instance.EndCombat();
     }
 

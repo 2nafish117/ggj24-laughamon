@@ -209,7 +209,7 @@ public class CharacterAnimationController : MonoBehaviour
         PlayAnimation(healKeys.GetRandom(out _));
     }
 
-    public void PlayerHitReaction()
+    public void PlayHitReaction()
     {
         if (attackReaction.Count == 0)
             return;

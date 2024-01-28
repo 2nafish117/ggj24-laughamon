@@ -235,12 +235,12 @@ public class DamageModifiers
         target.LaughterPoints.Laugh(reflectedDamage);
         if (reflectedDamage > 0)
         {
-            source.AnimationController.PlayAnimation(AnimationKey.TakeDamage1);
+            source.AnimationController.PlayHitReaction();
             //TODO : Add reflected damage combat log;
         }
         else
         {
-            source.AnimationController.PlayAnimation(AnimationKey.Heal);
+            source.AnimationController.PlayHeal();
             //TODO : Add reflected heal combat log;
         }
 
@@ -248,12 +248,12 @@ public class DamageModifiers
         source.LaughterPoints.Laugh(reducedDamage);
         if (reducedDamage > 0)
         {
-            target.AnimationController.PlayAnimation(AnimationKey.TakeDamage1);
+            target.AnimationController.PlayHitReaction();
             //TODO : Add reduced damage combat log;
         }
         else
         {
-            target.AnimationController.PlayAnimation(AnimationKey.Heal);
+            target.AnimationController.PlayHeal();
             //TODO : Add amped damage combat log;
         }
     }
@@ -262,7 +262,7 @@ public class DamageModifiers
 [System.Serializable]
 public class JokeData
 {
-    public float AnswerTime=4f;
+    public float AnswerTime = 4f;
     public string JokeStart;
     public string CorrectAnswer;
     public string[] WrongAnswers;
