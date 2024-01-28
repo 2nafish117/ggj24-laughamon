@@ -3405,7 +3405,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5376d75e5f208bf44856f2536a125e2e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -20925,9 +20925,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Created at Global Game Jam 2024\n-By-\n[Player], [Player], [Player], \n[Player],
-    [Player], \n-With Support Of-\n[Source], [Source], [Source], [Source], \n[Source],
-    [Source], [Source], "
+  m_text: "Created at Global Game Jam 2024\n-By-\nSurya, Aditya, Kuldeep, \nShashank,
+    Neha\n-With Support Of-\nBrian Markowitz, Peritunes,\nEmacArt"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

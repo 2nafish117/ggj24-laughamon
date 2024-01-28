@@ -39,16 +39,22 @@ public enum AnimationKey
     Taunt2,
     Taunt3,
 
-	Meditate1,
-	Meditate2,
+    Meditate1,
+    Meditate2,
 
-	NumKeys
+    NumKeys
 }
 
 public class CharacterAnimationController : MonoBehaviour
 {
     [SerializeField]
     private Animator animator;
+
+    [SerializeField]
+    private VfxContainer vfxContainer;
+
+    [SerializeField]
+    private AudioContainer audioContainer;
 
     [Header("Keys")]
     [SerializeField]
@@ -67,7 +73,7 @@ public class CharacterAnimationController : MonoBehaviour
 
     private void Start()
     {
-        if(danceByDefault)
+        if (danceByDefault)
         {
             LoopDance();
         }
@@ -88,15 +94,18 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
             case AnimationKey.DefenseLoop:
                 animator.SetTrigger("idle_defense");
+                vfxContainer.PlayPowerUp(transform.position);
                 break;
             case AnimationKey.IdleTwitch1:
                 animator.SetTrigger("idle_twitch1");
                 break;
             case AnimationKey.Heal:
                 animator.SetTrigger("heal");
+                vfxContainer.PlayPowerUp(transform.position);
                 break;
             case AnimationKey.ListenMusic:
                 animator.SetTrigger("listen_music");
+                vfxContainer.PlayPowerUp(transform.position);
                 break;
             case AnimationKey.DumbDance1:
                 animator.SetTrigger("dumb_dance1");
@@ -109,9 +118,13 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
             case AnimationKey.Laughing1:
                 animator.SetTrigger("laughing1");
+                vfxContainer.PlayLaugh(transform.position);
+                audioContainer.PlayLaugh();
                 break;
             case AnimationKey.Laughing2:
                 animator.SetTrigger("laughing2");
+                vfxContainer.PlayLaugh(transform.position);
+                audioContainer.PlayLaugh();
                 break;
             case AnimationKey.Death1:
                 animator.SetTrigger("death1");
@@ -121,15 +134,19 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
             case AnimationKey.TakeHotSauceDamage:
                 animator.SetTrigger("hot_sauce_damage");
+                vfxContainer.PlayFire(transform.position);
+                audioContainer.PlayHotSauceScreech();
                 break;
             case AnimationKey.TakeDamage1:
                 animator.SetTrigger("damage1");
+                vfxContainer.PlayLaugh(transform.position);
                 break;
             //case AnimationKey.TakeDamage2:
             //	animator.SetTrigger("damage2");
             //	break;
             case AnimationKey.TakeTickleDamage:
                 animator.SetTrigger("take_tickle_damage");
+                vfxContainer.PlayLaugh(transform.position);
                 break;
 
             case AnimationKey.Break4thWall1:
@@ -149,19 +166,24 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
             case AnimationKey.Taunt1:
                 animator.SetTrigger("taunt1");
+                audioContainer.PlayKabaali();
                 break;
             case AnimationKey.Taunt2:
                 animator.SetTrigger("taunt2");
+                audioContainer.PlayKabaali();
                 break;
             case AnimationKey.Taunt3:
                 animator.SetTrigger("taunt3");
+                audioContainer.PlayKabaali();
                 break;
-			case AnimationKey.Meditate1:
-				animator.SetTrigger("meditate1");
-				break;
-			case AnimationKey.Meditate2:
-				animator.SetTrigger("meditate2");
-				break;
+            case AnimationKey.Meditate1:
+                animator.SetTrigger("meditate1");
+                vfxContainer.PlayPowerUp(transform.position);
+                break;
+            case AnimationKey.Meditate2:
+                animator.SetTrigger("meditate2");
+                vfxContainer.PlayPowerUp(transform.position);
+                break;
             default:
                 Debug.Assert(false, "BRUH");
                 break;

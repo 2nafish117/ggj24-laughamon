@@ -3,7 +3,11 @@ guid: 92d9d2468bd0b964cbcd502b49ab996c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - animator: {instanceID: 0}
+  - vfxContainer: {fileID: 11400000, guid: 4f9440613615aa94c98eee9fe142b192, type: 2}
+  - characterPrefab: {instanceID: 0}
+  - debugContainer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
