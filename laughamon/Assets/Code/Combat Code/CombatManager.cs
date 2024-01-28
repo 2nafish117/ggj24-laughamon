@@ -82,10 +82,10 @@ public class CombatManager : MonoBehaviour
         GameManager.Instance.OnCombatFinished(playerVictory);
     }
 
-    public GameObject SpawnVFX(GameObject prefab)
+    public GameObject SpawnVFX(GameObject prefab, Vector3 worldPos)
     {
-        return Instantiate(prefab, VfxRoot);
+        var pos = worldPos + prefab.transform.position;
+        return Instantiate(prefab, pos, prefab.transform.rotation, VfxRoot);
     }
-
 
 }

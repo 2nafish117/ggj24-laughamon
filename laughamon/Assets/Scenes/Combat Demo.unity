@@ -581,7 +581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &473623393
 Transform:
   m_ObjectHideFlags: 0
@@ -2112,6 +2112,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2521440136743214040, guid: d0a2649d27c2df047b89139b57568169, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12.799988
+      objectReference: {fileID: 0}
     - target: {fileID: 2537485898158129800, guid: d0a2649d27c2df047b89139b57568169, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2470,6 +2474,10 @@ PrefabInstance:
     - target: {fileID: 1387885154331386170, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
       propertyPath: m_Name
       value: Pf LevelArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387885154331386170, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1844731881980501562, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
       propertyPath: m_Materials.Array.data[0]

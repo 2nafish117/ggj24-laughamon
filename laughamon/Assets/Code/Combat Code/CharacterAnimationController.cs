@@ -50,6 +50,9 @@ public class CharacterAnimationController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private VfxContainer vfxContainer;
+
     [Header("Keys")]
     [SerializeField]
     private List<AnimationKey> danceKeys;
@@ -88,15 +91,18 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
             case AnimationKey.DefenseLoop:
                 animator.SetTrigger("idle_defense");
+                vfxContainer.PlayPowerUp(transform.position);
                 break;
             case AnimationKey.IdleTwitch1:
                 animator.SetTrigger("idle_twitch1");
                 break;
             case AnimationKey.Heal:
                 animator.SetTrigger("heal");
+                vfxContainer.PlayPowerUp(transform.position);
                 break;
             case AnimationKey.ListenMusic:
                 animator.SetTrigger("listen_music");
+                vfxContainer.PlayPowerUp(transform.position);
                 break;
             case AnimationKey.DumbDance1:
                 animator.SetTrigger("dumb_dance1");
@@ -109,9 +115,11 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
             case AnimationKey.Laughing1:
                 animator.SetTrigger("laughing1");
+                vfxContainer.PlayLaugh(transform.position);
                 break;
             case AnimationKey.Laughing2:
                 animator.SetTrigger("laughing2");
+                vfxContainer.PlayLaugh(transform.position);
                 break;
             case AnimationKey.Death1:
                 animator.SetTrigger("death1");
@@ -121,15 +129,18 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
             case AnimationKey.TakeHotSauceDamage:
                 animator.SetTrigger("hot_sauce_damage");
+                vfxContainer.PlayFire(transform.position);
                 break;
             case AnimationKey.TakeDamage1:
                 animator.SetTrigger("damage1");
+                vfxContainer.PlayLaugh(transform.position);
                 break;
             //case AnimationKey.TakeDamage2:
             //	animator.SetTrigger("damage2");
             //	break;
             case AnimationKey.TakeTickleDamage:
                 animator.SetTrigger("take_tickle_damage");
+                vfxContainer.PlayLaugh(transform.position);
                 break;
 
             case AnimationKey.Break4thWall1:
@@ -158,10 +169,12 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
 			case AnimationKey.Meditate1:
 				animator.SetTrigger("meditate1");
-				break;
+                vfxContainer.PlayPowerUp(transform.position);
+                break;
 			case AnimationKey.Meditate2:
 				animator.SetTrigger("meditate2");
-				break;
+                vfxContainer.PlayPowerUp(transform.position);
+                break;
             default:
                 Debug.Assert(false, "BRUH");
                 break;
