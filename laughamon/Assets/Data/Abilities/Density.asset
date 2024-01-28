@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: Density
   m_EditorClassIdentifier: 
-  LaughPoint: 0
+  LaughPoint: -15
   IsSelfTargeting: 1
   AbilityIcon: {fileID: 0}
   ShopCost: 0
@@ -26,7 +26,8 @@ MonoBehaviour:
   ChargeAbility: {fileID: 0}
   BuffsList:
   - {fileID: 11400000, guid: 2a44618c3bdd9c446813185b0f8e51bf, type: 2}
-  UsageText: '[enemy] compressed his body and became extremely dense!'
+  UsageText: '[enemy] compressed his body and became extremely dense! Humour cannot
+    penetrate him!'
   Reactions: []
   ReactionMultipliers: []
   DOTs: []
@@ -40,11 +41,8 @@ MonoBehaviour:
     SourceAbility: {fileID: 0}
   MultiHits: 0
   IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  JokeDataArray: []
+  JokeReaction: 0
+  JokeReactionDelay: 0
+  JokeFailedText: 
   ExecutionTime: 3

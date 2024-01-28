@@ -32,18 +32,15 @@ MonoBehaviour:
   CombatEffects: []
   HasDamageModifier: 1
   DamageModifiers:
-    DamageBlockMultiplier: 0.5
+    DamageBlockMultiplier: 0
     DamageBlockInstance: 1
     DamageReflectMultiplier: 1
     DamageReflectInstance: 1
     SourceAbility: {fileID: 0}
   MultiHits: 0
   IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  JokeDataArray: []
+  JokeReaction: 0
+  JokeReactionDelay: 0
+  JokeFailedText: 
   ExecutionTime: 3

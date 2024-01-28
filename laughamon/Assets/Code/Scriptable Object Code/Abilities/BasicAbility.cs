@@ -18,11 +18,23 @@ public class BasicAbility : Ability, IJokeResultHandler
         if (IsAJoke)
         {
             CombatLogger.Instance.AddLog(UsageText);
-            currentJoke = JokeDataArray[Random.Range(0, JokeDataArray.Length)];
 
-            CombatLogger.OnLogEmptied += ShowJoke;
+            Buff targetDefensiveBuff = target.GetDefensiveBuff(DamageType.Joke);
 
-            return;
+            if(targetDefensiveBuff != null)
+            {
+                CombatLogger.Instance.AddLog(JokeFailedText);
+                HandleJokeResult(false);
+                return;
+            }
+            else
+            {
+                currentJoke = JokeDataArray[Random.Range(0, JokeDataArray.Length)];
+
+                CombatLogger.OnLogEmptied += ShowJoke;
+
+                return;
+            }
         }
 
         CombatLogger.Instance.AddLog(UsageText);
@@ -145,11 +157,11 @@ public class BasicAbility : Ability, IJokeResultHandler
     {
         if (success)
         {
-            StartAbilityExecution();
+            //StartAbilityExecution();
         }
         else
         {
-            ExecuteFailed();
+            //ExecuteFailed();
         }
 
         switch (CombatManager.Instance.IsPlayerTurn, success)
@@ -157,15 +169,20 @@ public class BasicAbility : Ability, IJokeResultHandler
             case (true, true):
                 ApplyLaugh();
                 JokeReactionCall();
-                return;
+                break;
 
             case (false, true):
                 //ApplyLaugh();
-                return;
+                DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
+                break;
 
-            case (false, false):
+            case(false, false):
                 ApplyLaugh();
-                return;
+                break;
+
+            case(true, false):
+                DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
+                break;
         }
     }
 

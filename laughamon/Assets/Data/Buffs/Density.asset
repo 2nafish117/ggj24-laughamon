@@ -15,7 +15,7 @@ MonoBehaviour:
   damageType: 1
   value: 60
   buffType: 1
-  turnsLeft: 1
+  turnsLeft: 2
   Reactions:
   - Effectiveness: 0
     Reactions:

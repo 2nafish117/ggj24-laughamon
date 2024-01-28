@@ -52,6 +52,7 @@ public abstract class Ability : ScriptableObject
     public JokeData[] JokeDataArray;
     public AnimationKey JokeReaction;
     public float JokeReactionDelay;
+    public string JokeFailedText;
 
     public void ExecuteAbility(CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
