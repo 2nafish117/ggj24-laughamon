@@ -46,6 +46,10 @@ public abstract class Ability : ScriptableObject
     [Range(0, 5)]
     public int MultiHits;
 
+    [Header("Joke Ability")]
+    public bool IsAJoke;
+    public JokeData JokeData;
+
     public void ExecuteAbility(CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
         this.executionHandler = executionHandler;
@@ -253,6 +257,21 @@ public class DamageModifiers
             //TODO : Add amped damage combat log;
         }
     }
+}
+
+[System.Serializable]
+public class JokeData
+{
+    public float AnswerTime=4f;
+    public string JokeStart;
+    public string CorrectAnswer;
+    public string[] WrongAnswers;
+    public string CorrectReaction;
+    public string WrongReaction;
+
+    public bool IsCorrectAnswer(string answer) => CorrectAnswer.Equals(answer);
+
+    public string FullJoke => JokeStart + " " + CorrectAnswer;
 }
 
 [System.Serializable]

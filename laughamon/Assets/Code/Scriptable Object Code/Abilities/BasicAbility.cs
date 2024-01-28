@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Linq;
 
 [CreateAssetMenu(fileName = "Ability", menuName = "Custom/Ability")]
-public class BasicAbility : Ability
+public class BasicAbility : Ability, IJokeResultHandler
 {
     [Header("Animation Delays")]
     public float ExecutionTime = 3f;
@@ -11,6 +11,13 @@ public class BasicAbility : Ability
     public override void ExecuteSucceeded()
     {
         //Announcer.Instance.Say($"{source.name} used an ability on {target.name}", 2f);
+
+        if (IsAJoke)
+        {
+            CombatHUDManager.Instance.ShowJokeQTE(JokeData, this);
+            return;
+        }
+
         StartAbilityExecution();
         if (!IsSelfTargeting)
         {
@@ -104,7 +111,6 @@ public class BasicAbility : Ability
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
     }
 
-
     private void ApplyToSelf()
     {
         CombatLogger.Instance.AddLog(UsageText);
@@ -118,5 +124,32 @@ public class BasicAbility : Ability
     {
         StartAbilityExecution();
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
+    }
+
+    public void HandleJokeResult(bool success)
+    {
+        if (success)
+        {
+            StartAbilityExecution();
+        }
+        else
+        {
+            ExecuteFailed();
+        }
+
+        switch (CombatManager.Instance.IsPlayerTurn, success)
+        {
+            case (true, true):
+                ApplyLaugh();
+                return;
+
+            case (false, true):
+                ApplyLaugh();
+                return;
+
+            case (false, false):
+                ApplyLaugh();
+                return;
+        }
     }
 }
