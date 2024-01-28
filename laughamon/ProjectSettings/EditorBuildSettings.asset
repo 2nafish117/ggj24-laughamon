@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/EmaceArt/EmaceArt_LavaPlant/Scene/EmaceArt_LavaScene.unity
     guid: 0bed5165b0803d645bb237c4db149cd7
   - enabled: 1
-    path: Assets/EmaceArt/Swamp_Remaster_2021/Scenes/ForsetDemo.unity
+    path: Assets/EmaceArt/Swamp_Remaster_2021/Scenes/ForestDemo.unity
     guid: 3d9c5bdf759276d4ca2c4ff4247e3dfd
   m_configObjects: {}

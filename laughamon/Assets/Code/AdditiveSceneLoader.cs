@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,6 +27,33 @@ public class AdditiveSceneLoader : MonoBehaviour
         desertScene.UnLoadScene();
         lavaScene.UnLoadScene();
         forestScene.UnLoadScene();
+    }
+
+    public void LoadScene(string mapName)
+    {
+        if (desertScene.scene.Equals(mapName))
+        {
+            desertScene.LoadScene(combatContainer);
+            forestScene.UnLoadScene();
+            lavaScene.UnLoadScene();
+            return;
+        }
+
+        if (forestScene.scene.Equals(mapName))
+        {
+            forestScene.LoadScene(combatContainer);
+            desertScene.UnLoadScene();
+            lavaScene.UnLoadScene();
+            return;
+        }
+
+        if (lavaScene.scene.Equals(mapName))
+        {
+            lavaScene.LoadScene(combatContainer);
+            forestScene.UnLoadScene();
+            desertScene.UnLoadScene();
+            return;
+        }
     }
 }
 

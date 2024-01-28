@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class UILevelButton : MonoBehaviour
 {
     public int LevelIndex;
+    public string mapName;
 
     [SerializeField]
     private Transform activeState;
@@ -82,6 +83,6 @@ public class UILevelButton : MonoBehaviour
             return;
         }
 
-        GameManager.Instance.StartCombatAtLevel(LevelIndex);
+        GameManager.Instance.StartCombatAtLevel(LevelIndex,mapName);
     }
 }

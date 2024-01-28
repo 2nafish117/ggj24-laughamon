@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 250
-  m_AmbientSkyColor: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
+  m_AmbientSkyColor: {r: 0.6176962, g: 0.6176962, b: 0.6176962, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -835,7 +835,7 @@ MonoBehaviour:
   forestScene:
     position: {x: -37.23, y: 0.6, z: -43.69}
     rotation: {x: 0, y: 325, z: 0}
-    scene: ForsetDemo
+    scene: ForestDemo
 --- !u!4 &1864917894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7344766670358209516, guid: 2afb45926e639ab4eb80227f628b6c53, type: 3}
@@ -1193,22 +1193,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pf LevelArea
       objectReference: {fileID: 0}
-    - target: {fileID: 1387885154331386170, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752540908376441560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752540908376441560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886157333610228397, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2326836505024882307, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1248,22 +1232,6 @@ PrefabInstance:
     - target: {fileID: 2326836505024882307, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7372530583843670712, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 7372530583843670712, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 7569095844826804916, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 7569095844826804916, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.03
       objectReference: {fileID: 0}
     - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
