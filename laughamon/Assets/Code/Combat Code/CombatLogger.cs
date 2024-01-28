@@ -50,6 +50,19 @@ public class CombatLogger : MonoBehaviour
         logBuilder = new StringBuilder(32_762);
         //AddLog("Combat Started.");
         LogText.SetText("");
+
+        CombatManager.Instance.OnCombatStarted += ClearLog;
+    }
+
+    private void ClearLog()
+    {
+        logQueue.Clear();
+        if (ActiveLogDisplayCoroutine != null) 
+        {
+            StopCoroutine(ActiveLogDisplayCoroutine);
+            ActiveLogDisplayCoroutine = null;
+        }
+        textDisplayHelper.ClearText();
     }
 
     private void OnEnable()
