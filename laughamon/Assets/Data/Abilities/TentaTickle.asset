@@ -27,7 +27,7 @@ MonoBehaviour:
   BuffsList: []
   UsageText: '[enemy] used their ssslimy tentacles to tickle you in sensitive places.'
   Reactions:
-  - Effectiveness: 0
+  - Effectiveness: 6
     Reactions:
     - You scream for HR, but no one comes! Tickle damage!
     - There's no escape from those slippery suckers! You are forced to laugh!
@@ -53,11 +53,5 @@ MonoBehaviour:
     SourceAbility: {fileID: 0}
   MultiHits: 0
   IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  JokeDataArray: []
   ExecutionTime: 3

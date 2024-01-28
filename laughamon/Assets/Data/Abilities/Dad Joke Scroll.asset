@@ -25,8 +25,7 @@ MonoBehaviour:
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: "You read the ancient scroll aloud.\r\n\"Did you hear about the kidnapping
-    at school?\"\r\n\r \"It's ok, he woke up!\""
+  UsageText: You read the ancient scroll aloud.
   Reactions:
   - Effectiveness: 6
     Reactions:
@@ -47,12 +46,19 @@ MonoBehaviour:
     DamageReflectInstance: 0
     SourceAbility: {fileID: 0}
   MultiHits: 0
-  IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  IsAJoke: 1
+  JokeDataArray:
+  - AnswerTime: 10
+    JokeStart: Did you hear about the kidnapping at school?
+    FullJoke: Did you hear about the kidnapping at school? It's ok, he woke up.
+    CorrectAnswer: He woke up
+    WrongAnswers:
+    - That's awful
+    - School Rules
+    - Hear What?
+    CorrectReaction: Nice joke! You opponent is falling over laughing!
+    WrongReaction: That...makes no sense. No laughs dealt!
+  JokeReaction: 8
+  JokeReactionDelay: 1
+  JokeFailedText: But [enemy] was too dense to get the joke!
   ExecutionTime: 3

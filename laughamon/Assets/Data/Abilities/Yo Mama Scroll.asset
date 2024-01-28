@@ -25,7 +25,7 @@ MonoBehaviour:
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: Yo Mama Joke was used.
+  UsageText: 
   Reactions: []
   ReactionMultipliers: []
   DOTs: []
@@ -39,14 +39,5 @@ MonoBehaviour:
     SourceAbility: {fileID: 0}
   MultiHits: 0
   IsAJoke: 1
-  JokeData:
-    AnswerTime: 4
-    JokeStart: Yo momma is so fat when she got on the scale it said
-    CorrectAnswer: '"I need your weight not your phone number."'
-    WrongAnswers:
-    - '"The crapper breaks when she shits."'
-    - '"Her farts power rockets."'
-    - '"An elephant is lighter."'
-    CorrectReaction: Yo Mama So Proud of You
-    WrongReaction: You are fatter than Yo Mama
+  JokeDataArray: []
   ExecutionTime: 3

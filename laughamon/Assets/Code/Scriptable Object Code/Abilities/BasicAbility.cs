@@ -8,17 +8,37 @@ public class BasicAbility : Ability, IJokeResultHandler
     [Header("Animation Delays")]
     public float ExecutionTime = 3f;
 
+    private JokeData currentJoke; 
+
     public override void ExecuteSucceeded()
     {
         //Announcer.Instance.Say($"{source.name} used an ability on {target.name}", 2f);
+        StartAbilityExecution();
 
         if (IsAJoke)
         {
-            CombatHUDManager.Instance.ShowJokeQTE(JokeData, this);
-            return;
+            CombatLogger.Instance.AddLog(UsageText);
+
+            Buff targetDefensiveBuff = target.GetDefensiveBuff(DamageType.Joke);
+
+            if(targetDefensiveBuff != null)
+            {
+                CombatLogger.Instance.AddLog(JokeFailedText);
+                HandleJokeResult(false);
+                return;
+            }
+            else
+            {
+                currentJoke = JokeDataArray[Random.Range(0, JokeDataArray.Length)];
+
+                CombatLogger.OnLogEmptied += ShowJoke;
+
+                return;
+            }
         }
 
-        StartAbilityExecution();
+        CombatLogger.Instance.AddLog(UsageText);
+
         if (!IsSelfTargeting)
         {
             ApplyLaugh();
@@ -46,6 +66,12 @@ public class BasicAbility : Ability, IJokeResultHandler
         AddQueuedAbilities();
     }
 
+    private void ShowJoke()
+    {
+        CombatLogger.OnLogEmptied -= ShowJoke;
+        CombatHUDManager.Instance.ShowJokeQTE(currentJoke, this);
+    }
+
     private void AddQueuedAbilities()
     {
         for (int i = 0; i < ExtraTurns; i++)
@@ -70,8 +96,6 @@ public class BasicAbility : Ability, IJokeResultHandler
         }
 
         float damage = LaughPoint * multiplier;
-
-        CombatLogger.Instance.AddLog(UsageText);
 
         //Buff calculations
 
@@ -113,8 +137,6 @@ public class BasicAbility : Ability, IJokeResultHandler
 
     private void ApplyToSelf()
     {
-        CombatLogger.Instance.AddLog(UsageText);
-
         source.LaughterPoints.Laugh(LaughPoint);
 
         if (target.HasActiveDamageModifiers)
@@ -135,26 +157,37 @@ public class BasicAbility : Ability, IJokeResultHandler
     {
         if (success)
         {
-            StartAbilityExecution();
+            //StartAbilityExecution();
         }
         else
         {
-            ExecuteFailed();
+            //ExecuteFailed();
         }
 
         switch (CombatManager.Instance.IsPlayerTurn, success)
         {
             case (true, true):
                 ApplyLaugh();
-                return;
+                JokeReactionCall();
+                break;
 
             case (false, true):
-                ApplyLaugh();
-                return;
+                //ApplyLaugh();
+                DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
+                break;
 
-            case (false, false):
+            case(false, false):
                 ApplyLaugh();
-                return;
+                break;
+
+            case(true, false):
+                DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
+                break;
         }
+    }
+
+    private void JokeReactionCall()
+    {
+        DOVirtual.DelayedCall(JokeReactionDelay, TriggerTargetJokeAnimation);
     }
 }

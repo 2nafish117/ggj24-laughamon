@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Yo Mama Brick Scroll
+  m_Name: Octodad New Joke
   m_EditorClassIdentifier: 
-  LaughPoint: 50
+  LaughPoint: 40
   IsSelfTargeting: 0
   AbilityIcon: {fileID: 21300000, guid: 898abc7b0e1b28342b767673debc76b0, type: 3}
   ShopCost: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: '[enemy] read an ancient scroll aloud..."YO MAMA!"'
+  UsageText: '[enemy] read out the ancient scroll: "D''ad Joek"!'
   Reactions:
   - Effectiveness: 6
     Reactions:
@@ -48,15 +48,15 @@ MonoBehaviour:
   IsAJoke: 1
   JokeDataArray:
   - AnswerTime: 8
-    JokeStart: YO MAMA
-    FullJoke: YO MAMA
-    CorrectAnswer: SO NICE
+    JokeStart: Two cannibals are eating a clown. One says...
+    FullJoke: Two cannibals are eating a clown. One says..."Does this taste funny?"
+    CorrectAnswer: Taste Funny
     WrongAnswers:
-    - SO BIG
-    - SO WIDE
-    - SO FAT
-    CorrectReaction: THATS RIGHT YO MAMA NICE AS HELL YO. NO DAMAGE YO!
-    WrongReaction: HA YOU NO RESPECT YO MAMA YO, TAKE DAMAGE YO!
+    - Clown Around
+    - OOGA BOOGA NO SPEAK ENGLISH
+    - Can I Ball?
+    CorrectReaction: You were unaffected! It's not funny if you know the answer.
+    WrongReaction: Wrong Answer! You cringed hard enough to sustain mental damage!
   JokeReaction: 8
   JokeReactionDelay: 1
   ExecutionTime: 3
