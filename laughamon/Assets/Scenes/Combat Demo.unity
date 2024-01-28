@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLevel: 2
-  StartingLevelsUnlocked: 2
+  StartingLevelsUnlocked: 0
   EnemyProfiles:
   - {fileID: 11400000, guid: af6484324d70f954b89daa7639230db8, type: 2}
   - {fileID: 11400000, guid: fa25832bc8cd2364283a570099708a5b, type: 2}
