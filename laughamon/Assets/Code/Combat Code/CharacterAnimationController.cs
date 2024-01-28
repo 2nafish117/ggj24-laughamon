@@ -62,6 +62,17 @@ public class CharacterAnimationController : MonoBehaviour
     [SerializeField]
     private List<AnimationKey> deathKeys;
 
+    [SerializeField]
+    private bool danceByDefault;
+
+    private void Start()
+    {
+        if(danceByDefault)
+        {
+            LoopDance();
+        }
+    }
+
     //Set the default state in this function
     public void Init()
     {
