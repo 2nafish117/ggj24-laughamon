@@ -38,6 +38,11 @@ public class AudioManager : MonoBehaviour
         };
     }
 
+    public void StopBGM()
+    {
+        BGMPlayer.Stop();
+    }
+
     public void PlayBGM(AudioClip clip)
     {
         if (Tracks.Length == 0)

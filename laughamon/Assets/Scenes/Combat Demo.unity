@@ -271,8 +271,7 @@ Transform:
   m_LocalPosition: {x: -3.4, y: 6.6, z: -7.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1710949253}
+  m_Children: []
   m_Father: {fileID: 903842154}
   m_LocalEulerAnglesHint: {x: 20.804, y: 53.432, z: -1.621}
 --- !u!1001 &189571106
@@ -1241,7 +1240,8 @@ MonoBehaviour:
   - {fileID: 933220855}
   - {fileID: 1816247075}
   BGMPlayer: {fileID: 1603058826}
-  Tracks: []
+  Tracks:
+  - {fileID: 8300000, guid: 5376d75e5f208bf44856f2536a125e2e, type: 3}
 --- !u!81 &939473531
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1649,7 +1649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1603058825
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,7 +1675,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5376d75e5f208bf44856f2536a125e2e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1818,37 +1818,6 @@ MonoBehaviour:
     position: {x: -37.23, y: 0.6, z: -43.69}
     rotation: {x: 0, y: 325, z: 0}
     scene: ForestDemo
---- !u!1 &1710949252
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1710949253}
-  m_Layer: 0
-  m_Name: BattleMusic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1710949253
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710949252}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.16789675, y: -0.29949316, z: 0.06779424, w: 0.93675953}
-  m_LocalPosition: {x: 22.15065, y: -3.9826229, z: 8.93309}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 155699253}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1816247073
 PrefabInstance:
   m_ObjectHideFlags: 0
