@@ -35,6 +35,7 @@ public class CombatManager : MonoBehaviour
         AIController.Instance.Init(enemyProfile);
         CombatHUDManager.Instance.ShowStartScreen(PlayerController.Instance.CharacterProfile.Name, enemyProfile.Name);
         OnCombatPrep?.Invoke();
+        AudioManager.Instance.PlayBGM(0);
     }
 
     public void StartCombat()
@@ -80,12 +81,13 @@ public class CombatManager : MonoBehaviour
         Announcer.Instance.Say(playerVictory ? "You Won!" : "You Lost..", 5f);
         CombatHUDManager.Instance.ShowCombatEndScreen(playerVictory);
         GameManager.Instance.OnCombatFinished(playerVictory);
+        AudioManager.Instance.StopBGM();
     }
 
-    public GameObject SpawnVFX(GameObject prefab)
+    public GameObject SpawnVFX(GameObject prefab, Vector3 worldPos)
     {
-        return Instantiate(prefab, VfxRoot);
+        var pos = worldPos + prefab.transform.position;
+        return Instantiate(prefab, pos, prefab.transform.rotation, VfxRoot);
     }
-
 
 }
