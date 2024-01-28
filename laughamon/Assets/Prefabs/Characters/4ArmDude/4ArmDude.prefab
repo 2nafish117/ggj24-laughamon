@@ -499,6 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4471118566086097278}
   vfxContainer: {fileID: 11400000, guid: 4f9440613615aa94c98eee9fe142b192, type: 2}
+  audioContainer: {fileID: 11400000, guid: bc1c7d3a1d757184a9dc0b58623c3164, type: 2}
   danceKeys: 16000000
   attackReaction: 0e000000
   healKeys: 14000000
