@@ -44,7 +44,7 @@ public class AudioContainer : ScriptableObject
 
     public void PlayKabaali()
     {
-        AudioManager.Instance.PlayAudioClip(kabaali, false);
+        //AudioManager.Instance.PlayAudioClip(kabaali, false);
     }
 
     public void PlayLaugh()
