@@ -17,11 +17,6 @@ public class AdditiveSceneLoader : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        forestScene.LoadScene(combatContainer);
-    }
-
     public void UnloadAll()
     {
         desertScene.UnLoadScene();
