@@ -67,6 +67,14 @@ public class SceneData
 
     public void UnLoadScene()
     {
-        SceneManager.UnloadSceneAsync(scene);
+        var allScenes = SceneManager.sceneCount;
+        for (int i = 0; i < allScenes; i++)
+        {
+            if (SceneManager.GetSceneAt(i).name.Equals(scene))
+            {
+                SceneManager.UnloadSceneAsync(scene);
+                return;
+            }
+        }
     }
 }
