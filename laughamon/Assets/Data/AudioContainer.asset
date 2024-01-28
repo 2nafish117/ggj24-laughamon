@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2062757098ec2914fb495d5515bec060, type: 3}
+  m_Name: AudioContainer
+  m_EditorClassIdentifier: 
+  battleMusic1: {fileID: 8300000, guid: 07e2b15b7351b074f84b64766811dee9, type: 3}
+  battleMusic2: {fileID: 8300000, guid: 5376d75e5f208bf44856f2536a125e2e, type: 3}
+  evilLaugh: {fileID: 8300000, guid: 14cf6cce847a0694497f0cbad56bfba0, type: 3}
+  giggle: {fileID: 8300000, guid: b197f681f7922154bb6cd0cf03e8e399, type: 3}
+  hotSauceScreech: {fileID: 8300000, guid: 2e35bb221b0362f4d994ad0c8a5d83e3, type: 3}
+  kabaali: {fileID: 8300000, guid: bc4c38aab3b7dad48b60e081baf4c200, type: 3}
+  laugh1: {fileID: 8300000, guid: 47fa151b50d224643802f1be9e5e734e, type: 3}
+  laugh2: {fileID: 8300000, guid: b31dbcf8fce521b4c8bac5999ac59b7a, type: 3}
+  laugh3: {fileID: 8300000, guid: a51228f65b5864148881eb9b6544a5ac, type: 3}
+  mainMenu: {fileID: 8300000, guid: e66d6534e593c644a90bcc9c9f455983, type: 3}
