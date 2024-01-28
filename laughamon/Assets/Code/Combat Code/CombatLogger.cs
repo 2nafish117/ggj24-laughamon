@@ -12,8 +12,6 @@ public class CombatLogger : MonoBehaviour
 
     private Queue<LogLineInfo> logQueue = new Queue<LogLineInfo>();
 
-    private bool playerInputPrompted = false;
-
     Coroutine ActiveLogDisplayCoroutine = null;
 
     public static event System.Action OnLogProgressed;

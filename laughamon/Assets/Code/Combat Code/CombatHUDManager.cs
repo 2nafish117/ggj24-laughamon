@@ -29,6 +29,9 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     private UICombatResultScreen combatResultScreen;
 
     [SerializeField]
+    private UIJokePanel jokePanel;
+
+    [SerializeField]
     private Camera combatCamera;
 
     private void Awake()
@@ -146,5 +149,10 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     {
         combatCamera.gameObject.SetActive(active);
         gameObject.SetActive(active);
+    }
+
+    public void ShowJokeQTE(JokeData jokeData,IJokeResultHandler resultHandler)
+    {
+        jokePanel.SetJoke(jokeData, resultHandler);
     }
 }
