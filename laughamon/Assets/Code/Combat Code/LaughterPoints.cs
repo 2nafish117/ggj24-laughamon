@@ -38,5 +38,6 @@ public class LaughterPoints : MonoBehaviour
     public void Init(float maxHP)
     {
         maxLaughPoints = maxHP;
+        laughPoints = maxHP;
     }
 }

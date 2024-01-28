@@ -19,9 +19,6 @@ public class UILevelButton : MonoBehaviour
     [SerializeField]
     private GameObject buttonText;
 
-    [Space]
-    public List<AnimationKey> DanceKeys;
-
     public bool IsInteractable;
 
     [SerializeField]
@@ -65,7 +62,7 @@ public class UILevelButton : MonoBehaviour
 
         if (state == State.Unlocked)
         {
-            activeAnimator.LoopDance(DanceKeys);
+            activeAnimator.LoopDance();
         }
         else
         {
