@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
     public event Action<int> OnCurrentLevelChanged;
     public int LevelIndex { get; private set; }
     public int MaxLevel;
+    public int StartingLevelsUnlocked = 0;
 
     private void Awake()
     {
         Instance = this;
+        LevelIndex = StartingLevelsUnlocked;
     }
 
     public CharacterProfile[] EnemyProfiles;
