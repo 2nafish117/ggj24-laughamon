@@ -139,7 +139,7 @@ public class CombatHUDManager : MonoBehaviour, IAbilityExecutionHandler
     //    ShowPlayerControls(false);
     //}
 
-    internal void ShowCombatEndScreen(bool playerVictory)
+    public void ShowCombatEndScreen(bool playerVictory)
     {
         SetCombatElements(false);
         combatResultScreen.SetResult(playerVictory);

@@ -47,6 +47,18 @@ public class CharacterAnimationController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [Header("Keys")]
+    [SerializeField]
+    private List<AnimationKey> danceKeys;
+    [SerializeField]
+    private List<AnimationKey> attackReaction;
+    [SerializeField]
+    private List<AnimationKey> healKeys;
+    [SerializeField]
+    private List<AnimationKey> laughKeys;
+    [SerializeField]
+    private List<AnimationKey> deathKeys;
+
     //Set the default state in this function
     public void Init()
     {
@@ -139,7 +151,7 @@ public class CharacterAnimationController : MonoBehaviour
 
     #region debug
 
-
+    [Header("Testing")]
     [SerializeField]
     private GameObject characterPrefab;
 
@@ -181,16 +193,54 @@ public class CharacterAnimationController : MonoBehaviour
         animator.SetInteger(name, 0);
     }
 
-    private List<AnimationKey> danceKeys;
+    public void PlayDance()
+    {
+        if (danceKeys.Count == 0)
+            return;
+
+        PlayAnimation(danceKeys.GetRandom(out _));
+    }
+
+    public void PlayHeal()
+    {
+        if (healKeys.Count == 0)
+            return;
+
+        PlayAnimation(healKeys.GetRandom(out _));
+    }
+
+    public void PlayerHitReaction()
+    {
+        if (attackReaction.Count == 0)
+            return;
+
+        PlayAnimation(attackReaction.GetRandom(out _));
+    }
+
+    public void PlayLaugh()
+    {
+        if (laughKeys.Count == 0)
+            return;
+
+        PlayAnimation(laughKeys.GetRandom(out _));
+    }
+
+    public void PlayDeath()
+    {
+        if (deathKeys.Count == 0)
+            return;
+
+        PlayAnimation(danceKeys.GetRandom(out _));
+    }
+
     Coroutine danceRoutine;
-    public void LoopDance(List<AnimationKey> danceKeys)
+    public void LoopDance()
     {
         if (gameObject.activeSelf == false || gameObject.activeInHierarchy == false)
         {
             return;
         }
 
-        this.danceKeys = danceKeys;
         if (danceKeys.Count == 0)
         {
             PlayAnimation(AnimationKey.IdleLoop);

@@ -394,7 +394,7 @@ Transform:
   m_GameObject: {fileID: 2925374425280360006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1358,7 +1358,7 @@ Transform:
   m_GameObject: {fileID: 8561303538410986300}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1399,6 +1399,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2440346043043170847}
+  danceKeys: 00000000050000000600000007000000
+  attackReaction: 0e000000
+  healKeys: 14000000
+  laughKeys: 08000000
+  deathKeys: 0a0000000b000000
   characterPrefab: {fileID: 0}
   debugContainer: {fileID: 0}
   m_IntTrigger: 

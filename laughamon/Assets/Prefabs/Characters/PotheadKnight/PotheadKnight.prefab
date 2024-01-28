@@ -842,6 +842,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1457002342800958169}
+  danceKeys: 050000000600000007000000
+  attackReaction: 0d000000
+  healKeys: 0300000004000000
+  laughKeys: 0800000009000000
+  deathKeys: 0a0000000b000000
   characterPrefab: {fileID: 0}
   debugContainer: {fileID: 0}
   m_IntTrigger: 

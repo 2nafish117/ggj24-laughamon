@@ -23,11 +23,11 @@ public class UICombatResultScreen : MonoBehaviour
 
         if (playerVictory)
         {
-            PlayerController.Instance.AnimationController.LoopDance(new List<AnimationKey> { AnimationKey.DumbDance1 });
+            PlayerController.Instance.AnimationController.LoopDance();
         }
         else
         {
-            AIController.Instance.AnimationController.LoopDance(new List<AnimationKey> { AnimationKey.DumbDance1 });
+            AIController.Instance.AnimationController.LoopDance();
         }
 
         gameObject.SetActive(true);
