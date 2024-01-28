@@ -50,8 +50,9 @@ public class GameManager : MonoBehaviour
         OnCurrentLevelChanged(LevelIndex);
     }
 
-    public void StartCombatAtLevel(int levelIndex)
+    public void StartCombatAtLevel(int levelIndex,string mapName)
     {
+        AdditiveSceneLoader.Instance.LoadScene(mapName);
         StartCombat(levelIndex);
     }
 

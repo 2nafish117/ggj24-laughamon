@@ -62,7 +62,7 @@ public class CharacterAnimationController : MonoBehaviour
     //Set the default state in this function
     public void Init()
     {
-
+        PlayAnimation(AnimationKey.IdleLoop);
     }
 
     public void PlayAnimation(AnimationKey key)

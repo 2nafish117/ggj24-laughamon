@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class UILevelButton : MonoBehaviour
 {
     public int LevelIndex;
+    public string mapName;
 
     [SerializeField]
     private Transform activeState;
@@ -71,7 +72,7 @@ public class UILevelButton : MonoBehaviour
 
         if (state == State.Defeated)
         {
-            deadAnimator.PlayAnimation(AnimationKey.Death1);
+            deadAnimator.PlayDeath();
         }
     }
 
@@ -82,6 +83,6 @@ public class UILevelButton : MonoBehaviour
             return;
         }
 
-        GameManager.Instance.StartCombatAtLevel(LevelIndex);
+        GameManager.Instance.StartCombatAtLevel(LevelIndex,mapName);
     }
 }
