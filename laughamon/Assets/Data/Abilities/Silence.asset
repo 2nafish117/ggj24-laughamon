@@ -25,7 +25,7 @@ MonoBehaviour:
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: You used Silence,  as defense. You are  protected from Laughter.
+  UsageText: '[enemy] stayed strong and silent. He is content to do nothing.'
   Reactions: []
   ReactionMultipliers: []
   DOTs: []
@@ -37,4 +37,13 @@ MonoBehaviour:
     DamageReflectMultiplier: 1
     DamageReflectInstance: 1
     SourceAbility: {fileID: 0}
+  MultiHits: 0
+  IsAJoke: 0
+  JokeData:
+    AnswerTime: 4
+    JokeStart: 
+    CorrectAnswer: 
+    WrongAnswers: []
+    CorrectReaction: 
+    WrongReaction: 
   ExecutionTime: 3
