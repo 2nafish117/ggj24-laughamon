@@ -31,6 +31,7 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
     {
         Buffs.Clear();
         AbilityQueue.Clear();
+        AnimationController.StopDance();
         AnimationController.PlayAnimation(AnimationKey.IdleLoop);
         LaughterPoints.Init(CharacterProfile.MaxHealth);
     }
