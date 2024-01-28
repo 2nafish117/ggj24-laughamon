@@ -39,10 +39,10 @@ public enum AnimationKey
     Taunt2,
     Taunt3,
 
-	Meditate1,
-	Meditate2,
+    Meditate1,
+    Meditate2,
 
-	NumKeys
+    NumKeys
 }
 
 public class CharacterAnimationController : MonoBehaviour
@@ -52,6 +52,9 @@ public class CharacterAnimationController : MonoBehaviour
 
     [SerializeField]
     private VfxContainer vfxContainer;
+
+    [SerializeField]
+    private AudioContainer audioContainer;
 
     [Header("Keys")]
     [SerializeField]
@@ -70,7 +73,7 @@ public class CharacterAnimationController : MonoBehaviour
 
     private void Start()
     {
-        if(danceByDefault)
+        if (danceByDefault)
         {
             LoopDance();
         }
@@ -116,10 +119,12 @@ public class CharacterAnimationController : MonoBehaviour
             case AnimationKey.Laughing1:
                 animator.SetTrigger("laughing1");
                 vfxContainer.PlayLaugh(transform.position);
+                audioContainer.PlayLaugh();
                 break;
             case AnimationKey.Laughing2:
                 animator.SetTrigger("laughing2");
                 vfxContainer.PlayLaugh(transform.position);
+                audioContainer.PlayLaugh();
                 break;
             case AnimationKey.Death1:
                 animator.SetTrigger("death1");
@@ -130,6 +135,7 @@ public class CharacterAnimationController : MonoBehaviour
             case AnimationKey.TakeHotSauceDamage:
                 animator.SetTrigger("hot_sauce_damage");
                 vfxContainer.PlayFire(transform.position);
+                audioContainer.PlayHotSauceScreech();
                 break;
             case AnimationKey.TakeDamage1:
                 animator.SetTrigger("damage1");
@@ -160,19 +166,22 @@ public class CharacterAnimationController : MonoBehaviour
                 break;
             case AnimationKey.Taunt1:
                 animator.SetTrigger("taunt1");
+                audioContainer.PlayKabaali();
                 break;
             case AnimationKey.Taunt2:
                 animator.SetTrigger("taunt2");
+                audioContainer.PlayKabaali();
                 break;
             case AnimationKey.Taunt3:
                 animator.SetTrigger("taunt3");
+                audioContainer.PlayKabaali();
                 break;
-			case AnimationKey.Meditate1:
-				animator.SetTrigger("meditate1");
+            case AnimationKey.Meditate1:
+                animator.SetTrigger("meditate1");
                 vfxContainer.PlayPowerUp(transform.position);
                 break;
-			case AnimationKey.Meditate2:
-				animator.SetTrigger("meditate2");
+            case AnimationKey.Meditate2:
+                animator.SetTrigger("meditate2");
                 vfxContainer.PlayPowerUp(transform.position);
                 break;
             default:
