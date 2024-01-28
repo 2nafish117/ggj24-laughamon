@@ -18,7 +18,7 @@ MonoBehaviour:
   ShopCost: 0
   SuccessChance: 1
   damageType: 1
-  AnimationKey: 5
+  AnimationKey: 20
   TargetReact: 1
   TargetAnimationKey: 8
   TargetAnimationDelay: 2
