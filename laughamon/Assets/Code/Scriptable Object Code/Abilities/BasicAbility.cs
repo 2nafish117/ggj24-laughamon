@@ -14,7 +14,9 @@ public class BasicAbility : Ability, IJokeResultHandler
 
         if (IsAJoke)
         {
-            CombatHUDManager.Instance.ShowJokeQTE(JokeData, this);
+            JokeData joke = JokeDataArray[Random.Range(0, JokeDataArray.Length)];
+
+            CombatHUDManager.Instance.ShowJokeQTE(joke, this);
             return;
         }
 

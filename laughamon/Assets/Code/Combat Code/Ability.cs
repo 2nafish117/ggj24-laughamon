@@ -48,7 +48,8 @@ public abstract class Ability : ScriptableObject
 
     [Header("Joke Ability")]
     public bool IsAJoke;
-    public JokeData JokeData;
+    //public JokeData JokeData;
+    public JokeData[] JokeDataArray;
 
     public void ExecuteAbility(CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
@@ -263,15 +264,18 @@ public class DamageModifiers
 public class JokeData
 {
     public float AnswerTime = 4f;
+    [TextArea]
     public string JokeStart;
+    [TextArea]
+    public string FullJoke;
     public string CorrectAnswer;
     public string[] WrongAnswers;
+    [TextArea]
     public string CorrectReaction;
+    [TextArea]
     public string WrongReaction;
 
     public bool IsCorrectAnswer(string answer) => CorrectAnswer.Equals(answer);
-
-    public string FullJoke => JokeStart + " " + CorrectAnswer;
 }
 
 [System.Serializable]
