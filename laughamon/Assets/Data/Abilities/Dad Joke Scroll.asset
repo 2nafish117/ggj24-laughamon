@@ -61,6 +61,16 @@ MonoBehaviour:
     - Hear What?
     CorrectReaction: Nice joke! You opponent is falling over laughing!
     WrongReaction: That...makes no sense. No laughs dealt!
+  - AnswerTime: 10
+    JokeStart: Why did the Squirrel get sent to the asylum?
+    FullJoke: Why did the Squirrel get sent to the asylum? He was nuts!
+    CorrectAnswer: He's Nuts!
+    WrongAnswers:
+    - I dunno
+    - Ass lump
+    - Crazy
+    CorrectReaction: Nice joke! You opponent is falling over laughing!
+    WrongReaction: That...makes no sense. No laughs dealt!
   JokeReaction: 8
   JokeReactionDelay: 1
   JokeFailedText: 
