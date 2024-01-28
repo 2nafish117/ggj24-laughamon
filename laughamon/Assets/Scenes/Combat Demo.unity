@@ -1193,6 +1193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pf LevelArea
       objectReference: {fileID: 0}
+    - target: {fileID: 1844731881980501562, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2326836505024882307, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1233,15 +1237,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5164667505111772080, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1074440642}
+    - target: {fileID: 5164667505111772080, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164667505111772080, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIMainMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164667505111772080, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1074440642}
+    - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1074440642}
+    - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIMainMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170991472204376560, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8130575726345192328, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 510951418797726252, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0011a84839d2e2c41a687ad216acfa4a, type: 3}

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/EmaceArt/Swamp_Remaster_2021/Scenes/ForestDemo.unity
     guid: 3d9c5bdf759276d4ca2c4ff4247e3dfd
+  - enabled: 1
+    path: Assets/EmaceArt/EmaceArt - raft on the desert/Scenes/Desert_EndScene.unity
+    guid: c2a822e6124e8994696086a7259dd2e3
   m_configObjects: {}
