@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Dad Joke Scroll
+  m_Name: Dapper Dance
   m_EditorClassIdentifier: 
-  LaughPoint: 50
+  LaughPoint: 35
   IsSelfTargeting: 0
-  AbilityIcon: {fileID: 21300000, guid: 898abc7b0e1b28342b767673debc76b0, type: 3}
+  AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
-  damageType: 1
+  damageType: 2
   AnimationKey: 5
   TargetReact: 1
   TargetAnimationKey: 8
@@ -25,17 +25,16 @@ MonoBehaviour:
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: "You read the ancient scroll aloud.\r\n\"Did you hear about the kidnapping
-    at school?\"\r\n\r \"It's ok, he woke up!\""
+  UsageText: '[enemy] began to tap dance with its eight limbs. '
   Reactions:
   - Effectiveness: 6
     Reactions:
-    - '[enemy] cringed hard enough to damage its fragile mind!'
-    - '[enemy] laughed in horror at the hideous joke!'
+    - You found it hard to resist the squishy display of clumsiness. A laugh escaped
+      you!
   - Effectiveness: 1
     Reactions:
-    - '[enemy] barely reacted. It''s not funny if you''ve heard it before.'
-    - '[enemy] was confused. The joke went right over their head.'
+    - Seeing those sensuously moving limbs only made you nauseous. You've built up
+      resistance!
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []
