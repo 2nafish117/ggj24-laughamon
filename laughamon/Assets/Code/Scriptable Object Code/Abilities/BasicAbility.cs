@@ -19,22 +19,20 @@ public class BasicAbility : Ability, IJokeResultHandler
         {
             CombatLogger.Instance.AddLog(UsageText);
 
-            Buff targetDefensiveBuff = target.GetDefensiveBuff(DamageType.Joke);
+            //Buff targetDefensiveBuff = target.GetDefensiveBuff(DamageType.Joke);
 
-            if(targetDefensiveBuff != null)
-            {
-                CombatLogger.Instance.AddLog(JokeFailedText);
-                HandleJokeResult(false);
-                return;
-            }
-            else
-            {
-                currentJoke = JokeDataArray[Random.Range(0, JokeDataArray.Length)];
+            //if(targetDefensiveBuff != null)
+            //{
+            //    CombatLogger.Instance.AddLog(JokeFailedText);
+            //    HandleJokeResult(false);
+            //    return;
+            //}
 
-                CombatLogger.OnLogEmptied += ShowJoke;
+            currentJoke = JokeDataArray[Random.Range(0, JokeDataArray.Length)];
 
-                return;
-            }
+            CombatLogger.OnLogEmptied += ShowJoke;
+
+            return;
         }
 
         CombatLogger.Instance.AddLog(UsageText);

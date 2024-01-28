@@ -10,35 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Dad Joke Scroll
+  m_Name: Fortnite Dance
   m_EditorClassIdentifier: 
-  LaughPoint: 50
+  LaughPoint: 25
   IsSelfTargeting: 0
-  AbilityIcon: {fileID: 21300000, guid: 898abc7b0e1b28342b767673debc76b0, type: 3}
+  AbilityIcon: {fileID: 21300000, guid: 904cda13f96d80e4189f749687fb8081, type: 3}
   ShopCost: 0
   SuccessChance: 1
-  damageType: 1
-  AnimationKey: 20
+  damageType: 2
+  AnimationKey: 5
   TargetReact: 1
   TargetAnimationKey: 8
   TargetAnimationDelay: 2
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: You read the ancient scroll aloud.
+  UsageText: You showed off your moves to [enemy], wiggling your body seductively.
   Reactions:
   - Effectiveness: 6
     Reactions:
-    - '[enemy] cringed hard enough to damage its fragile mind!'
-    - '[enemy] laughed in horror at the hideous joke!'
+    - '[enemy] can''t stifle a burst of laughter looking at your barrel-body!'
   - Effectiveness: 1
     Reactions:
-    - '[enemy] barely reacted. It''s not funny if you''ve heard it before.'
-    - '[enemy] was confused. The joke went right over their head.'
+    - '[enemy] averted their eyes from the spectacle, and protected their vision!'
   ReactionMultipliers:
   - Effectiveness: 0
     Multiplier:
-    - 2
+    - 1.5
+  - Effectiveness: 1
+    Multiplier:
+    - 0.5
   DOTs: []
   CombatEffects: []
   HasDamageModifier: 0
@@ -49,19 +50,9 @@ MonoBehaviour:
     DamageReflectInstance: 0
     SourceAbility: {fileID: 0}
   MultiHits: 0
-  IsAJoke: 1
-  JokeDataArray:
-  - AnswerTime: 10
-    JokeStart: Did you hear about the kidnapping at school?
-    FullJoke: Did you hear about the kidnapping at school? It's ok, he woke up.
-    CorrectAnswer: He woke up
-    WrongAnswers:
-    - That's awful
-    - School Rules
-    - Hear What?
-    CorrectReaction: Nice joke! You opponent is falling over laughing!
-    WrongReaction: That...makes no sense. No laughs dealt!
-  JokeReaction: 8
-  JokeReactionDelay: 1
+  IsAJoke: 0
+  JokeDataArray: []
+  JokeReaction: 0
+  JokeReactionDelay: 0
   JokeFailedText: 
   ExecutionTime: 3
