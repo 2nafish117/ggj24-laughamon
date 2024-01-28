@@ -27,7 +27,7 @@ MonoBehaviour:
   BuffsList: []
   UsageText: You tickled [enemy]'s armpit with the feather.
   Reactions:
-  - Effectiveness: 0
+  - Effectiveness: 6
     Reactions:
     - '[enemy] squealed and giggled uncontrollably!'
     - '[enemy] begged you to stop in a high-pitched voice!'
@@ -53,11 +53,5 @@ MonoBehaviour:
     SourceAbility: {fileID: 0}
   MultiHits: 0
   IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  JokeDataArray: []
   ExecutionTime: 3

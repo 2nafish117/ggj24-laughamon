@@ -8,19 +8,25 @@ public class BasicAbility : Ability, IJokeResultHandler
     [Header("Animation Delays")]
     public float ExecutionTime = 3f;
 
+    private JokeData currentJoke; 
+
     public override void ExecuteSucceeded()
     {
         //Announcer.Instance.Say($"{source.name} used an ability on {target.name}", 2f);
+        StartAbilityExecution();
 
         if (IsAJoke)
         {
-            JokeData joke = JokeDataArray[Random.Range(0, JokeDataArray.Length)];
+            CombatLogger.Instance.AddLog(UsageText);
+            currentJoke = JokeDataArray[Random.Range(0, JokeDataArray.Length)];
 
-            CombatHUDManager.Instance.ShowJokeQTE(joke, this);
+            CombatLogger.OnLogEmptied += ShowJoke;
+
             return;
         }
 
-        StartAbilityExecution();
+        CombatLogger.Instance.AddLog(UsageText);
+
         if (!IsSelfTargeting)
         {
             ApplyLaugh();
@@ -48,6 +54,12 @@ public class BasicAbility : Ability, IJokeResultHandler
         AddQueuedAbilities();
     }
 
+    private void ShowJoke()
+    {
+        CombatLogger.OnLogEmptied -= ShowJoke;
+        CombatHUDManager.Instance.ShowJokeQTE(currentJoke, this);
+    }
+
     private void AddQueuedAbilities()
     {
         for (int i = 0; i < ExtraTurns; i++)
@@ -72,8 +84,6 @@ public class BasicAbility : Ability, IJokeResultHandler
         }
 
         float damage = LaughPoint * multiplier;
-
-        CombatLogger.Instance.AddLog(UsageText);
 
         //Buff calculations
 
@@ -115,8 +125,6 @@ public class BasicAbility : Ability, IJokeResultHandler
 
     private void ApplyToSelf()
     {
-        CombatLogger.Instance.AddLog(UsageText);
-
         source.LaughterPoints.Laugh(LaughPoint);
 
         if (target.HasActiveDamageModifiers)
@@ -148,15 +156,21 @@ public class BasicAbility : Ability, IJokeResultHandler
         {
             case (true, true):
                 ApplyLaugh();
+                JokeReactionCall();
                 return;
 
             case (false, true):
-                ApplyLaugh();
+                //ApplyLaugh();
                 return;
 
             case (false, false):
                 ApplyLaugh();
                 return;
         }
+    }
+
+    private void JokeReactionCall()
+    {
+        DOVirtual.DelayedCall(JokeReactionDelay, TriggerTargetJokeAnimation);
     }
 }

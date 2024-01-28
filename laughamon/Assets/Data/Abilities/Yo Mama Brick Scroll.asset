@@ -19,15 +19,13 @@ MonoBehaviour:
   SuccessChance: 1
   damageType: 1
   AnimationKey: 20
-  TargetReact: 1
+  TargetReact: 0
   TargetAnimationKey: 8
   TargetAnimationDelay: 2
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: '[enemy] read the ancient scroll aloud.
-
-    "YO MAMA"'
+  UsageText: '[enemy] read an ancient scroll aloud..."YO MAMA!"'
   Reactions:
   - Effectiveness: 6
     Reactions:
@@ -47,12 +45,18 @@ MonoBehaviour:
     DamageReflectInstance: 0
     SourceAbility: {fileID: 0}
   MultiHits: 0
-  IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  IsAJoke: 1
+  JokeDataArray:
+  - AnswerTime: 8
+    JokeStart: YO MAMA
+    FullJoke: YO MAMA
+    CorrectAnswer: SO NICE
+    WrongAnswers:
+    - SO BIG
+    - SO WIDE
+    - SO FAT
+    CorrectReaction: THATS RIGHT YO MAMA NICE AS HELL YO. NO DAMAGE YO!
+    WrongReaction: HA YOU NO RESPECT YO MAMA YO, TAKE DAMAGE YO!
+  JokeReaction: 8
+  JokeReactionDelay: 1
   ExecutionTime: 3

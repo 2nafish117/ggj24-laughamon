@@ -50,6 +50,8 @@ public abstract class Ability : ScriptableObject
     public bool IsAJoke;
     //public JokeData JokeData;
     public JokeData[] JokeDataArray;
+    public AnimationKey JokeReaction;
+    public float JokeReactionDelay;
 
     public void ExecuteAbility(CharacterControllerLaugh source, CharacterControllerLaugh target, IAbilityExecutionHandler executionHandler)
     {
@@ -102,9 +104,14 @@ public abstract class Ability : ScriptableObject
         }
     }
 
-    private void TriggerTargetAnimation()
+    protected void TriggerTargetAnimation()
     {
         target.AnimationController.PlayAnimation(TargetAnimationKey);
+    }
+
+    protected void TriggerTargetJokeAnimation()
+    {
+        target.AnimationController.PlayAnimation(JokeReaction);
     }
 
     public virtual void ExecuteOther()
