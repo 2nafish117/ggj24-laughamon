@@ -37,6 +37,9 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     protected virtual void OnStart()
     {
+        Buffs.Clear();
+        AbilityQueue.Clear();
+        AnimationController.PlayAnimation(AnimationKey.IdleLoop);
         Init(CharacterProfile);
     }
 
@@ -65,7 +68,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     {
     }
 
-    private void ClearBuffs()
+    private void ClearOldBuffs()
     {
         List<Buff> remainingBuffs = new List<Buff>();
         foreach (Buff buff in Buffs)
@@ -99,7 +102,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     public virtual void OnBeforeAbilityExecuted(Ability ability)
     {
-        ClearBuffs();
+        ClearOldBuffs();
         executionHandler?.OnBeforeAbilityExecuted(ability);
     }
 

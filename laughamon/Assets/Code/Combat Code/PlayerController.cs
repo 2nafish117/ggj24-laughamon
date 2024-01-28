@@ -29,6 +29,9 @@ public class PlayerController : CharacterControllerLaugh, IAbilityExecutionHandl
 
     protected override void OnStart()
     {
+        Buffs.Clear();
+        AbilityQueue.Clear();
+        AnimationController.PlayAnimation(AnimationKey.IdleLoop);
         LaughterPoints.Init(CharacterProfile.MaxHealth);
     }
 
