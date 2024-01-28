@@ -10,24 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Tickle Guard
+  m_Name: Yo Mama Brick Scroll
   m_EditorClassIdentifier: 
-  LaughPoint: 0
-  IsSelfTargeting: 1
-  AbilityIcon: {fileID: 0}
+  LaughPoint: 50
+  IsSelfTargeting: 0
+  AbilityIcon: {fileID: 21300000, guid: 898abc7b0e1b28342b767673debc76b0, type: 3}
   ShopCost: 0
   SuccessChance: 1
-  damageType: 0
-  AnimationKey: 1
-  TargetReact: 0
-  TargetAnimationKey: 0
-  TargetAnimationDelay: 0
+  damageType: 1
+  AnimationKey: 20
+  TargetReact: 1
+  TargetAnimationKey: 8
+  TargetAnimationDelay: 2
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
-  BuffsList:
-  - {fileID: 11400000, guid: 1467158381dbe2f4eb305edeeac4806d, type: 2}
-  UsageText: '[enemy] defended their armpits with ancient martial arts techniques.'
-  Reactions: []
+  BuffsList: []
+  UsageText: '[enemy] read the ancient scroll aloud.
+
+    "YO MAMA"'
+  Reactions:
+  - Effectiveness: 6
+    Reactions:
+    - You cringed hard enough to sustain mental damage!
+    - You laughed in horror at the sheer dumbness of the joke.
+  - Effectiveness: 1
+    Reactions:
+    - You were unaffected! It's not funny if you've heard it before.
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []

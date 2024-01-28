@@ -122,7 +122,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     {
         if (LaughterPoints.IsDead)
         {
-            OnDead();
+            CombatManager.Instance.OnTurnChanged += OnDead;
             return;
         }
 
@@ -136,8 +136,9 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         //}
     }
 
-    public void OnDead()
+    public void OnDead(bool isPlayerTurn)
     {
+        CombatManager.Instance.OnTurnChanged -= OnDead;
         AnimationController.PlayDeath();
         CombatManager.Instance.EndCombat();
     }

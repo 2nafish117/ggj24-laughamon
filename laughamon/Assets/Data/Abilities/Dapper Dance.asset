@@ -10,24 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Tickle Guard
+  m_Name: Dapper Dance
   m_EditorClassIdentifier: 
-  LaughPoint: 0
-  IsSelfTargeting: 1
+  LaughPoint: 35
+  IsSelfTargeting: 0
   AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
-  damageType: 0
-  AnimationKey: 1
-  TargetReact: 0
-  TargetAnimationKey: 0
-  TargetAnimationDelay: 0
+  damageType: 2
+  AnimationKey: 5
+  TargetReact: 1
+  TargetAnimationKey: 8
+  TargetAnimationDelay: 2
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
-  BuffsList:
-  - {fileID: 11400000, guid: 1467158381dbe2f4eb305edeeac4806d, type: 2}
-  UsageText: '[enemy] defended their armpits with ancient martial arts techniques.'
-  Reactions: []
+  BuffsList: []
+  UsageText: '[enemy] began to tap dance with its eight limbs. '
+  Reactions:
+  - Effectiveness: 6
+    Reactions:
+    - You found it hard to resist the squishy display of clumsiness. A laugh escaped
+      you!
+  - Effectiveness: 1
+    Reactions:
+    - Seeing those sensuously moving limbs only made you nauseous. You've built up
+      resistance!
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []

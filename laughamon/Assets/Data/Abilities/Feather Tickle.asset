@@ -21,10 +21,10 @@ MonoBehaviour:
   AnimationKey: 18
   TargetReact: 1
   TargetAnimationKey: 14
-  TargetAnimationDelay: 2.5
+  TargetAnimationDelay: 1.5
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
-  addsBuff: {fileID: 0}
+  BuffsList: []
   UsageText: You tickled [enemy]'s armpit with the feather.
   Reactions:
   - Effectiveness: 0
@@ -44,4 +44,20 @@ MonoBehaviour:
     - 0.5
   DOTs: []
   CombatEffects: []
+  HasDamageModifier: 0
+  DamageModifiers:
+    DamageBlockMultiplier: 0
+    DamageBlockInstance: 0
+    DamageReflectMultiplier: 0
+    DamageReflectInstance: 0
+    SourceAbility: {fileID: 0}
+  MultiHits: 0
+  IsAJoke: 0
+  JokeData:
+    AnswerTime: 4
+    JokeStart: 
+    CorrectAnswer: 
+    WrongAnswers: []
+    CorrectReaction: 
+    WrongReaction: 
   ExecutionTime: 3

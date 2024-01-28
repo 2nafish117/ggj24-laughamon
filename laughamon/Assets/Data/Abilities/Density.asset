@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Tickle Guard
+  m_Name: Density
   m_EditorClassIdentifier: 
   LaughPoint: 0
   IsSelfTargeting: 1
@@ -18,15 +18,15 @@ MonoBehaviour:
   ShopCost: 0
   SuccessChance: 1
   damageType: 0
-  AnimationKey: 1
+  AnimationKey: 0
   TargetReact: 0
   TargetAnimationKey: 0
   TargetAnimationDelay: 0
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList:
-  - {fileID: 11400000, guid: 1467158381dbe2f4eb305edeeac4806d, type: 2}
-  UsageText: '[enemy] defended their armpits with ancient martial arts techniques.'
+  - {fileID: 11400000, guid: 2a44618c3bdd9c446813185b0f8e51bf, type: 2}
+  UsageText: '[enemy] compressed his body and became extremely dense!'
   Reactions: []
   ReactionMultipliers: []
   DOTs: []

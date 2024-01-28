@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: Meditate
   m_EditorClassIdentifier: 
-  LaughPoint: -30
+  LaughPoint: -25
   IsSelfTargeting: 1
   AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
   damageType: 0
-  AnimationKey: 20
+  AnimationKey: 23
   TargetReact: 0
   TargetAnimationKey: 0
   TargetAnimationDelay: 0
