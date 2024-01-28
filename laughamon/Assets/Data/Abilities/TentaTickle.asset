@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: TentaTickle
   m_EditorClassIdentifier: 
-  LaughPoint: 25
+  LaughPoint: 15
   IsSelfTargeting: 0
   AbilityIcon: {fileID: 0}
   ShopCost: 0
@@ -54,4 +54,7 @@ MonoBehaviour:
   MultiHits: 0
   IsAJoke: 0
   JokeDataArray: []
+  JokeReaction: 0
+  JokeReactionDelay: 0
+  JokeFailedText: 
   ExecutionTime: 3

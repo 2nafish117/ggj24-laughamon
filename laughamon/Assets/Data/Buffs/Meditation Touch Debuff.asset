@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Meditation Touch Debuff
   m_EditorClassIdentifier: 
   damageType: 0
-  value: -30
+  value: -40
   buffType: 1
   turnsLeft: 1
   Reactions:
