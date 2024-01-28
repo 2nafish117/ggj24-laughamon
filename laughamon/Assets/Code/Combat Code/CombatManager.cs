@@ -71,10 +71,10 @@ public class CombatManager : MonoBehaviour
     public void EndCombat()
     {
         IsCombatOver = true;
-        OnCombatEnded?.Invoke();
         bool playerVictory = AIController.Instance.LaughterPoints.IsDead;
+        OnCombatEnded?.Invoke();
         Announcer.Instance.Say(playerVictory ? "You Won!" : "You Lost..", 5f);
         CombatHUDManager.Instance.ShowCombatEndScreen(playerVictory);
-        GameManager.Instance.OnCombatFinished(AIController.Instance.LaughterPoints.IsDead);
+        GameManager.Instance.OnCombatFinished(playerVictory);
     }
 }
