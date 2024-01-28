@@ -40,16 +40,23 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         Buffs.Clear();
         AbilityQueue.Clear();
         AnimationController.PlayAnimation(AnimationKey.IdleLoop);
+        ActiveDamageModifiers = null;
+        MultiHits = 0;
         Init(CharacterProfile);
     }
 
     public virtual void Init(CharacterProfile profile)
     {
         CharacterProfile = profile;
+
         AnimationController = SpawnCharacter(profile.Prefab);
+        AnimationController.StopDance();
+
         LaughterPoints.Init(CharacterProfile.MaxHealth);
-        InventoryManager.Init(CharacterProfile.Inventory);
+
+        InventoryManager.Init(CharacterProfile.Inventory, true);
         InventoryManager.EquipDefaults();
+
         ActionExecuter.Init(InventoryManager);
         EffectHandler.Init(this);
         AnimationController.Init();
