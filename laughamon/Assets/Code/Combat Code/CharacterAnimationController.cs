@@ -39,7 +39,8 @@ public enum AnimationKey
     Taunt2,
     Taunt3,
 
-    NumKeys
+    NumKeys,
+    Meditate
 }
 
 public class CharacterAnimationController : MonoBehaviour
@@ -142,6 +143,10 @@ public class CharacterAnimationController : MonoBehaviour
             case AnimationKey.Taunt3:
                 animator.SetTrigger("taunt3");
                 break;
+            case AnimationKey.Meditate:
+                animator.SetTrigger("meditate");
+                break;
+
 
             default:
                 Debug.Assert(false, "BRUH");

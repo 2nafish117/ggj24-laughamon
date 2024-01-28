@@ -27,7 +27,7 @@ MonoBehaviour:
   BuffsList: []
   UsageText: '[enemy] used all four of their arms to tickle you all over. '
   Reactions:
-  - Effectiveness: 0
+  - Effectiveness: 6
     Reactions:
     - There's no escape! You squealed and giggled uncontrollably.
     - You begged [enemy] to stop in a high-pitched voice!
