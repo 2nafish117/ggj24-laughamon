@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: Octodad Joke Scroll
   m_EditorClassIdentifier: 
-  LaughPoint: 50
+  LaughPoint: 40
   IsSelfTargeting: 0
   AbilityIcon: {fileID: 21300000, guid: 898abc7b0e1b28342b767673debc76b0, type: 3}
   ShopCost: 0
   SuccessChance: 1
   damageType: 1
-  AnimationKey: 0
+  AnimationKey: 20
   TargetReact: 1
   TargetAnimationKey: 8
   TargetAnimationDelay: 2
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
-  addsBuff: {fileID: 0}
+  BuffsList: []
   UsageText: "[enemy] read the ancient scroll aloud.\r\nTwo cannibals are eating
     a clown. One says to the other...\r\n\r...Does this taste funny to you?"
   Reactions:
@@ -38,4 +38,20 @@ MonoBehaviour:
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []
+  HasDamageModifier: 0
+  DamageModifiers:
+    DamageBlockMultiplier: 0
+    DamageBlockInstance: 0
+    DamageReflectMultiplier: 0
+    DamageReflectInstance: 0
+    SourceAbility: {fileID: 0}
+  MultiHits: 0
+  IsAJoke: 0
+  JokeData:
+    AnswerTime: 4
+    JokeStart: 
+    CorrectAnswer: 
+    WrongAnswers: []
+    CorrectReaction: 
+    WrongReaction: 
   ExecutionTime: 3

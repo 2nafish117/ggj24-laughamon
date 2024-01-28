@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: Pillow Guard
   m_EditorClassIdentifier: 
-  LaughPoint: 15
-  IsSelfTargeting: 0
+  LaughPoint: 0
+  IsSelfTargeting: 1
   AbilityIcon: {fileID: 21300000, guid: 423834b071fa3214f944129c092e5a89, type: 3}
   ShopCost: 0
   SuccessChance: 1
@@ -31,4 +31,20 @@ MonoBehaviour:
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []
+  HasDamageModifier: 0
+  DamageModifiers:
+    DamageBlockMultiplier: 0
+    DamageBlockInstance: 0
+    DamageReflectMultiplier: 0
+    DamageReflectInstance: 0
+    SourceAbility: {fileID: 0}
+  MultiHits: 0
+  IsAJoke: 0
+  JokeData:
+    AnswerTime: 4
+    JokeStart: 
+    CorrectAnswer: 
+    WrongAnswers: []
+    CorrectReaction: 
+    WrongReaction: 
   ExecutionTime: 3
