@@ -137,10 +137,9 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         AbilityQueue.Enqueue(ability);
     }
 
-    public Buff GetDefensiveBuff()
+    public Buff GetDefensiveBuff(DamageType damageType)
     {
-        if (Buffs.Count == 0) return null;
-        else return Buffs[0]; //TODO search for defensive buff.
+        return Buffs.FirstOrDefault(x => x.damageType == damageType || x.damageType == DamageType.Universal);
     }
 
     public void AddBuff(Buff buff)

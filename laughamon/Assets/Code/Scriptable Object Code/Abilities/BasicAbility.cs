@@ -75,8 +75,8 @@ public class BasicAbility : Ability, IJokeResultHandler
 
         //Buff calculations
 
-        Buff targetDefensiveBuff = target.GetDefensiveBuff();
-        if (targetDefensiveBuff != null && (damageType == targetDefensiveBuff.damageType || targetDefensiveBuff.damageType == DamageType.Universal))
+        Buff targetDefensiveBuff = target.GetDefensiveBuff(damageType);
+        if (targetDefensiveBuff != null)
         {
             damage = Mathf.Clamp(damage - targetDefensiveBuff.value, 0, 1000f);
 
@@ -116,6 +116,11 @@ public class BasicAbility : Ability, IJokeResultHandler
         CombatLogger.Instance.AddLog(UsageText);
 
         source.LaughterPoints.Laugh(LaughPoint);
+
+        if (target.HasActiveDamageModifiers)
+        {
+            target.RemoveExpiredDamageModifiers();
+        }
 
         DOVirtual.DelayedCall(ExecutionTime, EndAbilityExecution);
     }

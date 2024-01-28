@@ -16,10 +16,7 @@ MonoBehaviour:
   Prefab: {fileID: 5957343603994407860, guid: c64880850fbf01f4bb59a86459a0f14c, type: 3}
   MaxHealth: 100
   ProfilePicture: {fileID: 0}
-  AbilityEffectiveness:
-  - Effectiveness: 0
-    Reactions:
-    - {fileID: 11400000, guid: e8a24a6d284704d49a7d4a239849cdc2, type: 2}
+  AbilityEffectiveness: []
   Inventory:
   - {fileID: 11400000, guid: 9a4804c81f64abc4db03774839e5c13a, type: 2}
   - {fileID: 11400000, guid: 52e45f75145315d4290889cce487585f, type: 2}

@@ -12,21 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
   m_Name: HotSauceBurn
   m_EditorClassIdentifier: 
-  LaughPoint: 0
+  LaughPoint: 10
   IsSelfTargeting: 0
   AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
-  damageType: 0
+  damageType: 2
   AnimationKey: 12
-  TargetReact: 0
-  TargetAnimationKey: 0
+  TargetReact: 1
+  TargetAnimationKey: 8
   TargetAnimationDelay: 0
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
+  BuffsList: []
   UsageText: You are still burning with spice!
-  Reactions: []
+  Reactions:
+  - Effectiveness: 6
+    Reactions:
+    - '[enemy] chuckled a bit at your suffering.'
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []
+  HasDamageModifier: 0
+  DamageModifiers:
+    DamageBlockMultiplier: 0
+    DamageBlockInstance: 0
+    DamageReflectMultiplier: 0
+    DamageReflectInstance: 0
+    SourceAbility: {fileID: 0}
+  MultiHits: 0
+  IsAJoke: 0
+  JokeData:
+    AnswerTime: 4
+    JokeStart: 
+    CorrectAnswer: 
+    WrongAnswers: []
+    CorrectReaction: 
+    WrongReaction: 
   ExecutionTime: 3
