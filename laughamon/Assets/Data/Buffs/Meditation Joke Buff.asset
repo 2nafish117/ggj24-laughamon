@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Meditation Joke Buff
   m_EditorClassIdentifier: 
   damageType: 1
-  value: 60
+  value: 100
   buffType: 1
   turnsLeft: 1
   Reactions:

@@ -37,6 +37,9 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     protected virtual void OnStart()
     {
+        Buffs.Clear();
+        AbilityQueue.Clear();
+        AnimationController.PlayAnimation(AnimationKey.IdleLoop);
         Init(CharacterProfile);
     }
 
@@ -65,7 +68,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
     {
     }
 
-    private void ClearBuffs()
+    private void ClearOldBuffs()
     {
         List<Buff> remainingBuffs = new List<Buff>();
         foreach (Buff buff in Buffs)
@@ -99,7 +102,7 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
 
     public virtual void OnBeforeAbilityExecuted(Ability ability)
     {
-        ClearBuffs();
+        ClearOldBuffs();
         executionHandler?.OnBeforeAbilityExecuted(ability);
     }
 
@@ -137,10 +140,9 @@ public class CharacterControllerLaugh : MonoBehaviour, IAbilityExecutionHandler
         AbilityQueue.Enqueue(ability);
     }
 
-    public Buff GetDefensiveBuff()
+    public Buff GetDefensiveBuff(DamageType damageType)
     {
-        if (Buffs.Count == 0) return null;
-        else return Buffs[0]; //TODO search for defensive buff.
+        return Buffs.FirstOrDefault(x => x.damageType == damageType || x.damageType == DamageType.Universal);
     }
 
     public void AddBuff(Buff buff)

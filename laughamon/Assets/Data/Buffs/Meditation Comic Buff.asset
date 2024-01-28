@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Meditation Comic Buff
   m_EditorClassIdentifier: 
   damageType: 2
-  value: 60
+  value: 100
   buffType: 1
   turnsLeft: 1
   Reactions:
   - Effectiveness: 0
     Reactions:
-    - '[enemy]''s eyes are closed. She does not see your tomfoolery.'
+    - '[enemy]''s eyes are closed in Meditation. She does not see your tomfoolery.'

@@ -10,24 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e00fca191c4352545a99f6130f4b9bc2, type: 3}
-  m_Name: Yo Mama Joke
+  m_Name: TentaTickle
   m_EditorClassIdentifier: 
   LaughPoint: 20
   IsSelfTargeting: 0
-  AbilityIcon: {fileID: 21300000, guid: 904cda13f96d80e4189f749687fb8081, type: 3}
+  AbilityIcon: {fileID: 0}
   ShopCost: 0
   SuccessChance: 1
-  damageType: 3
-  AnimationKey: 20
+  damageType: 0
+  AnimationKey: 18
   TargetReact: 1
-  TargetAnimationKey: 14
-  TargetAnimationDelay: 0
+  TargetAnimationKey: 13
+  TargetAnimationDelay: 1.5
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []
-  UsageText: Yo Mama Joke was used.
-  Reactions: []
-  ReactionMultipliers: []
+  UsageText: '[enemy] used their ssslimy tentacles to tickle you in sensitive places.'
+  Reactions:
+  - Effectiveness: 0
+    Reactions:
+    - You scream for HR, but no one comes! Tickle damage!
+    - There's no escape from those slippery suckers! You are forced to laugh!
+  - Effectiveness: 1
+    Reactions:
+    - You barely reacted! You're numb to the stimulation!
+    - You shrugged it off with barely a laugh. You're numb to the stimulation!
+  ReactionMultipliers:
+  - Effectiveness: 0
+    Multiplier:
+    - 1.5
+  - Effectiveness: 1
+    Multiplier:
+    - 0.5
   DOTs: []
   CombatEffects: []
   HasDamageModifier: 0
@@ -38,15 +52,12 @@ MonoBehaviour:
     DamageReflectInstance: 0
     SourceAbility: {fileID: 0}
   MultiHits: 0
-  IsAJoke: 1
+  IsAJoke: 0
   JokeData:
     AnswerTime: 4
-    JokeStart: Yo momma is so fat when she got on the scale it said
-    CorrectAnswer: '"I need your weight not your phone number."'
-    WrongAnswers:
-    - '"The crapper breaks when she shits."'
-    - '"Her farts power rockets."'
-    - '"An elephant is lighter."'
-    CorrectReaction: Yo Mama So Proud of You
-    WrongReaction: You are fatter than Yo Mama
+    JokeStart: 
+    CorrectAnswer: 
+    WrongAnswers: []
+    CorrectReaction: 
+    WrongReaction: 
   ExecutionTime: 3

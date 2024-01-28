@@ -26,7 +26,7 @@ MonoBehaviour:
   ChargeAbility: {fileID: 11400000, guid: 0817fbcc7991ef749808567a5423189f, type: 2}
   BuffsList:
   - {fileID: 11400000, guid: 0e90997d620f5174e9f37b58b1bddd99, type: 2}
-  UsageText: You chugged the entire bottle of hot sauce in one go....AAAH FIREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.
+  UsageText: You chugged the entire bottle of hot sauce in one go....AAAH FIREEEEE.
   Reactions:
   - Effectiveness: 6
     Reactions:
@@ -40,4 +40,20 @@ MonoBehaviour:
   ReactionMultipliers: []
   DOTs: []
   CombatEffects: []
+  HasDamageModifier: 0
+  DamageModifiers:
+    DamageBlockMultiplier: 0
+    DamageBlockInstance: 0
+    DamageReflectMultiplier: 0
+    DamageReflectInstance: 0
+    SourceAbility: {fileID: 0}
+  MultiHits: 0
+  IsAJoke: 0
+  JokeData:
+    AnswerTime: 4
+    JokeStart: 
+    CorrectAnswer: 
+    WrongAnswers: []
+    CorrectReaction: 
+    WrongReaction: 
   ExecutionTime: 3
