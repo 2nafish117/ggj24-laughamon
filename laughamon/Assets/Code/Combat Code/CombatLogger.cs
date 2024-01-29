@@ -52,6 +52,8 @@ public class CombatLogger : MonoBehaviour
         LogText.SetText("");
 
         CombatManager.Instance.OnCombatStarted += ClearLog;
+
+        textDisplayHelper.onFinishedScrollingText += OnLogTextShown;
     }
 
     private void ClearLog()
@@ -108,12 +110,12 @@ public class CombatLogger : MonoBehaviour
 
     private void ProgressLog()
     {
-        if (ActiveLogDisplayCoroutine == null && logQueue.Count > 0)
+        if (ActiveLogDisplayCoroutine == null && textDisplayHelper.isScrollingText == false && logQueue.Count > 0)
         {
             ActiveLogDisplayCoroutine = StartCoroutine(DisplayLogQueueRoutine());
         }
 
-        else if (ActiveLogDisplayCoroutine == null && logQueue.Count == 0)
+        else if (ActiveLogDisplayCoroutine == null && textDisplayHelper.isScrollingText == false && logQueue.Count == 0)
         {
             HideBlinkingArrow();
             LogText.SetText("");
@@ -152,6 +154,10 @@ public class CombatLogger : MonoBehaviour
         yield return new WaitForSeconds(first.minDelay);
 
         ActiveLogDisplayCoroutine = null;
+    }
+
+    private void OnLogTextShown()
+    {
         ShowBlinkingArrow();
 
         OnLogProgressed?.Invoke();
