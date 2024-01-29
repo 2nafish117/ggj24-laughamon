@@ -34,6 +34,7 @@ public class AudioManager : MonoBehaviour
             trackIndex = trackIndex % Tracks.Length;
             BGMPlayer.clip = Tracks[trackIndex];
             BGMPlayer.loop = true;
+            BGMPlayer.Play();
             BGMPlayer.DOFade(1, 2f).SetEase(Ease.InSine);
         };
     }

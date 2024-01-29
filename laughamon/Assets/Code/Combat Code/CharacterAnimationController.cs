@@ -140,6 +140,7 @@ public class CharacterAnimationController : MonoBehaviour
             case AnimationKey.TakeDamage1:
                 animator.SetTrigger("damage1");
                 vfxContainer.PlayLaugh(transform.position);
+                audioContainer.PlayLaugh();
                 break;
             //case AnimationKey.TakeDamage2:
             //	animator.SetTrigger("damage2");
@@ -147,6 +148,7 @@ public class CharacterAnimationController : MonoBehaviour
             case AnimationKey.TakeTickleDamage:
                 animator.SetTrigger("take_tickle_damage");
                 vfxContainer.PlayLaugh(transform.position);
+                audioContainer.PlayLaugh();
                 break;
 
             case AnimationKey.Break4thWall1:

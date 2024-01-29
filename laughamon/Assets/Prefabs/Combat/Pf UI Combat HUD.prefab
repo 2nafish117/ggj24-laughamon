@@ -304,7 +304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 18.099976, y: 148.3}
+  m_AnchoredPosition: {x: 111, y: 324}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1039239798589415227
@@ -326,7 +326,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1496,7 +1496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -15.200012}
+  m_AnchoredPosition: {x: 128, y: -34}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &5103316493740090751
@@ -3607,6 +3607,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8098548186338607003, guid: fb4c02849ee70b242a444445eb144a01, type: 3}
+      propertyPath: m_text
+      value: Next Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098548186338607003, guid: fb4c02849ee70b242a444445eb144a01, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098548186338607003, guid: fb4c02849ee70b242a444445eb144a01, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8342564251221141280, guid: fb4c02849ee70b242a444445eb144a01, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 12.799988
@@ -3678,7 +3690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5642018851410134341, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
       propertyPath: m_Size
-      value: 0.29220298
+      value: 0.292203
       objectReference: {fileID: 0}
     - target: {fileID: 8634456696616690542, guid: 93acc8ed9dd27044c901b7c08520c0a6, type: 3}
       propertyPath: m_Pivot.x

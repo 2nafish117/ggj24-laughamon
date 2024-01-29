@@ -21,7 +21,7 @@ MonoBehaviour:
   AnimationKey: 18
   TargetReact: 1
   TargetAnimationKey: 13
-  TargetAnimationDelay: 1.5
+  TargetAnimationDelay: 0.6
   ExtraTurns: 0
   ChargeAbility: {fileID: 0}
   BuffsList: []

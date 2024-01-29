@@ -50,13 +50,53 @@ MonoBehaviour:
   - AnswerTime: 8
     JokeStart: Two cannibals are eating a clown. One says...
     FullJoke: Two cannibals are eating a clown. One says..."Does this taste funny?"
-    CorrectAnswer: Taste Funny
+    CorrectAnswer: Tastes Funny?
     WrongAnswers:
     - Clown Around
     - OOGA BOOGA NO SPEAK ENGLISH
     - Can I Ball?
     CorrectReaction: You knew the correct answer and were unaffected by the attack!
     WrongReaction: Wrong Answer! You cringed hard enough to sustain mental damage!
+  - AnswerTime: 10
+    JokeStart: Why don't Oysters donate to charity?
+    FullJoke: Why don't Oysters donate to charity? Because they're shellfish!
+    CorrectAnswer: Shellfish
+    WrongAnswers:
+    - They're Dumb
+    - Clam up
+    - Sweet Chariot
+    CorrectReaction: Nice joke! You opponent is falling over laughing!
+    WrongReaction: That...makes no sense. No laughs dealt!
+  - AnswerTime: 10
+    JokeStart: Why did the scarecrow win an award?
+    FullJoke: Why did the scarecrow win an award? He was outstanding in his field!
+    CorrectAnswer: Outstanding in his field
+    WrongAnswers:
+    - Awesome in his yield
+    - Deadly and two-wheeled
+    - Guilty and appealed
+    CorrectReaction: Nice joke! You opponent is falling over laughing!
+    WrongReaction: That...makes no sense. No laughs dealt!
+  - AnswerTime: 10
+    JokeStart: Did you hear about the kidnapping at school?
+    FullJoke: Did you hear about the kidnapping at school? It's ok, he woke up.
+    CorrectAnswer: He woke up
+    WrongAnswers:
+    - That's awful
+    - School Rules
+    - Hear What?
+    CorrectReaction: Nice joke! You opponent is falling over laughing!
+    WrongReaction: That...makes no sense. No laughs dealt!
+  - AnswerTime: 10
+    JokeStart: I used to be addicted to soap but...
+    FullJoke: I used to be addicted to soap but...now I'm clean.
+    CorrectAnswer: Now I'm Clean
+    WrongAnswers:
+    - Soap Opera
+    - Add a Ted
+    - I'm Bathing
+    CorrectReaction: Nice joke! You opponent is falling over laughing!
+    WrongReaction: That...makes no sense. No laughs dealt!
   JokeReaction: 8
   JokeReactionDelay: 1
   JokeFailedText: 

@@ -30,7 +30,13 @@ MonoBehaviour:
   - Effectiveness: 6
     Reactions:
     - '[enemy] chuckled a bit at your suffering.'
-  ReactionMultipliers: []
+  ReactionMultipliers:
+  - Effectiveness: 0
+    Multiplier:
+    - 1.5
+  - Effectiveness: 1
+    Multiplier:
+    - 0.5
   DOTs: []
   CombatEffects: []
   HasDamageModifier: 0
@@ -42,11 +48,8 @@ MonoBehaviour:
     SourceAbility: {fileID: 0}
   MultiHits: 0
   IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  JokeDataArray: []
+  JokeReaction: 0
+  JokeReactionDelay: 0
+  JokeFailedText: 
   ExecutionTime: 3

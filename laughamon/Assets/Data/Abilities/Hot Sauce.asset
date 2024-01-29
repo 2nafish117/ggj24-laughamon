@@ -37,7 +37,13 @@ MonoBehaviour:
     - '[enemy] kept a straight face. Slapstick comedy is old now'
     - '[enemy] is concerned for you. Hurting yourself isn''t funny. Do you need a
       doctor?'
-  ReactionMultipliers: []
+  ReactionMultipliers:
+  - Effectiveness: 0
+    Multiplier:
+    - 1.5
+  - Effectiveness: 1
+    Multiplier:
+    - 0.5
   DOTs: []
   CombatEffects: []
   HasDamageModifier: 0
@@ -49,11 +55,8 @@ MonoBehaviour:
     SourceAbility: {fileID: 0}
   MultiHits: 0
   IsAJoke: 0
-  JokeData:
-    AnswerTime: 4
-    JokeStart: 
-    CorrectAnswer: 
-    WrongAnswers: []
-    CorrectReaction: 
-    WrongReaction: 
+  JokeDataArray: []
+  JokeReaction: 0
+  JokeReactionDelay: 0
+  JokeFailedText: 
   ExecutionTime: 3
